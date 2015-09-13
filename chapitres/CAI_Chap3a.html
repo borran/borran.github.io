@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js ie6" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!-->  <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+  <title>Création d'Applications sur Internet</title>
+
+  <meta name="description" content="Création d'Applications sur Internet">
+  <meta name="author" content="Fatemeh Borran">
+  <meta name="viewport" content="width=1024, user-scalable=no">
+
+  <!-- Core and extension CSS files -->
+  <link rel="stylesheet" media="screen" href="../deck.js-latest/core/deck.core.css">
+  <link rel="stylesheet" media="screen" href="../deck.js-latest/extensions/goto/deck.goto.css">
+  <link rel="stylesheet" media="screen" href="../deck.js-latest/extensions/menu/deck.menu.css">
+  <link rel="stylesheet" media="screen" href="../deck.js-latest/extensions/navigation/deck.navigation.css">
+  <link rel="stylesheet" media="screen" href="../deck.js-latest/extensions/status/deck.status.css">
+  <link rel="stylesheet" media="screen" href="../deck.js-latest/extensions/scale/deck.scale.css">
+
+  <!-- Style theme. More available in /themes/style/ or create your own. -->
+  <link rel="stylesheet" media="screen" href="../deck.js-latest/themes/style/swiss.css">
+
+  <!-- Transition theme. More available in /themes/transition/ or create your own. -->
+  <link rel="stylesheet" media="screen" href="../deck.js-latest/themes/transition/horizontal-slide.css">
+
+  <!-- Basic black and white print styles -->
+  <link rel="stylesheet" media="print" href="../deck.js-latest/core/print.css">
+
+  <script src="../deck.js-latest/modernizr.custom.js"></script>
+</head>
+
+<body>
+  <div class="deck-container">
+
+    <!-- Begin slides -->
+    <section class="slide" id="slide1">
+      <h2>Création d'Applications sur Internet</h2>      
+      <br/><br/><br/><br/>
+      <center>
+        <h3>Chapitre3a: Langage HTML</h3>
+        <h4>Fatemeh BORRAN</h4>
+      </center>
+    </section>
+
+    <section class="slide" id="slide2">
+      <h2>Sommaire</h2>
+      <ul>
+        <li>HTML, qu'est-ce que c'est?</li>
+        <li>Structure d'une page HTML</li>
+        <li>Structure du contenu d'une page</li>
+        <li>Listes à puces</li>
+        <li>Liens hypertextes</li>
+        <li>Images</li>
+        <li>Tableaux</li>                
+      </ul>
+    </section>
+
+    <section class="slide" id="slide3">
+      <h2>HTML, qu'est-ce que c'est? (1/4)</h2>        
+      <table>
+        <tr>
+          <td><img src="../Figures/firefox.png" alt="Firefox" width="40px"/></td>        
+          <td>http://en.wikipedia.org/wiki/Main_Page</td>
+        </tr>
+      </table>
+      <img src="../HTML/wikipedia.png" alt="Wikipedia"/>           
+    </section>
+
+    <section class="slide" id="slide4">
+      <h2>HTML, qu'est-ce que c'est? (2/4)</h2>
+      <p>View Page Source:</p>
+      <img src="../HTML/wikipedia_ViewSource.png" alt="Wikipeida_ViewSource"/>                 
+    </section>
+    
+    <section class="slide" id="slide5">
+      <h2>HTML, qu'est-ce que c'est? (3/4)</h2>    
+      <p>HTML+CSS:</p>
+      <img src="../HTML/wikipedia_Source.png" alt="Wikipeida_Source"/>           
+    </section>
+
+    <section class="slide" id="slide6">
+      <h2>HTML, qu'est-ce que c'est? (4/4)</h2>
+      <ul>
+        <li>HTML (HyperText Markup Langage) est un <strong>langage de description de document</strong> (≠ langage de programmation).</li>
+        <li>Il est interprété par le <strong>navigateur Web</strong> pour représenter graphiquement une page Web.</li>
+        <li>Une page Web est un fichier contenant du <strong>texte</strong> et du <strong>code HTML</strong> et possédant l'extension <code>.html</code> ou <code>.htm</code>.</li>
+      </ul>    
+      <img src="../HTML/html.png" alt="HTML"/>                
+    </section>
+
+    <section class="slide" id="slide7">
+      <h2>Balises HTML</h2>   
+      <ul>
+        <li>Un fichier HTML contient du texte ainsi qu'un certain nombre de <strong>balises</strong> (tag en anglais) permettant de définir la <strong>structure du document</strong>.</li>
+        <li>Dans un document HTML, les balises sont encadrées par les caractères <code>&lt;</code> et <code>&gt;</code>.</li>
+        <pre>Voici un exemple de texte normal contenant <code>&lt;b&gt;</code>à la fois<code>&lt;/b&gt;</code> du contenu textuel <code>&lt;i&gt;</code>normal<code>&lt;/i&gt;</code> et un certain nombre de <code>&lt;u&gt;</code>balises HTML<code>&lt;/u&gt;</code>.</pre> 
+        <li>Les balises sont définies de manière (<em>plus ou moins</em>) standard dans le langage HTML. On ne peut pas utiliser n'importe quelle balise!</li>
+        <table>        
+          <tr>
+            <td width="50px"><img src="../HTML/correct.png" alt="Correct" width="40px"/></td>
+            <td><code style="color:green">&lt;html&gt;, &lt;head&gt;, &lt;body&gt;, &lt;span&gt;, &lt;table&gt;,...</code></td>
+          </tr>
+          <tr>
+            <td width="50px"><img src="../HTML/faux.png" alt="Faux" width="40px"/></td>
+            <td><code style="color:red">&lt;maBalise1&gt;, &lt;gras&gt;, &lt;italique&gt;, &lt;rouge&gt;,...</code></td>
+          </tr>
+        </table>    
+      </ul>    
+    </section>
+
+    <section class="slide" id="slide8">
+      <h2>Balises &lt;ouvrantes&gt; et &lt;/fermantes&gt;</h2>
+      <ul>
+        <li>La zone d'activité d'une balise est délimitée par ses balises <strong>ouvrante</strong> (normale) et <strong>fermante</strong> (où le nom est précédé d’un /).</li>
+        <li>Ainsi, sachant que les balises <code>&lt;b&gt;</code>, <code>&lt;i&gt;</code> et <code>&lt;u&gt;</code> permettent de formater du texte respectivement en <strong>gras</strong>, <em>italique</em> et <u>souligné</u>:</li>
+        <pre>Voici un exemple de texte normal contenant <code>&lt;b&gt;</code>à la fois<code>&lt;/b&gt;</code> du contenu textuel <code>&lt;i&gt;</code>normal<code>&lt;/i&gt;</code> et un certain nombre de <code>&lt;u&gt;</code>balises HTML<code>&lt;/u&gt;</code>.</pre>     
+        <li>S’affichera dans le navigateur:</li>
+        <pre><code>Voici un exemple de texte normal contenant <strong>à la fois</strong> du contenu textuel <em>normal</em> et un certain nombre de <u>balises HTML</u>.</code></pre>         
+      </ul>           
+    </section>
+    
+    <section class="slide" id="slide9">
+      <h2>Balises &lt;ouvrantes&gt; et &lt;/fermantes&gt;</h2>      
+      <table>
+        <tr><td><img src="../HTML/attention.png" alt="Faux" width="80px"/></td><td><pre>Une balise ouverte doit toujours être refermée, même si les navigateurs sont en général forcés d'être tolérants à ce sujet.</pre></td></tr>
+      </table>
+      <ul>
+        <li>Certaines balises ne contiennent pas de texte. C'est le cas de la balise <code>&lt;br&gt;</code> permettant de spécifier un retour chariot (saut à la ligne).</li>
+        <li>Comme cette balise n'encadre pas de texte, on devrait écrire systématiquement <code>&lt;br&gt;&lt;/br&gt;</code> pour respecter la contrainte de fermeture des balises.</li>
+        <li>Pour se faciliter la tâche, on écrira <code>&lt;br/&gt;</code>, ce qui est strictement équivalent à <code>&lt;br&gt;&lt;/br&gt;</code>.</li>
+        <li>Cette simplification est valable pour toutes les balises ne nécessitant pas d'encadrer du texte.</li>
+      </ul>
+    </section>
+
+    <section class="slide" id="slide10">
+      <h2>Attributs de balises</h2>
+      <ul>
+        <li>Certaines balises peuvent contenir des <strong>attributs</strong> qui permettent de définir des propriétés supplémentaires.</li>
+        <li>Les attributs apparaissent au sein de la balise ouvrante, sous la forme <code>nomAttribut="valeurAttribut"</code>. Si plusieurs attributs sont utilisés, ils sont séparés par un espace.</li>
+        <li>Par exemple, la balise <code>&lt;p&gt;</code> permet de définir un paragraphe et elle possède entre autres un attribut align permettant de spécifier l'alignement du paragraphe (left, right ou center).</li>
+        <table>
+         <tr><td width="95%">
+<pre><code><xmp><p align="left">Paragraphe aligné à gauche.</p>
+<p align="right">Paragraphe aligné à droite.</p>
+<p align="center">Paragraphe aligné au centre.</p>
+</xmp></code></pre></td>
+<td><a href="../HTML/paragraphe.html" target="_blank"><img src="../HTML/run.svg" alt="Run" width="100px"/></a></td></tr>
+      </table>
+      </ul> 
+    </section>
+
+    <section class="slide" id="slide11">
+      <h2>Syntaxe HTML</h2> 
+      <ul>
+        <li>Des balises HTML peuvent être imbriquées les unes dans les autres, mais <strong>jamais se chevaucher</strong>!</li>
+        <table>        
+          <tr>
+            <td width="50px"><img src="../HTML/correct.png" alt="Correct" width="40px"/></td>
+            <td><code style="color:green">&lt;u&gt;mon texte &lt;b&gt;bien formaté&lt;/b&gt;&lt;/u&gt;</code></td>
+          </tr>
+          <tr>
+            <td width="50px"><img src="../HTML/faux.png" alt="Faux" width="40px"/></td>
+            <td><code style="color:red">&lt;u&gt;mon texte &lt;b&gt;mal formaté&lt;/u&gt;&lt;/b&gt;</code></td>
+          </tr>
+        </table>           
+        <li>Les règles de syntaxe du langage HTML ont été définies par le W3C, et codées dans une série de fichiers appelés <strong>DTD</strong> (Document Type Definition), qui spécifient notamment:</li>
+        <ul>
+          <li>Les noms des balises admises;</li>
+          <li>Les attributs de ces balises ainsi que leurs valeurs admises;</li>
+          <li>Les règles d'imbrication de ces balises (comme nous le verrons, certaines balises doivent respecter une structure bien précise).</li>
+        </ul>
+      </ul>      
+    </section>
+
+    <section class="slide" id="slide12">
+      <h2>Structure d'une page Web</h2>
+      <ul>
+        <li>Une page HTML contient toujours au minimum les balises <code>&lt;html&gt;</code>, <code>&lt;head&gt;</code> et <code>&lt;body&gt;</code>, imbriquées comme présenté ci-dessous:</li>
+      </ul>
+<pre><code><xmp><!DOCTYPE html>
+<html>
+   <head>
+      informations générales sur le document
+   </head>
+   <body>
+      texte du document + commandes de formatage
+   </body>
+</html></xmp></code></pre>           
+    </section>
+    
+    <section class="slide" id="slide13">
+      <h2>Structure du contenu d'une page (1/2)</h2> 
+      <img src="../HTML/structure_page1.png" alt="Structure1" width="80%"/>      
+    </section>
+
+    <section class="slide" id="slide14">
+      <h2>Structure du contenu d'une page (2/2)</h2>
+      <img src="../HTML/structure_page2.png" alt="Structure2" width="80%"/>              
+    </section>
+
+    <section class="slide" id="slide15">
+      <h2>Code HTML correspondant</h2>
+      <table><tr><td>  
+<pre><code><xmp><!DOCTYPE html>
+<html>
+   <!-- ceci est un commentaire -->
+   <head>
+      <!-- ceci représente l'encodage -->   
+      <meta charset="utf-8">   
+      <title>Rapport</title>
+   </head>
+   <body>
+      <h1>Rapport d'activité</h1>
+         <h2>Introduction</h2>
+            <p>blablabla</p>
+            <p>blablabla</p>
+         <h2>Evolution</h2>
+            <h3>Stratégie</h3>
+               <p>Notre stratégie...</p>
+            <h3>Recherche</h3>
+               <p>Notre recherche...</p>
+   </body>
+</html></xmp></code></pre></td>
+<td><img src="../HTML/structure_screenshot.png" alt="Structure" width="95%"/></td>        
+      </table>
+    </section>
+
+    <section class="slide" id="slide16">
+      <h2>Listes à puces</h2>
+      <ul>
+        <li>Une <strong>liste</strong> est délimitée par la balise <code>&lt;ul&gt;</code> (<emp>Unordered List</emp>) ou la balise <code>&lt;ol&gt;</code> (Ordered List).</li>
+        <li>Les lignes sont délimitées par <code>&lt;li&gt;</code> (<emp>List Item</emp>).</li>
+      </ul> 
+      <table>
+      <tr><td width="95%">      
+<pre><code><xmp>Le Schbörtch farci aux pruneaux:
+<ul>
+   <li>50g de pruneaux</li>
+   <li>1Kg de beurre</li>
+   <li>500g de graisse de porc</li>
+</ul>      
+</xmp></code></pre></td>
+<td><a href="../HTML/liste.html" target="_blank"><img src="../HTML/run.svg" alt="Run" width="100px"/></a></td></tr>
+      </table>
+    </section>
+    
+    <section class="slide" id="slide17">
+      <h2>Liens hypertextes</h2> 
+      <ul>
+        <li>Un <strong>lien hypertexte</strong> est défini en utilisant la balise <code>&lt;a&gt;</code> (anchor). Le texte du lien (cliquable) est le texte placé entre les balises ouvrante et fermante <code>&lt;a&gt;</code> et <code>&lt;/a&gt;</code>.</li>
+        <li>On utilise l'attribut <code>href</code> pour indiquer la cible du lien, en spécifiant son <strong>chemin d'accès</strong>.</li>
+      <table>
+      <tr><td width="95%">      
+<pre><code><xmp><a href="http://www.perdu.com">Un site</a><br/>
+<a href="accueil.html">Page d’accueil</a>  
+</xmp></code></pre></td>
+<td><a href="../HTML/link.html" target="_blank"><img src="../HTML/run.svg" alt="Run" width="100px"/></a></td></tr>
+      </table>
+      <li>En ajoutant l'attribut <code>target</code> avec la valeur <code>_blank</code>, le lien ouvrira la page cible dans une nouvelle fenêtre.</li>        
+      </ul>      
+    </section>
+
+    <section class="slide" id="slide18">
+      <h2>Davantage sur les liens hypertextes</h2>
+      <ul>
+        <li><strong>Lien vers un fichier à télécharger:</strong> ouvre une fenêtre de téléchargement de fichier (en principe).</li>
+      <table>
+      <tr><td width="95%">         
+<pre><code><xmp><a href="fichier.zip">cliquez ici pour télécharger le fichier</a></xmp></code></pre></td>
+<td><a href="../HTML/zip.html" target="_blank"><img src="../HTML/run.svg" alt="Run" width="80px"/></a></td></tr>
+      </table>        
+        <li><strong>Lien d'email:</strong> ouvre le client de messagerie par défaut avec certains champs pré-remplis (destinataire, sujet et contenu du message).</li>
+      <table>
+      <tr><td width="95%">         
+<pre><code><xmp><a href="mailto:info@heig-vd.ch?subject=Info&body=texte">Contact</a> 
+</xmp></code></pre></td>
+<td><a href="../HTML/zip.html" target="_blank"><img src="../HTML/run.svg" alt="Run" width="80px"/></a></td></tr>
+      </table>            
+      </ul>     
+    </section>
+
+    <section class="slide" id="slide19">
+      <h2>Bookmarks</h2> 
+      <ul>
+        <li>On utilise un bookmark dans une page HTML très longue pour sauter d'un endroit à autre à l'intérieur de même page ou d'une autre page.</li>
+      </ul>
+      <table>
+      <tr><td width="95%">         
+<pre><code><xmp><html>
+<head>
+   <meta charset="utf-8"/>
+   <title>Hyperlink</title>
+</head>
+<body>
+<h1>Ma grande page</h1>
+    <p>Aller directement à la partie traitant de :<br/> 
+       <a href="#cuisine">La cuisine</a><br/>
+       <a href="#rollers">Les rollers</a><br/>
+       <a href="#arc">Le tir à l'arc</a><br/>
+    </p>
+    <h2 id="cuisine">La cuisine</h2>
+       <p>La cuisine est ...</p>
+    <h2 id="rollers">Les rollers</h2> 
+       <p>Le patinage à roulettes ou roller ...</p>
+    <h2 id="arc">Le tir à l'arc</h2>
+       <p>Le tir à l'arc est ...</p>
+</body>
+</html>
+</xmp></code></pre></td>
+<td><a href="../HTML/grandePage.html" target="_blank"><img src="../HTML/run.svg" alt="Run" width="100px"/></a></td></tr>
+      </table>            
+    </section>
+
+    <section class="slide" id="slide20">
+      <h2>Chemins d'accès (1/2)</h2>
+      <table>
+      <tr>
+      <td>
+      <ul>
+        <li>Il existe 2 possibilités pour indiquer le chemin d'accès à une ressource dans une page HTML:</li>
+        <ul>
+          <li><strong>Chemin relatif:</strong> Indiquer l'emplacement relatif de la page cible par rapport à la page dans laquelle se trouve le chemin d’accès, avec:</li>
+          <ul>
+            <li><code>.</code> pour répertoire courant</li>          
+            <li><code>..</code> pour remonter d'un niveau</li>
+            <li>nom de dossier/fichier pour descendre d'un niveau</li>
+            <li><code>/</code>pour les séparer (Mac/Linux) <code>\</code> (Windows)</li>
+          </ul>
+          <li><strong>Chemin absolu:</strong> Indiquer l'emplacement de la page cible depuis la racine de l'arborescence.</li>
+        </ul>
+      </ul>
+      </td>
+      <td>
+        <img src="../HTML/chemin.png"/>
+      </td>
+      </tr>
+      </table>        
+    </section>
+       
+    <section class="slide" id="slide21">
+      <h2>Chemins d'accès (2/2)</h2>
+      <table>
+      <tr>
+      <td>
+      <ul>
+        <li>Comment atteindre la page <code>cible.html</code> depuis la page <code>source.html</code>
+        <ul>
+          <li>en utilisant un chemin relatif?</li>
+          <li>Et en utilisant un chemin absolu, si le site est en local?</li>
+          <li>Et si le site est déployé sur le serveur Web?</li>
+        </ul>
+      </ul>
+      </td>
+      <td>
+        <img src="../HTML/chemin.png"/>
+      </td>
+      </tr>
+      </table>             
+    </section>
+            
+    <section class="slide" id="slide22">
+      <h2>Images</h2>
+      <ul>
+        <li>Une <strong>image</strong> peut être affichée dans une page HTML en utilisant la balise <code>&lt;img&gt;</code>. Cette balise ne contient pas de texte, c'est pourquoi on la referme directement en l'écrivant <code>&lt;img/&gt;</code>.</li>
+        <li>On utilise l'attribut <code>src</code> pour indiquer l'emplacement de l'image en spécifiant son <strong>chemin d'accès</strong>.</li>
+      <table>
+      <tr><td width="95%">         
+<pre><code><xmp><html>
+   <body>
+      <img src="pince.png"/>
+      <p>Lorem ipsum...</p>  
+   </body>
+</html>
+</xmp></code></pre></td>
+<td><a href="../HTML/image.html" target="_blank"><img src="../HTML/run.svg" alt="Run" width="100px"/></a></td></tr>
+      </table>        
+      </ul>           
+    </section>
+       
+    <section class="slide" id="slide23">
+      <h2>Davantage sur les images</h2>
+      <ul>
+        <li>La balise <code>&lt;img&gt;</code> accepte d'autres attributs, et notamment:</li>
+        <ul>
+          <li><code>alt</code>: texte alternatif qui sera affiché à la place de l'image au cas où celle-ci ne peut pas être affichée. Le texte est en général également affiché dans une info-bulle lorsque le curseur est placé sur celle-ci;</li>
+          <li><code>width</code> et <code>height</code>: permettent de spécifier les dimensions de l'image (en nombre de pixels). Attention cependant à ne pas utiliser ces attributs pour redimensionner les images dans la page HTML.</li>
+          <li><code>border</code>: permet d'afficher une bordure autour de l’image, en spécifiant la largeur de celle-ci (en nombre de pixels).</li>
+          <li>On peut  tout à fait créer un lien sur une image en plaçant celle-ci entre les balises <code>&lt;a&gt;</code> et <code>&lt;/a&gt;</code> (très utile pour réaliser des menus attrayants).</li>
+        </ul>
+      </ul>           
+    </section>
+    
+    <section class="slide" id="slide24">
+      <h2>Tableaux (1/5)</h2>
+      <ul>
+        <li>On utilise souvent les <strong>tableaux</strong> pour positionner les différents éléments d’une page Web (même si ce n'est en réalité pas recommandé).</li>
+        <li>Mais comment produire un tableau en deux dimensions, alors que le texte d'un fichier HTML n'a qu'une dimension?</li>        
+      </ul>     
+      <table border="2">
+        <tr><td>Carmen</td><td>33</td><td>Espagne</td></tr>
+        <tr><td>Michelle</td><td>26</td><td>Etat-Unis</td></tr>
+      </table>
+    </section>
+       
+    <section class="slide" id="slide25">
+      <h2>Tableaux (2/5)</h2>
+           
+    </section>
+    
+    <section class="slide" id="slide26">
+      <h2>Tableaux (3/5)</h2>
+           
+    </section>
+       
+    <section class="slide" id="slide27">
+      <h2>Tableaux (4/5)</h2>
+           
+    </section>
+    
+    <section class="slide" id="slide28">
+      <h2>Tableaux (5/5)</h2>
+           
+    </section>
+       
+    <section class="slide" id="slide29">
+      <h2>Balises et attributs des tableaux (1/2)</h2>
+           
+    </section>
+    
+    <section class="slide" id="slide30">
+      <h2>Balises et attributs des tableaux (2/2)</h2>
+           
+    </section>
+       
+    <section class="slide" id="slide31">
+      <h2>Tableaux imbriquées</h2>
+           
+    </section>
+
+    <section class="slide" id="slide32">
+      <h2>Quelques considérations générales</h2>
+           
+    </section>
+       
+    <section class="slide" id="slide33">
+      <h2>Comment vérifier le code HTML?</h2>
+           
+    </section>
+    
+    <section class="slide" id="slide34">
+      <h2>Questions?!</h2>    
+      <img src="../Figures/chapitre0.png" alt="Questions?!"/>
+    </section>
+
+    <!-- deck.navigation snippet -->
+    <div aria-role="navigation">
+      <a href="#" class="deck-prev-link" title="Previous">&#8592;</a>
+      <a href="#" class="deck-next-link" title="Next">&#8594;</a>
+    </div>
+
+    <!-- deck.status snippet -->    
+    <p class="deck-status">
+      <span class="var-title">Année 2015-2016</span>    
+      -      
+      <span class="var-author">Fatemeh Borran</span> 
+      -
+      <span class="deck-status-current"></span> 
+      /
+      <span class="deck-status-total"></span>     
+    </p>    
+
+    <!-- deck.goto snippet -->
+    <form action="." method="get" class="goto-form">
+      <label for="goto-slide">Go to slide:</label>
+      <input type="text" name="slidenum" id="goto-slide" list="goto-datalist">
+      <datalist id="goto-datalist"></datalist>
+      <input type="submit" value="Go">
+    </form>
+  </div>
+
+<script src="../deck.js-latest/jquery.min.js"></script>
+
+<!-- Deck Core and extensions -->
+<script src="../deck.js-latest/core/deck.core.js"></script>
+<script src="../deck.js-latest/extensions/menu/deck.menu.js"></script>
+<script src="../deck.js-latest/extensions/goto/deck.goto.js"></script>
+<script src="../deck.js-latest/extensions/status/deck.status.js"></script>
+<script src="../deck.js-latest/extensions/navigation/deck.navigation.js"></script>
+<script src="../deck.js-latest/extensions/scale/deck.scale.js"></script>
+
+<!-- Initialize the deck -->
+<script>
+$(function() {
+  $.deck('.slide');
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="utf-8">   
+      <title>Fromulaire</title>
+   </head>
+   <body>
+      <form method=post action="script.php">
+         <fieldset>
+            <legend>Enregistrement d'un utilisateur</legend>
+            <table>
+               <tr>
+                  <td>Nom</td>
+                  <td><input type=text name="nom"/></td>
+               </tr>
+               <tr>
+                  <td>Prénom</td>
+                  <td><input type=text name="prenom"/></td>
+               </tr>
+               <tr>
+                  <td>Sexe</td>
+                  <td>
+                     Homme : <input type=radio name="sexe" value="M"/><br/>
+                     Femme : <input type=radio name="sexe" value="F"/>
+                 </td>
+               </tr>
+               <tr>
+                  <td>Fonction</td>
+                  <td>
+                     <select name="fonction">
+                        <option VALUE="enseignant">Enseignant</option>
+                        <option VALUE="etudiant">Etudiant</option>
+                        <option VALUE="ingenieur">Ingénieur</option>
+                        <option VALUE="retraite">Retraité</option>
+                        <option VALUE="autre">Autre</option>
+                     </select>
+                  </td>
+               </tr>
+               <tr>
+                  <td>Commentaires</td>
+                  <td>
+                     <textarea rows="3" name="commentaires">Tapez ici vos commentaires</textarea>
+                  </td>
+               </tr>
+               <tr>
+                  <td colspan=2><input type="submit" value="Envoyer"/></td>
+               </tr>
+            </table>
+         </fieldset>
+      </form>
+   </body>
+</html>
+
+
+
+

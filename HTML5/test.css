@@ -1,0 +1,9 @@
+body { padding-left: 200px;}
+
+#menu01 {
+*position: absolute;position: fixed;
+top: 0;
+left: 0;
+height: 100%;
+width: 200px;
+border: 1px solid gray; }

@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js ie6" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!-->  <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+  <title>Création d'Applications sur Internet</title>
+
+  <meta name="description" content="Création d'Applications sur Internet">
+  <meta name="author" content="Fatemeh Borran">
+  <meta name="viewport" content="width=1024, user-scalable=no">
+
+  <!-- Core and extension CSS files -->
+  <link rel="stylesheet" media="screen" href="../deck.js-latest/core/deck.core.css">
+  <link rel="stylesheet" media="screen" href="../deck.js-latest/extensions/goto/deck.goto.css">
+  <link rel="stylesheet" media="screen" href="../deck.js-latest/extensions/menu/deck.menu.css">
+  <link rel="stylesheet" media="screen" href="../deck.js-latest/extensions/navigation/deck.navigation.css">
+  <link rel="stylesheet" media="screen" href="../deck.js-latest/extensions/status/deck.status.css">
+  <link rel="stylesheet" media="screen" href="../deck.js-latest/extensions/scale/deck.scale.css">
+
+  <!-- Style theme. More available in /themes/style/ or create your own. -->
+  <link rel="stylesheet" media="screen" href="../deck.js-latest/themes/style/swiss.css">
+
+  <!-- Transition theme. More available in /themes/transition/ or create your own. -->
+  <link rel="stylesheet" media="screen" href="../deck.js-latest/themes/transition/horizontal-slide.css">
+
+  <!-- Basic black and white print styles -->
+  <link rel="stylesheet" media="print" href="../deck.js-latest/core/print.css">
+
+  <script src="../deck.js-latest/modernizr.custom.js"></script>
+</head>
+
+<body>
+  <div class="deck-container">
+
+    <!-- Begin slides -->
+    <section class="slide" id="slide1">
+      <h2>Création d'Applications sur Internet</h2>      
+      <br/><br/><br/><br/>
+      <center>
+        <h3>Chapitre2: Fonctionnement du Web</h3>
+        <h4>Fatemeh BORRAN</h4>
+      </center>
+    </section>
+
+    <section class="slide" id="slide2">
+      <h2>Sommaire</h2>
+      <ul>
+        <li>Architecture client/serveur</li>
+        <li>Protocoles de communication</li>
+        <li>Protocole TCP/IP</li>
+        <li>Protocole HTTP</li>
+        <li>URL</li>
+        <li>Nom de domaine</li>
+      </ul>
+    </section>
+
+    <section class="slide" id="slide3">
+      <h2>Architecture client/serveur (1/4)</h2>
+      <ul>
+        <li>Le Web est construit sur une architecture <strong>client/serveur</strong>.</li>
+        <ul>
+          <li>Votre ordinateur/tablet/smartphone joue le rôle du <strong>client</strong>.</li>
+          <li>Les ordinateurs distants qui hébergent les fichiers électroniques (pages Web) sont les <strong>serveurs</strong>.</li>
+        </ul>
+        <li>Dans le contexte du Web, clients et serveurs sont reliés entre eux par Internet.</li>
+      </ul>
+      <img src="../Figures/client-serveur.jpg" alt="ClientServeur"/>
+    </section>
+
+    <section class="slide" id="slide4">
+      <h2>Architecture client/serveur (2/4)</h2>
+      <ul>
+        <li>Un serveur peut fournir <strong>un ou plusieurs services</strong>, et ce, à <strong>un ou plusieurs clients</strong>.</li>
+        <li>Le programme serveur et le ou les programmes clients peuvent se trouver sur la même machine ou sur des machines différentes, reliées entre elles par un réseau.</li>
+        <li><em>Note</em>: cette architecture n'est pas utilisée uniquement pour le Web!</li>
+      </ul> 
+      <blockquote><strong>Client/serveur</strong> désigne un mode de communication entre des programmes informatiques:
+      <ul>
+        <li>un programme tient le rôle de "serveur": il est conçu de façon à pouvoir répondre à des requêtes extérieures;</li>
+        <li>les autres programmes, "clients", contactent le serveur pour lui soumettre des demandes, et attendent sa réponse.</li> 
+      </ul>
+      </blockquote>          
+    </section>
+
+    <section class="slide" id="slide5">
+      <h2>Architecture client/serveur (3/4)</h2>
+      <p>Imaginons que vous souhaitiez visiter le site Web de la HEIG-VD:</p> 
+      <ul>
+        <li>Vous entrez l'<strong>adresse</strong> du site Web dans votre navigateur et appuyez sur <code>Enter</code>.</li>
+        <li>Votre <strong>navigateur</strong> se charge alors de <strong>demander</strong> la page Web auprès du serveur qui héberge le site de la HEIG-VD.</li> 
+        <li>Ce <strong>serveur</strong> traite votre demande et transmet les données à votre ordinateur via Internet.</li>
+        <li>Votre <strong>navigateur</strong> les <strong>interprète</strong> et les affiche sur votre ordinateur.</li>        
+      </ul>          
+    </section>
+    
+    <section class="slide" id="slide6">
+      <h2>Architecture client/serveur (4/4)</h2>
+      <img src="../Figures/client-serveur.jpg" alt="ClientServeur" width="500px"/>
+      <br/> 
+      <img src="../Figures/page-dynamique.jpg" alt="PageDynamique" width="600px"/>                      
+    </section>    
+       
+    <section class="slide" id="slide7">
+      <h2>Protocoles de communication (1/2)</h2>
+      <ul>
+        <li>Pour que deux ordinateurs puissent communiquer entre eux, ils doivent impérativement être capable de se comprendre, c'est-à-dire utiliser <strong>un langage commun</strong>.</li>
+        <li>Un ordinateur n'a pas la faculté qu'ont les humains à s’adapter aux ambiguïtés et incertitudes de langage.</li>
+        <ul>
+          <li>Si il ne comprend pas son "interlocuteur", il sera en principe <strong>incapable de raisonner</strong> pour comprendre ce qu'il voulait dire.</li>
+          <li>Le langage qu'il utilise pour communiquer doit donc être <strong>clair</strong>, <strong>précis</strong> et <strong>sans ambiguïté</strong>.</li>
+          <li>Ce sont quelques-unes des qualités requises pour un <strong>protocole de communication</strong>.</li>
+        </ul>
+      </ul>           
+    </section>  
+    
+    <section class="slide" id="slide8">
+      <h2>Protocoles de communication (2/2)</h2>
+      <p>Pour communiquer sur Internet, il faut s'assurer que:</p>
+      <ul>
+        <li>l'interlocuteur sait que vous avez quelque chose à transmettre</li>
+        <p><em>téléphone: vous composez son numéro pour faire sonner son combiné</em></p>
+        <li>qu'il est prêt pour cela</li>
+        <p><em>téléphone: vous attendez qu'il décroche</em></p>
+        <li>qu'il situe votre communication dans son contexte</li>
+        <p><em>téléphone: "Je t'appelle pour la raison suivante..."</em></p>
+        <li>qu'un éventuel destinataire final y soit identifié</li>
+        <p><em>téléphone: "Peux-tu prévenir Michel que..."</em></li>
+        <li>que le correspondant s'assure d'avoir bien compris le message</li>
+        <p><em>téléphone: "Peux-tu me répéter le nom?"</em></p>
+        <li>que les procédures d'anomalies soient mises en place</li>
+        <p><em>téléphone: "Je te rappelle si je n'arrive pas à le joindre"</em></p>
+        <li>qu'on se mette d'accord sur ce qu'est la fin de la communication</li>
+        <p><em>téléphone: "Merci de m'avoir prévenu. A bientôt!".</em></p>
+      </ul>
+      <p>Cette méta communication n'est autre que la mise en œuvre de <strong>protocoles</strong>.</p>                 
+    </section>  
+           
+    <section class="slide" id="slide9">
+      <h2>Protocole TCP/IP (1/5)</h2>
+      <ul>
+        <li>La communication sur Internet (à l'intérieur d'un réseau ou entre les réseaux hétérogènes) se fait en utilisant de nombreux protocoles:</li>
+        <ul>
+          <li><strong>HTTP:</strong> visiter des pages web</li>
+          <li><strong>FTP:</strong> transférer des fichiers</li>
+          <li><strong>Telnet:</strong> commander un ordinateur à distance</li>
+          <li><strong>IRC:</strong> discuter en direct</li>
+          <li>Etc. (il en existe énormément)</li>
+        </ul>
+        <li>Parmi ces protocoles, de nombreux sont basés sur le protocole TCP/IP:</li>
+        <ul>
+          <li><strong>Transmission Control Protocol / Internet Protocol</strong></li>
+          <li>Il provient des noms des deux protocoles majeurs de la suite de protocoles, c'est-à-dire les protocoles <strong>TCP</strong> et <strong>IP</strong>.</li>
+        </ul>
+      </ul>                 
+    </section>    
+       
+    <section class="slide" id="slide10">
+      <h2>Protocole TCP/IP (2/5)</h2>
+      <ul>
+        <li>Le protocole <strong>IP</strong> (Internet Protocol) permet de réaliser le <strong>routage</strong> et l'<strong>adressage</strong> des paquets de données sur Internet.</li>
+        <li><em>Rappel</em>: Internet est un réseau de réseaux. En général, il n’existe pas de ligne directe entre deux ordinateurs. Les données envoyées d'un ordinateur à un autre doivent donc transiter par plusieurs intermédiaires (routeurs, switchs, hubs, ...).</li>
+        <li>Pour qu'un ordinateur puisse envoyer des données à un autre ordinateur, il doit connaître l'<strong>adresse</strong> de son destinataire et l'inscrire sur le paquet de données envoyé.</li>
+        <li>Cette adresse est appelée <strong>adresse IP</strong>.</li>
+      </ul>           
+    </section>  
+    
+    <section class="slide" id="slide11">
+      <h2>Protocole TCP/IP (3/5)</h2>
+      <p>Il existe des adresse IP de version 4 (IPv4) et de version 6 (IPv6)</p>
+      <ul>
+        <li><strong>Les adresses IPv4 sont 32 bits (4 octets):</strong> composées de 4 nombres entiers entre 0 et 255 notées sous la forme xxx.xxx.xxx.xxx.</li> 
+        <p>Par exemple, 194.153.205.26 est une adresse IPv4 valide.</p>
+        <p>Les plages d'adresses IPv4 sont épuisés en février 2011: 256^4</p>
+        <p>environ 18 millions d'adresses possibles!</p>
+        <li><strong>Les adresses IPv6 sont 128 bits (16 octets):</strong> composées de 8 groupes de 4 chiffres hexadécimales [0-9a-f] sous la forme de xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx.</li>
+        <p>Par exemple, 2001:0db8:0000:85a3:0000:0000:ac1f:8001 est une adresse IPv6 valide.</p> 
+      </ul>           
+    </section>  
+
+    <section class="slide" id="slide12">
+      <h2>Protocole TCP/IP (4/5)</h2>
+      <ul>
+        <li>Le protocole <strong>TCP</strong> (<em>Transmission Control Protocol</em>) permet d'établir une connexion fiable entre deux ordinateurs. Il se charge <em>notamment</em> de:</li>
+        <ul>
+          <li>Remettre dans le bon ordre des paquets transmis par le protocole IP (ceux-ci peuvent suivre des routes différentes, et donc arriver à destination dans le désordre).</li>
+          <li>Redemander des paquets égarés (il se peut qu'un intermédiaire tombe en panne, ou qu'une ligne soit momentanément interrompue).</li>
+        </ul>
+        <li>Ainsi, la combinaison de TCP et IP permet d'établir une <strong>ligne de communication fiable de bout en bout</strong> entre deux ordinateurs sur un réseau.</li>
+        <li>Deux ordinateurs peuvent ensuite utiliser cette ligne fiable pour se communiquer des informations <em>utiles</em> (applicatives), en utilisant le protocole adéquat (HTTP, FTP, ...).</li>
+      </ul>           
+    </section>  
+    
+    <section class="slide" id="slide13">
+      <h2>Protocole TCP/IP (5/5)</h2>
+      <img src="../Figures/TCP.gif" alt="TCP/IP" width="800px"/>           
+    </section> 
+        
+    <section class="slide" id="slide14">
+      <h2>Protocole HTTP (1/2)</h2>
+      <ul>
+        <li>La communication entre le navigateur et le serveur se fait selon un protocole spécifique: <strong>HTTP</strong> (<em>HyperText Transfer Protocol</em>).</li>
+        <li>Le protocole HTTP est le protocole le plus utilisé sur Internet depuis 1990.</li>
+        <li>Le but du protocole HTTP est de permettre un transfert de fichiers (essentiellement au format HTML) localisés grâce à une chaîne de caractères appelée <strong>URL</strong> entre un navigateur (le client) et un serveur Web.</li>
+      </ul>    
+      <img src="../Figures/HTTP.png" alt="HTTP" width="800px"/>              
+    </section>  
+    
+    <section class="slide" id="slide15">
+      <h2>Protocole HTTP (2/2)</h2>
+      <p>La communication entre le navigateur et le serveur se fait en deux temps:</p>           
+      <ul>
+        <li>Le navigateur effectue une <strong>requête HTTP</strong>.</li>
+        <li>Le serveur traite la requête puis envoie une <strong>réponse HTTP</strong>.</li>
+      </ul>
+      <img src="../Figures/HTTP_Steps.png" alt="HTTP2" width="800px"/>  
+    </section>  
+
+    <section class="slide" id="slide16">
+      <h2>Requête HTTP (1/4)</h2>
+      <ul>
+        <li>Un exemple de requête HTTP:</li>           
+<pre><code>GET http://www.heig-vd.ch HTTP/1.1 
+Accept : text/html, application/xhtml+xml
+If-Modified-Since : Tuesday, 30-September-2009 11:04:46 GMT
+User-Agent : Mozilla/5.0 (Windows NT 5.1) Firefox/3.0.3       
+</code></pre>
+        <li>Une requête HTTP est un ensemble de lignes envoyées au serveur par le navigateur. Elle comprend:</li>
+      <ol>      
+        <li>Une ligne de <strong>requête</strong></li>
+        <li>Les <strong>champs d'en-tête</strong> de la requête</li>
+        <li>Le <strong>corps</strong> de la requête</li>      
+      </ul>
+    </section>  
+    
+    <section class="slide" id="slide17">
+      <h2>Requête HTTP (2/4)</h2>
+      <p><strong>Une ligne de requête:</strong> cette ligne comprend trois éléments devant être séparés par un espace:</p>    
+      <ul>
+        <li>La méthode qui doit être appliquée,</li>
+        <li>L'URL demandée,</li> 
+        <li>La version du protocole utilisé par le client (<em>HTTP/1.1</em>, et parfois encore <em>HTTP/1.0</em>).</li>
+        <pre><code>GET http://www.google.com/contact/ HTTP/1.1</code></pre>
+        <li>Ou le plus souvent:</li>
+        <pre><code>GET /contact/ HTTP/1.1</code></pre>
+        <li>Car une connexion TCP/IP est déjà établie vers l'hôte</li>
+      </ul>       
+    </section> 
+
+    <section class="slide" id="slide18">
+      <h2>Requête HTTP (3/4)</h2>
+      <p><strong>Les champs d'en-tête de la requête:</strong> il s'agit d'un ensemble de lignes facultatives permettant de donner des informations supplémentaires sur la requête et/ou le client (Navigateur, système d'exploitation, etc.).</p>           
+      <ul>
+        <li>Chacune de ces lignes est composée d'un nom qualifiant le type d'en-tête, suivi de deux points "<code>:</code>" et de la valeur de l'en-tête.</li>        
+      </ul>
+<pre><code>Host: www.google.com
+Accept: text/html, application/xhtml+xml
+If-Modified-Since: Tuesday, 30-September-2008 11:04:46 GMT
+User-Agent: Mozilla/5.0 (Windows NT 5.1) Firefox/3.0.3
+Cookie:PREF=ID=af6de2c1b8500829:TM=1223242...      
+</pre></code>
+    </section>  
+    
+    <section class="slide" id="slide19">
+      <h2>Requête HTTP (4/4)</h2>
+      <p><strong>Le corps de la requête:</strong> c'est un ensemble de lignes optionnelles devant être séparées des lignes précédentes par une ligne vide.</p>
+      <ul>
+        <li>Il permet par exemple un envoi de données par une commande POST lors de l'envoi de données au serveur par un formulaire (voir Chapitre3)</li>
+      </ul>   
+      <p>Code HTML (pour information):</p>
+<pre><code><xmp><html>
+   <body>
+      <form action="http://www.google.com" method="POST">
+         <input type="text" name="nom"/>
+         <input type="text" name="prenom"/>
+         <input type="submit"/>
+      </form>
+   </body>
+</html></xmp></code></pre>  
+	  <p>Résultat dans le navigateur:<img src="../Figures/post.png" alt="POST" width="500px" style="float:right"/></p>
+	  <br/>
+	  <p>Requête HTTP envoyée:</p>
+<pre><code>POST / HTTP/1.1
+Host: www.google.com
+Accept: text/html
+nom=Borran&prenom=Fatemeh
+</code></pre>
+    </section> 
+    
+    <section class="slide" id="slide20">
+      <h2>Réponse HTTP (1/4)</h2>
+      <ul>
+        <li>Un exemple de réponse HTTP:</li>  
+<pre><code>HTTP/1.1 200 OK
+Server: gws
+Content-Type: text/html
+Content-Length: 2281
+Date: Tue, 30 Sep 2009 11:04:48 GMT
+Last-Modified: Wed, 25 Jun 2009 21:15:14 GMT
+</code></pre>         
+        <li>Une réponse HTTP est un ensemble de lignes envoyées au navigateur par le serveur. Elle comprend:</li>
+        <ol>
+          <li>Une ligne de statut</li>
+          <li>Les champs d'en-tête de la réponse</li>
+          <li>Le corps de la réponse</li>
+        </ol>
+      </ul>      
+    </section>  
+    
+    <section class="slide" id="slide21">
+      <h2>Réponse HTTP (2/4)</h2>
+      <p><strong>Une ligne de statut:</strong> c'est une ligne précisant la version du protocole utilisé et l'état du traitement de la requête à l'aide d'un code et d'un texte explicatif. La ligne comprend trois éléments devant être séparés par un espace:</p> 
+      <ol>
+        <li>La version du protocole utilisé</li>
+        <li>Le code du statut</li>
+        <li>La signification du code</li>
+      </ol>          
+      <p>Exemples:</p>
+      <ul>
+        <li>1xx: Informational Messages</li>
+        <li>2xx: Successful (ex: 200 OK)</li>
+        <li>3xx: Redirection (ex: 301 Moved Permanently)</li>
+        <li>4xx: Client Error (ex: 404 Not Found)</li>
+        <li>5xx: Server Error (ex: 500 Internal Server Error)</li>
+      </ul>
+    </section> 
+     
+    <section class="slide" id="slide22">
+      <h2>Réponse HTTP (3/4)</h2>
+      <p><strong>Les champs d'en-tête de la réponse:</strong> il s'agit d'un ensemble de lignes facultatives permettant de donner des informations supplémentaires sur la réponse et/ou le serveur</p>           
+      <ul>
+        <li>Chacune de ces lignes est composée d'un nom qualifiant le type d'en-tête, suivi de deux points "<code>:</code>" et de la valeur de l’en-tête.</li>
+      </ul>
+<pre><code>Server: gws
+Content-Type: text/html
+Content-Length: 2281
+Date: Tue, 30 Sep 2009 11:04:48 GMT
+Last-Modified: Wed, 25 Jun 2009 21:15:14 GMT
+</code></pre>
+    </section>  
+    
+    <section class="slide" id="slide23">
+      <h2>Réponse HTTP (4/4)</h2>
+      <p><strong>Le corps de la réponse:</strong> il contient le document demandé (en principe une page HTML), séparé des lignes précédentes par une ligne vide.</p>
+      <ul>
+        <li>Exemple: <a href="http://www.perdu.com" target="_blank">http://www.perdu.com</a></li>
+      </ul>          
+<pre><code><xmp>HTTP/1.1 200 OK
+Date: Tue, 30 Sep 2008 12:55:14 GMT
+Server: Apache/2.2.9 (Fedora)
+Last-Modified: Mon, 24 Apr 2006 07:45:49 GMT
+Content-Length: 204
+Content-Type: text/html
+
+<html><head><title>Vous Etes Perdu ?</title></head><body>
+  <h1>Perdu sur l'Internet ?</h1>
+  <h2>Pas de panique, on va vous aider</h2>
+  <strong><pre>    * <----- vous êtes ici</pre></strong>
+</body></html>
+</xmp></code></pre>
+    </section> 
+          
+    <section class="slide" id="slide24">
+      <h2>RFC</h2>
+      <p>Les <strong>RFC</strong> (<em>Request For Comments</em>) sont un ensemble de documents qui font référence auprès de la communauté Internet et qui décrivent, spécifient, aident à l'implémentation, standardisent et débattent de la majorité des normes, standards, technologies et protocoles liés à Internet et aux réseaux en général.</p> 
+      <ul>
+        <li>Liens: <a href="http://www.ietf.org/rfc.html" target="_blank">http://www.ietf.org/rfc.html</a></li>
+        <li>Exemples:</li>
+        <ul>
+          <li>RFC 1945: protocole HTTP</li>
+          <li>RFC 959: protocole FTP</li>
+          <li>RFC 1149: :-)</li>
+        </ul>
+      </ul>          
+    </section>  
+    
+    <section class="slide" id="slide25">
+      <h2>HTTPS</h2>
+      <ul>
+        <li>Le protocole <strong>HTTPS</strong> (HTTP sécurisé) est de plus en plus utilisé avec l'utilisation de systèmes de commerce électronique, car il s'agit d'un protocole sécurisé permettant de chiffrer les requêtes échangées entre le navigateur et le serveur.</li>
+        <li>Les données transitant sur le réseau ne sont donc lisibles que par les deux machines communicantes, et en aucun cas par un éventuel pirate intermédiaire.</li>        
+        <ul>
+          <li>Des données sensibles peuvent être envoyées sur le réseau pratiquement sans risque (mots de passe, n° de carte de crédit, etc.).</li>
+          <li>HTTPS utilise le port 443 par défaut.</li>
+          <li>HTTP utilise le port 80 par défaut.</li>          
+        </ul>
+      </ul>        
+      <img src="../Figures/https.png" alt="HTTPS"/>   
+    </section> 
+                                      
+    <section class="slide" id="slide26">
+      <h2>Qu'est ce qu'une URL (1/3)</h2>
+      <ul>
+        <li>Une <strong>URL</strong> (<em>Uniform Resource Locator</em>) est un format de nommage universel pour désigner une ressource sur Internet (page Web, image, etc.).</li>
+        <li>Il s'agit d'une chaîne de caractères ASCII imprimables qui se décompose en plusieurs parties:</li>
+        <ul>
+          <li>Le nom du protocole</li>
+          <li>Le nom du serveur (hôte)</li>
+          <li>Le numéro de port</li>
+          <li>Le chemin d'accès à la ressource</li>          
+        </ul>
+      </ul>   
+      <pre><code>http://www.google.ch:80/ads/</code></pre>                               
+    </section>  
+    
+    <section class="slide" id="slide27">
+      <h2>Qu'est ce qu'une URL (2/3)</h2>
+      <ul>
+        <li>Le nom du protocole</li>
+        <ul>
+          <li>C'est-à-dire en quelque sorte le langage utilisé pour communiquer sur le réseau.</li>
+          <li>Le protocole le plus largement utilisé est le protocole HTTP, le protocole permettant d'échanger des pages Web au format HTML. De nombreux autres protocoles sont toutefois utilisables (ftp, mailto, telnet, ...)</li>
+        </ul>
+        <pre><code><u style="color:#c00">http://</u>www.google.com:80/ads/</code></pre>
+        <li>Le nom du serveur</li>
+        <ul>
+          <li>Il s'agit d'un <strong>nom de domaine</strong> de l'ordinateur hébergeant la ressource demandée.</li>
+          <li>Il est aussi possible d'utiliser l'<strong>adresse IP</strong> du serveur, ce qui rend par contre l'URL moins lisible.</li>
+        </ul>
+        <pre><code>http://<u style="color:#c00">72.14.203.99</u>:80/ads/</code></pre>        
+      </ul>                 
+    </section> 
+    
+    <section class="slide" id="slide28">
+      <h2>Qu'est ce qu'une URL (3/3)</h2>
+      <ul>
+        <li>Le numéro de port</li>
+        <ul>
+          <li>Il s'agit d'un numéro qui permet au serveur de rediriger la requête vers le service qui s'occupera de répondre (un ordinateur possède 65’536 ports).</li>
+          <li>Le port associé par défaut au protocole HTTP est le 80. Ainsi, lorsque le service Web du serveur est associé au numéro de port 80, le numéro de port est facultatif.</li>
+        </ul>
+        <pre><code>http://72.14.203.99<u style="color:#c00">:80</u>/ads/</code></pre>
+        <li>Le chemin d'accès à la ressource</li>
+        <ul>
+          <li>Cette dernière partie permet au serveur de connaître l'emplacement auquel la ressource est située, c'est-à-dire de manière générale l'emplacement (répertoire) et le nom du fichier demandé.</li>
+        </ul>
+        <pre><code>http://72.14.203.99:80<u style="color:#c00">/ads/</u></code></pre>
+      </ul>
+    </section>  
+    
+    <section class="slide" id="slide29">
+      <h2>Nom de Domaine (1/4)</h2>
+      <ul>
+        <li>Chaque ordinateur hébergeant des données sur Internet dispose d'une adresse numérique unique (adresse IP).</li>
+        <li>Etant donné que les adresses IP ne sont pas pratique à mémoriser, le système <strong>DNS</strong> (<em>Domain Name System</em>) a été créé.</li>
+        <li>En associant une adresse IP à un nom, ce système joue un rôle déterminant dans l'infrastructure technique d'Internet.</li>
+        <pre><code>72.14.203.99 &lt;===DNS===&gt; www.google.ch</code></pre>
+        <li>Les noms de domaine sont aussi très utilisés pour permettre la migration de services (Web, mail, etc...) sans que les utilisateurs doivent modifier leur configuration.</li>
+      </ul>           
+    </section>                                           
+      
+    <section class="slide" id="slide30">
+      <h2>Nom de Domaine (2/4)</h2>
+      <ul>
+        <li>L'accès au site Web de Google peut se faire en entrant l'adresse IP lui correspondant dans le champ Adresse du navigateur Web.</li>
+        <li>Pourtant, la plupart des internautes préfèrent utiliser <code>www.google.ch</code>. Dans ce cas, le nom de domaine est <code>google.ch</code>.</li>
+        <li>Internet peut donc être considéré de deux manières:</li>
+        <ul>
+          <li><em>Comme on le voit:</em> des machines au nom compréhensible</li>
+          <li><em>Comme on l'utilise:</em> des machines possédant un numéro</li>
+        </ul>
+        <li>En règle générale, le suffixe du nom de domaine, composé de deux ou trois lettres, s'appelle le domaine de premier niveau. Il décrit le type d'entité concernée.</li>
+      </ul>           
+    </section>  
+    
+    <section class="slide" id="slide31">
+      <h2>Nom de Domaine (3/4)</h2>
+      <ul>
+        <li>Le système DNS s'appuie sur une structure arborescente dans laquelle sont définis des domaines de niveau supérieurs (appelés <strong>TLD</strong>, pour <em>Top Level Domains</em>), rattachés à un noeud racine représenté par un point.</li>
+        <li><em>Note:</em> l'arborescence est inversée par rapport à l'ordre des éléments apparaissant dans les noms de domaine.</li>        
+      </ul>          
+      <img src="../Figures/nom_domaines.png" alt="Domaines" width="600px"/> 
+    </section>  
+    
+    <section class="slide" id="slide32">
+      <h2>Nom de Domaine (4/4)</h2>
+      <p>Il existe deux catégories de TLD:</p>
+      <ul>
+        <li>Les domaines <strong>génériques</strong>, appelés <strong>gTLD</strong> (<em>generic TLD</em>):
+        Les gTLD sont des noms de domaines génériques de niveau supérieur proposant une classification selon le secteur d'activité.</li>
+        <li>Les domaines <strong>nationaux</strong>, appelés <strong>ccTLD</strong> (<em>country code TLD</em>): Les ccTLD correspondent aux différents pays et leurs noms correspondent aux abréviations des noms de pays définies par la norme ISO 3166.</li>
+      </ul>           
+    </section>  
+    
+    <section class="slide" id="slide33">
+      <h2>Les domaines génériques</h2>
+      <p>Ces dernières années, la distinction faite entre ces catégories s'est quelque peu atténuée.</p>
+      <ul>
+        <li><strong>.co:</strong> pour les sociétés</li>
+        <li><strong>.com:</strong> pour les activités commerciales</li>
+        <li><strong>.edu:</strong> pour les établissements d'enseignement et les universités</li>
+        <li><strong>.org:</strong> pour les organisations à but non lucratif</li>
+        <li><strong>.mil:</strong> pour les entités militaires</li>
+        <li><strong>.net:</strong> correspondait initialement aux organismes ayant trait aux réseaux</li>
+        <li><strong>.gov:</strong> pour les organismes gouvernementaux</li>
+      </ul>           
+    </section>
+    
+    <section class="slide" id="slide34">
+      <h2>Les domaines nationaux</h2>
+      <p>Exemples:</p>
+      <ul>
+        <li><strong>.au:</strong> Australie</li>
+        <li><strong>.ca:</strong> Canada</li> 
+        <li><strong>.ch:</strong> Suisse (Confédération Helvétique)</li>
+        <li><strong>.fr:</strong> France</li>
+        <li><strong>.de:</strong> Allemagne (Deutschland)</li>
+        <li><strong>.uk:</strong> Royaume-Uni (United Kingdom)</li>
+      </ul>                 
+    </section>  
+    
+    <section class="slide" id="slide35">
+      <h2>Résolution de noms de domaines (1/2)</h2>
+      <ul>
+        <li>On appelle <strong>résolution de noms de domaines</strong> (ou <em>résolution d'adresses</em>) la corrélation entre les adresses IP et le nom de domaine associé.</li>
+        <li>Lorsqu'une application souhaite se connecter à un serveur connu par son nom de domaine celle-ci va interroger un serveur de noms défini dans sa configuration réseau.</li>
+        <li>Chaque machine connectée au réseau possède en effet dans sa configuration les adresses IP de plusieurs serveurs de noms de son fournisseur d'accès.</li>
+      </ul>                 
+    </section>  
+        
+    <section class="slide" id="slide36">
+      <h2>Résolution de noms de domaines (2/2)</h2>
+      <p>Par exemple, lorsque vous tapez <code>http://www.google.ch</code>:</p>
+      <ul>
+        <li>Votre ordinateur demande à un serveur DNS connu:</li>
+        <p>Quelle est l'adresse IP du site <code>www.google.ch</code>?</p> 
+        <p><em>(cette question est formalisée selon une syntaxe précise)</em></p>
+        <li>Le serveur DNS répond:</li>
+        <p><code>72.14.203.99</code></p>
+      </ul>
+      <p>Vous auriez tout à fait pu vous passer du DNS en tapant directement <code>http://72.14.203.99/</code> dans la barre d'adresse de votre navigateur, mais c'est tout de même plus pratique comme ceci!</p>                 
+    </section>  
+        
+    <section class="slide" id="slide37">
+      <h2>Questions?!</h2>    
+      <img src="../Figures/questions.png" alt="Questions?!"/>
+    </section>
+                                                                              
+    <!-- deck.navigation snippet -->
+    <div aria-role="navigation">
+      <a href="#" class="deck-prev-link" title="Previous">&#8592;</a>
+      <a href="#" class="deck-next-link" title="Next">&#8594;</a>
+    </div>
+
+    <!-- deck.status snippet -->    
+    <p class="deck-status">
+      <span class="var-title">Année 2015-2016</span>    
+      -      
+      <span class="var-author">Fatemeh Borran</span> 
+      -
+      <span class="deck-status-current"></span> 
+      /
+      <span class="deck-status-total"></span>     
+    </p>    
+
+    <!-- deck.goto snippet -->
+    <form action="." method="get" class="goto-form">
+      <label for="goto-slide">Go to slide:</label>
+      <input type="text" name="slidenum" id="goto-slide" list="goto-datalist">
+      <datalist id="goto-datalist"></datalist>
+      <input type="submit" value="Go">
+    </form>
+  </div>
+
+<script src="../deck.js-latest/jquery.min.js"></script>
+
+<!-- Deck Core and extensions -->
+<script src="../deck.js-latest/core/deck.core.js"></script>
+<script src="../deck.js-latest/extensions/menu/deck.menu.js"></script>
+<script src="../deck.js-latest/extensions/goto/deck.goto.js"></script>
+<script src="../deck.js-latest/extensions/status/deck.status.js"></script>
+<script src="../deck.js-latest/extensions/navigation/deck.navigation.js"></script>
+<script src="../deck.js-latest/extensions/scale/deck.scale.js"></script>
+
+<!-- Initialize the deck -->
+<script>
+$(function() {
+  $.deck('.slide');
+});
+</script>
+
+</body>
+</html>

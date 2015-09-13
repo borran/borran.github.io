@@ -7,385 +7,557 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-  <title>Getting Started with deck.js</title>
+  <title>Création d'Applications sur Internet</title>
 
-  <meta name="description" content="A jQuery library for modern HTML presentations">
-  <meta name="author" content="Caleb Troughton">
+  <meta name="description" content="Création d'Applications sur Internet">
+  <meta name="author" content="Fatemeh Borran">
   <meta name="viewport" content="width=1024, user-scalable=no">
 
   <!-- Core and extension CSS files -->
-  <link rel="stylesheet" media="screen" href="../core/deck.core.css">
-  <link rel="stylesheet" media="screen" href="../extensions/goto/deck.goto.css">
-  <link rel="stylesheet" media="screen" href="../extensions/menu/deck.menu.css">
-  <link rel="stylesheet" media="screen" href="../extensions/navigation/deck.navigation.css">
-  <link rel="stylesheet" media="screen" href="../extensions/status/deck.status.css">
-  <link rel="stylesheet" media="screen" href="../extensions/scale/deck.scale.css">
+  <link rel="stylesheet" media="screen" href="../deck.js-latest/core/deck.core.css">
+  <link rel="stylesheet" media="screen" href="../deck.js-latest/extensions/goto/deck.goto.css">
+  <link rel="stylesheet" media="screen" href="../deck.js-latest/extensions/menu/deck.menu.css">
+  <link rel="stylesheet" media="screen" href="../deck.js-latest/extensions/navigation/deck.navigation.css">
+  <link rel="stylesheet" media="screen" href="../deck.js-latest/extensions/status/deck.status.css">
+  <link rel="stylesheet" media="screen" href="../deck.js-latest/extensions/scale/deck.scale.css">
 
   <!-- Style theme. More available in /themes/style/ or create your own. -->
-  <link rel="stylesheet" media="screen" href="../themes/style/swiss.css">
+  <link rel="stylesheet" media="screen" href="../deck.js-latest/themes/style/swiss.css">
 
   <!-- Transition theme. More available in /themes/transition/ or create your own. -->
-  <link rel="stylesheet" media="screen" href="../themes/transition/horizontal-slide.css">
+  <link rel="stylesheet" media="screen" href="../deck.js-latest/themes/transition/horizontal-slide.css">
 
   <!-- Basic black and white print styles -->
-  <link rel="stylesheet" media="print" href="../core/print.css">
+  <link rel="stylesheet" media="print" href="../deck.js-latest/core/print.css">
 
-  <script src="../modernizr.custom.js"></script>
+  <script src="../deck.js-latest/modernizr.custom.js"></script>
 </head>
 
 <body>
   <div class="deck-container">
 
     <!-- Begin slides -->
-    <section class="slide" id="title-slide">
-      <h2>Création d'applications sur Internet</h1>
-      <br/><br/><br/><br/><br/><br/><br/><br/>
-      <center>      
-      <h3>Objectifs du cours de CAI</h2>
-      <h4>Fatemeh BORRAN</h3>
+    <section class="slide" id="slide1">
+      <h2>Création d'Applications sur Internet</h2>      
+      <br/><br/><br/><br/>
+      <center>
+        <h3>Chapitre1: Internet et le Web</h3>
+        <h4>Fatemeh BORRAN</h4>
       </center>
     </section>
 
-    <section class="slide" id="organisation1">
-      <h2>Organisation</h2>
+    <section class="slide" id="slide2">
+      <h2>Sommaire</h2>
       <ul>
-        <li>
-          <h3>Prof: Fatemeh BORRAN</h3>
-          <ul>
-          	<li>Cours & Labos</li>
-          	<li>Contact:</li>
-          	<ul>
-          	  <li>Email: <a href="mailto:fatemeh.borran@heig-vd.ch">fatemeh.borran@heig-vd.ch</a>
-          	  <li>Bureau: B29</li>
-          	  <li>Tel: 024 55 77562</li>
-		    </ul>          	
-          </ul>
-        </li>
-        <li>
-          <h3>Assistant: Christophe GREPPIN</h3>
-          <ul>
-          	<li>Labos</li>
-          	<li>Email: <a href="mailto:christophe.greppin@heig-vd.ch">christophe.greppin@heig-vd.ch</a></li>
-          </ul>
-        </li>
+        <li>Internet</li>
+        <li>Connexion à Internet</li>
+        <li>Services Internet</li>
+        <li>Le Web</li>
+        <li>Conception de pages Web</li>
       </ul>
     </section>
 
-    <section class="slide" id="organisation2">
-      <h2>Organisation (suite)</h2>
+    <section class="slide" id="slide3">
+      <h2>Qu'est-ce que c'est Internet?</h2>
+      <p>Internet</p>
       <ul>
-        <li>Cours: 2 périodes toutes les 2 semaines</li>
-          <ul>
-            <li>5 Chapitres</li>
-          </ul>
-		<li>Labo: 2 périodes par semaine</li>
-		  <ul>
-		    <li>3 Labos + 1 Projet</li>
-		  </ul>
-		<li>Evaluation:</li>
-		  <ul>
-		    <li>2 TEs + 3 Labos + Projet</li>
-		     <li>TE1: mardi 4 novembre 2014 à 13h</li>
-		    <li>TE2: mardi 13 janvier 2015 à 13h</li>
-		  </ul>
-		<li>Note finale:</li>
-		  <ul>
-		    <li>0.5 (TE1+TE2)/2 + 0.5 (Labo1+Labo2+Labo3+2*Projet)/5</li>
-		  </ul>
+        <li><strong>INTER</strong>connected <strong>NET</strong>works (en anglais)</li>
+        <li>une interconnexion de réseaux</li>
+      </ul>
+      <blockquote>
+      <p>Internet est <strong>un réseau des réseaux</strong>.</p>
+      </blockquote>         
+    </section>
+
+    <section class="slide" id="slide4">
+      <h2>Qu'est-ce que c'est un réseau? (1/2)</h2>
+      <p>Un réseau d'ordinateurs est un <strong>ensemble d'ordinateurs connectés</strong> les uns aux autres par un moyen quelconque.</p>
+      <img src="../Figures/reseau.png" alt="Réseau" width="500px"/>             
+    </section>
+    
+    <section class="slide" id="slide5">
+      <h2>Qu'est-ce que c'est un réseau? (2/2)</h2>
+      <p>On peut comparer un réseau d'ordinateurs à un réseau d'émetteurs de télévision ou de radio.</p>
+      <ul>
+        <li>les réseaux radio ou télévision diffusent la même musique, les mêmes informations, les mêmes feuilletons;</li>
+        <li>une emission de télé passe par plusieurs intermediares (ou stations) pour arriver à une destination locale ou internationale. Les comminucations sont dans <strong>une direction</strong>.</li>
+        <li>alors que dans un réseau informatique chaque machine <strong>conserve son individualité</strong>.</li>
+      </ul>                 
+    </section>
+    
+    <section class="slide" id="slide6">
+      <h2>Les réseaux radio ou télé</h2>    
+      <img src="../Figures/reseauTV.jpg" alt="RéseauTV" width="800px"/> 
+    </section>
+              
+    <section class="slide" id="slide7">
+      <h2>La communication sur l'Internet</h2>
+      <p>A la différence des réseaux de réémetteurs, les réseaux d’ordinateurs fonctionnent à l'<strong>alternat</strong>:</p>
+      <ul>
+        <li>quand la machine <code>A</code> envoie un message à la machine <code>B</code>, <code>B</code> peut renvoyer une réponse à <code>A</code>. Bien sûr, <code>B</code> peut aussi s’adresser à la collectivité.</li>
+      </ul>    
+      <blockquote>La communication sur Internet est en effet définie via plusieurs langages que nous appelons des <strong>protocoles</strong> (voir Chapitre2).  
+      </blockquote>            
+    </section>
+
+    <section class="slide" id="slide8">
+      <h2>Un réseau hétérogène</h2>
+      <ul>
+        <li><em>Rappel</em>: l'Internet n'est pas vraiment un réseau, c'est un réseau de réseaux.</li>
+        <li>Ces réseaux <strong>hétérogènes</strong> (de natures différentes) qui se sont développés aux quatre coins du globe vont</li>
+        <ul>
+          <li>des réseaux nationaux,</li>
+          <li>à celui qu'un étudiant en informatique construit en reliant deux PCs,</li>
+          <li>en passant par le réseau local de la HEIG-VD.</li>
+        </ul>
+      </ul>            
+    </section>
+    
+    <section class="slide" id="slide9">
+      <h2>Le réseau Internet en image</h2>
+      <img src="../Figures/internet.png" alt="Internet" width="700px"/>               
+    </section>
+    
+    <section class="slide" id="slide10">
+      <h2>Connexion à Internet</h2>
+      <p>Pour vous connecter à Internet, il vous faut:</p>
+      <ul>
+        <li>une <strong>carte réseau</strong> sur votre ordinateur</li>
+        <li>un <strong>modem</strong> pour se connecter à un réseau par l'intermédiaire des lignes qui ne sont pas prévues à cet effet à l'origine (téléphone, télévision)</li>
+        <li>un <strong>abonnement</strong> auprès d'un <strong>fournisseur d’accès</strong> afin d’établir une liaison entre votre propre machine et l'Internet</li>
+        <li>les <strong>logiciels</strong> nécessaires pour gérer les communications et exploiter votre connexion</li>
+      </ul>          
+    </section>
+      
+    <section class="slide" id="slide11">
+      <h2>La carte réseau</h2>
+      <ul>
+        <li>La carte réseau est l'élément de l'ordinateur qui permet de se connecter à un réseau par des lignes spécialement prévues pour faire transiter des informations numériques.</li>
+        <li>La fonction d'une carte réseau est de préparer, d'envoyer et de contrôler les informations sur le réseau.</li>
+      </ul> 
+      <img src="../Figures/carte_reseau.png" alt="CarteReseau" width="400px"/>                 
+    </section>
+
+    <section class="slide" id="slide12">
+      <h2>Le Modem (1/3)</h2>
+      <ul>
+        <li>Le Modem est le périphérique utilisé pour transférer des informations entre les ordinateurs via les lignes de communications (téléphoniques, de télévision).</li>
+      </ul> 
+      <img src="../Figures/modem.png" alt="Modem" width="400px"/> 
+    </section>
+    
+    <section class="slide" id="slide13">
+      <h2>Le Modem (2/3)</h2>
+      <p>Les ordinateurs fonctionnent de façon <strong>digitale</strong> (ou numérique): ils utilisent le langage binaire (une série de 0 et de 1), mais les modems sont <strong>analogiques</strong>.</p>          
+      <ul>
+        <li>Les signaux digitaux <strong>passent</strong> d'une valeur à une autre (1 ou 0).</li>
+        <li>L'analogique par contre n'évolue pas <strong>par pas</strong>, il couvre toutes les valeurs de façon continue. Ainsi vous pouvez avoir les valeurs 0, 0.1, 0.2, 0.3, ..., 1.0 et toutes les valeurs intermédiaires.</li>
+        <li>Le modem convertit en analogique l'information binaire provenant de l'ordinateur. Il envoie ensuite ce nouveau code dans la ligne téléphonique.</li>
       </ul>
     </section>
     
-    <section class="slide" id="introduction1">
-      <h2>Introduction: qui je suis?</h2>
+    <section class="slide" id="slide14">
+      <h2>Le Modem (3/3)</h2>
+      <p>Ainsi, le modem module les informations numériques en ondes analogiques; en sens inverse il retranscrit les données sous forme analogique en données numériques.</p>
       <ul>
-        <li>Doctorat en Informatique de l’EPFL (2010)</li>
-          <ul>
-            <li>Labos: algorithmes distribués, programmation concurrente, ...</li>
-            <li>R&D: systèmes distribués et tolérance aux fautes</li>
-          </ul>
-		<li>A l’HEIG-VD depuis 2012</li>
-		  <ul>
-		    <li>Cours: CAI</li>
-		    <li>Labos: CAI, BDR, ASD1, BDA, CLD, DMG</li>
-		    <li>Ra&D: Calcul parallèl et distribué, data mining, BigData analytics, Cloud computing.</li>
-		  </ul>
+        <li>C'est pourquoi modem est l'acronyme de <strong>MO</strong>dulateur/<strong>DEM</strong>odulateur.</li>
       </ul>
+      <img src="../Figures/modulateur.png" alt="Modulateur" width="400px"/>
+    </section>
+    
+    <section class="slide" id="slide15">
+      <h2>Le fournisseur d'accès Internet (1/2)</h2>
+      <ul>
+        <li>Le fournisseur d'accès Internet (FAI) est aussi appelé <strong>provider</strong>, mot provenant de l'appellation anglaise ISP (Internet Service Provider)</li>
+        <li>C'est un <strong>prestataire de service</strong> qui vous permet de vous connecter à Internet, contre le paiement d’un abonnement.</li>
+        <li>Quelques fournisseurs d’accès en Suisse: Bluewin (Swisscom), Cablecom, Sunrise, VTX, etc.
+        <img src="../Figures/ISP.png" alt="ISPs" width="600px"/>
+      </ul>          
     </section>
 
-    <section class="slide" id="introduction2">
-      <h2>Introduction: qui êtes vous?</h2>
+    <section class="slide" id="slide16">
+      <h2>Le fournisseur d'accès Internet (2/2)</h2>
       <ul>
-        <li>Qui est qui?</li>
-        <li>Introduire vous-même (prénom, nom, origin)?</li>
-        <li>Parler de vos études?</li>
-        <li>Pourquoi vous êtes ici?</li>
-        <li>Que voulez vous faire après?</li>
-        <li>Est-ce que vous avez déjà utilisé un ordinateur, Internet, email, chat, réseaux sociaux?</li>
-        <li>Est-ce que vous avez un ordinateur?</li>
-      </ul>
+        <li>Le fournisseur d'accès Internet est un intermédiaire qui vous procure un accès à Internet par son biais.</li>
+        <li>Votre connexion est donc une <strong>connexion par procuration</strong> car c'est votre fournisseur qui envoie toutes les requêtes que vous faites, et c'est lui qui reçoit les pages que vous demandez et qui vous les réexpédie.</li>
+      </ul>  
+      <img src="../Figures/fournisseur.png" alt="Fournisseur" width="400px"/>  
     </section>
-   
-    <section class="slide" id="introduction3">
-      <h2>Votre provenance</h2>
+    
+    <section class="slide" id="slide17">
+      <h2>Les logiciels</h2>
       <ul>
-        <li>Vaud</li>
-        <li>Suisse romande</li>
-        <li>Autres cantons Suisse</li>
-        <li>Europe</li>
-        <li>Asie</li>
-        <li>Afrique</li>
-      </ul>
+        <li>Lorsque l'on a établi une connexion à Internet, on peut utiliser différents types de <strong>services</strong> au moyen de logiciels spécialisés.</li>
+        <li>Quels services connaissez-vous?</li>
+        <li>Quels logiciels permettent d’utiliserces services?</li>
+      </ul> 
+      <img src="../Figures/logiciels.png" alt="Logiciels" width="400px"/>           
     </section>
-
-    <section class="slide" id="introduction4">
-      <h2>Votre niveau d'étude</h2>
+    
+    <section class="slide" id="slide18">
+      <h2>Chat: Messagerie instantanée (1/2)</h2>
       <ul>
-        <li>EPF</li>
-        <li>Université en Suisse</li>
-        <li>Université à l’étranger</li>
-        <li>HES</li>
-        <li>Gymnase</li>
-        <li>Maturité professionnelle</li>
-        <li>Diplôme à l’étranger</li>
-      </ul>
+        <li>Du verbe anglais <strong>to chat</strong> (bavarder)</li>
+        <li>Toute application qui permet à différents Internautes de dialoguer en direct, dans un interface qui peut être un logiciel ou une page Web. Les messages s’affichent en temps réel et tous les utilisateurs peuvent y répondre.</li>
+        <li>Exemples: MSN Messenger, IRC, ICQ (I seek you), Caramail, etc.</li>
+      </ul>  
+      <img src="../Figures/chat.png" alt="Chat" width="400px"/>  
+    </section>
+    
+    <section class="slide" id="slide19">
+      <h2>Chat: Messagerie instantanée (2/2)</h2>
+      <img src="../Figures/chat2.png" alt="Chat"/>          
     </section>
 
-    <section class="slide" id="introduction5">
-      <h2>Votre connaissance Informatique </h2>
+    <section class="slide" id="slide20">
+      <h2>Messagerie: courrier électronique (1/3)</h2>
       <ul>
-        <li>Language de programmation</li>
-        <ul>
-          <li>C</li>
-          <li>C++</li>
-          <li>Java</li>
-          <li>Scala</li>
-        </ul>
-        <li>Application Web</li>
-        <ul>
-          <li>HTML</li>
-          <li>PHP</li>
-          <li>JavaScript</li>
-        </ul>
+        <li>Permet d'envoyer des messages à un ou plusieurs destinataires sans que ceux-ci soit connecté à Internet au même moment.</li>
+        <li>On peut attacher toutes sortes de fichiers au message (texte, images, vidéos, etc.), on les appelle des <strong>pièces jointes</strong> (attachments en anglais).</li>
+        <li>Attention, plusieurs restrictions peuvent être imposées par les serveurs de messagerie (taille de la pièce jointe, type de fichier)</li>
+        <li>Exemples: Outlook, Thunderbird, Hotmail, etc.</li>
       </ul>
+      <img src="../Figures/emails.png" alt="Emails" width="600px"/>  
     </section>
-                        
-    <section class="slide" id="statsitiques">
-      <h2>Un peu statistiques</h2>
+    
+    <section class="slide" id="slide21">
+      <h2>Messagerie: courrier électronique (2/3)</h2>
+      <img src="../Figures/email3.png" alt="Email"/>     
+    </section>
+    
+    <section class="slide" id="slide22">
+      <h2>Messagerie: courrier électronique (3/3)</h2>
+      <img src="../Figures/email4.png" alt="Email"/>          
+    </section>
+
+    <section class="slide" id="slide23">
+      <h2>Autres services</h2>
       <ul>
-        <li class="slide">Nombre de utilisateurs Internet?</li>
-        <li class="slide">Nombre de sites web sur Internet?</li>
-        <li class="slide">Nombre de apparails connecté sur Internet à un moment donné?</li>
-        <li class="slide">Nombre de langages de programmation?</li>
+        <li><strong>Newsgroups</strong> (groupes de discussion): permet d’envoyer des messages électroniques à tous les abonnés d'un groupe de discussion et de recevoir toutes leurs réponses.</li>
+        <li><strong>FTP</strong> (File Transfert Protocol): permet de transferer des fichiers; utilisé notamment pour mettre à jour son site Web ou pour télécharger des fichiers volumineux sur Internet.</li>
+        <img src="../Figures/ftp.png" alt="FTP" width="400px"/>
+        <li><strong>Telnet</strong>: Permet d'utiliser des programmes sur des machines distantes, via un réseau de type Internet.</li>
+        <img src="../Figures/telnet.png" alt="Telnet" width="400px"/>
+      </ul>    
+    </section>
+    
+    <section class="slide" id="slide24">
+      <h2>Les usages fréquents d'Internet</h2>
+      <ul>
+        <li>Recherche d'information</li>
+        <li>Recherche de personnes</li>
+        <li>Recherche d'adresses de commerce et de prestataires de services</li>
+        <li>Enseignement</li>
+        <li>Achat et ventes d'objets</li>
+        <li>Réservation pour des voyages</li>
+        <li>Jeux</li>
+        <li>Bavardage (chat)</li>
+        <li>Réseaux P2P (peer-to-peer)</li>        
+      </ul>          
+    </section>
+    
+    <section class="slide" id="slide25">
+      <h2>Le Web</h2>
+      <ul>
+        <li>Nom anglais signifiant "toile"</li>
+        <li>Contraction de <strong>World Wide Web</strong> (www)</li>
+        <li>Une des possibilités offerte par le réseau Internet est de naviguer entre des documents reliés par des liens (qu'on appelle <strong>liens hypertextes</strong>).</li>
+        <li>Ces documents liés entreeux sont communément appelés <strong>sites Web</strong></li>        
+      </ul>    
+      <img src="../Figures/web.png" alt="Web" width="400px"/>      
+    </section>
+    
+    <section class="slide" id="slide26">
+      <h2>Naissance du Web</h2>
+      <p>Le concept du Web a été mis au point</p> 
+      <ul>
+        <li>au CERN (Centre Européen de Recherche Nucléaire)</li>
+        <li>en 1991</li>
+        <li>par une équipe de chercheurs à laquelle appartenait <strong>Tim-Berners LEE</strong>, le créateur du concept d'hyperlien, considéré aujourd'hui comme le père fondateur du Web. Il est le directeur du World Wide Web Consortium (<a href="http://www.w3.org/">http://www.w3.org/</a>).</li>
+      </ul>   
+      <blockquote>
+      Le <strong>World Wide Web Consortium</strong>, abrégé <strong>W3C</strong>, est un consortium fondé en octobre 1994 pour promouvoir la compatibilité des technologies du World Wide Web telles que HTML, CSS, XML, etc.
+      </blockquote>      
+    </section>
+    
+    <section class="slide" id="slide27">
+      <h2>Le Web, du point de vue logistique</h2>
+      <p>Le Web fonctionne à partir de:</p>    
+      <ul>
+        <li><em>Rappel</em>: votre ordinateur personnel et sa <strong>carte réseau</strong>, connecté à votre <strong>modem</strong> configuré pour votre <strong>FAI</strong>.</li>
+        <li>Un <strong>logiciel de navigation</strong> (aussi appelé <strong>browser Web</strong>) comme  Microsoft Internet Explorer ou Mozilla Firefox qui est chargé d'afficher les pages Web que vous visitez (Mosaic : premier navigateur en 1993).</li>
+        <img src="../Figures/web-browsers.jpg" alt="Navigateurs" width="300px"/>
+        <li>Des ordinateurs appelés <strong>serveurs</strong> qui hébergent les données des sites Web, ainsi que des <strong>routeurs</strong> et commutateurs qui dirigent le flux d'information entre les serveurs et votre navigateur (voir Chapitre2).</li>
       </ul>
     </section>
     
-    <section class="slide" id="pourquoi1">
-      <h2>Pourquoi ce cours ?</h2>
+    <section class="slide" id="slide28">
+      <h2>Navigation sur le Web</h2>
       <ul>
-        <li>Internet devient aujourd'hui le média numéro un de communication.</li>
-        <li>Nous sommes tous et toutes des utilisateurs et utilisatrices d'Internet.</li>
-        <li>La compréhension du fonctionnement de base d'Internet devient une nécessité.</li>
-      </ul>
-      <blockquote cite="http://example.org">
-      <p>Comprendre les technologies d'Internet nous permet de comprendre et de maîtriser l'outil que nous utilisons tous les jours.</p>
-      </blockquote>      
-    </section>
-        
-    <section class="slide" id="pourquoi2">
-      <h2>Pourquoi ce cours ? (suite)</h2>
-      <ul>
-        <li>Internet est un bon exemple de création mettant en œuvre</li>
-        <ul>
-          <li>technologies de télécommunications</li> 
-          <li>systèmes d'informations</li>
-        </ul>
-        <li>En étudiant les applications Internet, nous nous familiarisons avec ces technologies et nous apprenons leurs utilités dans de nombreux domaines.</li>
-      </ul>
-      <blockquote cite="http://example.org">
-      <p>La création des applications Internet est un des métiers multidisciplinaires qu'exerce l'ingénieur-e informaticien-ne.</p>
-      </blockquote>      
-    </section>
-
-    <section class="slide" id="objectifs1">
-      <h2>Objectifs pour l'année préparatoire</h2>
-      <ul>
-        <li>Apprendre l'approche de l'ingénierie Informatique:</li>
-        <ul>
-          <li>analyse de problèmes</li>
-          <li>conception des solutions</li>
-          <li>mise en œuvre de logiciels</li>
-          <li>tests et évaluation</li>
-        </ul>
-        <li>Connaître les matières principales de la formation en informatique :</li>
-        <ul>
-          <li>architecture des systèmes informatiques</li>
-          <li>systèmes d'informations et bases de données</li>
-          <li>programmation</li>
-          <li>réseaux</li>
-        </ul>
-      </ul>     
-    </section>
-
-    <section class="slide" id="objectifs2">
-      <h2>Objectifs de cours en détails</h2>
-      <ul>
-        <li>A l'issue de ce cours, vous serez capable de :</li>
-        <ul>        
-          <li>décrire principes du fonctionnement des applications sur Internet</li>
-          <li>décrire le fonctionnement du navigateur, les adresses URL et les noms de domaines</li>
-          <li>décrire le fonctionnement du protocole HTTP</li>
-          <li>identifier les étapes de la réalisation d'une application Web</li>
-          <li>utiliser les éléments principaux du langage HTML</li>
-          <li>utiliser les feuilles de styles CSS pour gérer l'apparence de la page Web</li>
-          <li>identifier le besoin d'interactivité d'une application Web, comprendre le fonctionnement des formulaires HTML et savoir les appliquer</li>
-          <li>créer un site dynamique en utilisant des fonctionnalités de PHP</li>
-          <li>comprendre la notion d'hébergement et savoir mettre en place un serveur Web</li>
-        </ul>
-      </ul>     
-    </section>
-                
-    <section class="slide" id="contenu">
-      <h2>Contenu du cours</h2>
-      <ul>
-      	<li>Chapitre 1 : Internet et le Web</li>
-      	<li>Chapitre 2 : Fonctionnement du Web</li>
-      	<li>Chapitre 3 : Langage HTML</li>
-      	<li>Chapitre 4 : Langage CSS</li>
-      	<li>Chapitre 5 : Langage PHP</li>
-      </ul>
+        <li>Lorsque vous êtes sur le Web vous parcourez les pages d'information, guidé par l'intérêt ressenti à leur lecture. On dit que vous naviguez ou surfez sur le Net.</li>
+      </ul>    
+      <img src="../Figures/navigateur.png" alt="Navigateur" width="800px"/> 
     </section>
      
-    <section class="slide" id="questions">
+    <section class="slide" id="slide29">
+      <h2>Evolution du Web (1/2)</h2>
+      <ul>
+        <li>En presque 20 ans, le Web a considérablement évolué</li>
+      </ul>    
+      <img src="../Figures/web_evolution.png" alt="EvolutionWeb" width="800px"/>      
+    </section>
+    
+    <section class="slide" id="slide30">
+      <h2>Evolution du Web (2/2)</h2>
+      <img src="../Figures/web3.png" alt="Web3" width="800px"/>    
+    </section>
+    
+    <section class="slide" id="slide31">
+      <h2>Page Web & site Web</h2>
+      <ul>
+        <li><strong>Page Web</strong></li>
+        <ul>
+          <li>Une page Web est une ressource du World Wide Web conçue pour être consultée par des visiteurs à l'aide d'un navigateur Web.</li>
+          <li>Une page Web représente la partie d'une présentation Web pouvant être affichée dans un écran.</li>
+        </ul>
+        <li><strong>Présentation Web</strong></li>
+        <ul>
+          <li>Une présentation Web est l’ensemble des pages Web traitant d'un sujet particulier.</li>
+          <li>On dit aussi, de plus en plus souvent, <strong>site Web</strong>, bien qu'il y ait ainsi un risque de confusion avec le serveur sur lequel est installé une présentation Web.</li>
+        </ul>        
+      </ul>    
+    </section>
+    
+    <section class="slide" id="slide32">
+      <h2>Catégories de sites Web</h2>
+      <p>On distingue plusieurs catégories de sites Web, selon le but poursuivi:</p>    
+      <ul>
+        <li>Les <strong>sites vitrines</strong> (ou sites plaquette): l'objectif est de mettre en avant l'image de marque de la société, en présentant par exemple ses produits ou ses services</li>
+        <li>Les <strong>sites catalogues</strong>: visant à présenter l'offre de l'entreprise</li>
+        <li>Les <strong>sites d'information</strong>: fournissant une information particulière à un type d'internaute</li>
+        <li>Les <strong>sites marchands</strong> (e-commerce): vendant directement des produits aux internautes et permettant éventuellement de payer en ligne</li>
+        <li>Les <strong>sites institutionnels</strong>: présentant l'organisation et ses valeurs. Ce type de site décrit généralement l'activité de l'organisation et donne les informations nécessaires aux clients ou aux bénéficiaires</li>
+        <li>Les <strong>sites personnels</strong> (parfois pages perso): réalisés par des particuliers à titre de loisir, le plus souvent par passion pour un sujet ou une discipline</li>
+        <li>Les <strong>sites communautaires</strong>: réunissant des internautes autour d'un intérêt commun</li>
+        <li>Les <strong>sites intranet</strong>: accessibles de l'intérieur d'une entreprise ou d'une direction, pour la mise à disposition et le partage d'informations professionnelles</li>
+      </ul>
+    </section>    
+     
+    <section class="slide" id="slide33">
+      <h2>Qu'est-ce que le webmastering?</h2>
+      <p>La vie d'un site Web possède deux principales facettes, chacune décomposable en phases spécifiques:</p>          
+      <ul>
+        <li>la <strong>création</strong>, correspondant à la concrétisation d'une idée en un site en ligne, référencé et visité</li>
+        <li>l'<strong>exploitation</strong>, correspondant à la gestion quotidienne du site, son évolution et sa maintenance</li>
+      </ul>
+      <blockquote>On appelle <strong>webmaster</strong> une personne en charge d'un site Web, c'est-à-dire généralement la personne qui conçoit un site Web et le met à jour.</blockquote>
+    </section>
+    
+    <section class="slide" id="slide34">
+      <h2>Les phases de vie d'un site Web</h2>
+      <img src="../Figures/web_creation1.png" alt="CreationWeb1" width="800px"/>           
+    </section>
+    
+    <section class="slide" id="slide35">
+      <h2>La création</h2>
+      <p>La <strong>création</strong> d'un site Web est un projet à part entière comprenant un grand nombre de phases:</p>   
+      <ul>
+        <li><strong>Conception:</strong> représentant la formalisation de l'idée</li>
+        <li><strong>Réalisation:</strong> correspondant au développement du site Web</li>
+        <li><strong>Hébergement:</strong> se rapportant à la mise en ligne du site, de manière permanente</li>
+        <li><strong>Référencement:</strong> visant à rendre le site accessible par un maximum de voies (moteurs de recherches, sites spécialisés, publicités, etc.)</li>
+      </ul>
+    </section>
+         
+    <section class="slide" id="slide36">
+      <h2>Les phases de vie d'un site Web</h2>
+      <img src="../Figures/web_creation2.png" alt="CreationWeb2" width="800px"/>          
+    </section>
+    
+    <section class="slide" id="slide37">
+      <h2>La création: conception</h2>
+      <ul>
+        <li>Une phase essentielle du projet, dans laquelle une réflexion globale est menée:</li>
+        <ul>
+          <li>dans un premier temps, sur les <strong>objectifs</strong> du site et la <strong>cible potentielle</strong></li>
+          <li>dans un second temps, sur la <strong>structure</strong>, l'<strong>ergonomie</strong> et la <strong>navigation</strong></li>
+        </ul>
+        <li>Une démarche stratégique et créative devant être réalisée de manière <strong>participative</strong> en y associant l'ensemble des parties prenantes.</li>
+      </ul>    
+    </section>
+       
+    <section class="slide" id="slide38">
+      <h2>Les phases de vie d'un site Web</h2>
+      <img src="../Figures/web_creation3.png" alt="CreationWeb3" width="800px"/>          
+    </section>
+    
+    <section class="slide" id="slide39">
+      <h2>La création: réalisation</h2>
+      <ul>
+        <li>La réalisation du site concerne la création:</li>
+        <ul>
+          <li>des <strong>pages Web</strong> (fichiers HTML ou PhP)</li>
+          <li>des <strong>éléments graphiques</strong> (images, photos).</li>
+        </ul>
+        <li>Deux façons de créer des fichiers HTML (voir Chapitre3):</li>
+        <ul>
+          <li>en éditant les fichiers HTML <strong>à la main</strong>,</li>
+          <li>en utilisant un <strong>éditeur HTML WYSIWYG</strong> (What You See Is What You Get).</li>
+        </ul>
+      </ul>    
+    </section>
+
+    <section class="slide" id="slide40">
+      <h2>La création: hébergement</h2>
+      <ul>
+        <li>Une société mettant à disposition un serveur Web connecté en permanence à Internet est appelée <strong>hébergeur</strong> et propose un service appelé <strong>hébergement</strong>.</li>
+        <li>Exemples en Suisse: Infomaniak, Easygiga, Hebweb</li>
+        <li>Plus tard dans ce cours nous verrons comment on peut installer et configurer un serveur Web sur son ordinateur (requis pour PhP).</li>        
+      </ul>    
+      <img src="../Figures/hebergement.png" alt="Hebergement" width="600px"/> 
+    </section>
+    
+    <section class="slide" id="slide41">
+      <h2>Les phases de vie d'un site Web</h2>
+      <img src="../Figures/web_creation4.png" alt="CreationWeb4" width="800px"/>    
+    </section>
+      
+    <section class="slide" id="slide42">
+      <h2>L'exploitation</h2>
+      <p>L'exploitation englobe notamment les activités suivantes:</p>    
+      <ul>
+        <li><strong>Veille:</strong> afin d'assurer un suivi des technologies, du positionnement du site et de celui des concurrents</li>
+        <li><strong>Référencement:</strong> notamment faire en sorte d'apparaître en tête de liste des moteurs de recherche, afin de développer son audience</li>
+        <li><strong>Maintenance:</strong> représentant l'animation quotidienne du site et le maintien de son bon fonctionnement, ainsi que l'ajout de nouvelles fonctionnalités</li>
+      </ul>
+    </section>
+             
+    <section class="slide" id="slide43">
+      <h2>Notions d'ergonomie</h2>
+      <p>Dans le contexte du développement d'un site Web, il s'agit de respecter un certain nombre de critères afin de garantir un <strong>confort de navigation</strong> à l'internaute.</p> 
+      <br/>
+      <blockquote>L'<strong>ergonomie</strong> est l'utilisation de connaissances scientifiques relatives à 
+l'homme (psychologie, physiologie, etc.) dans le but d'améliorer son environnement de travail.</blockquote>   
+    </section>
+
+    <section class="slide" id="slide44">
+      <h2>Quelques critères d'ergonomie</h2>
+      <ul>
+        <li><strong>Sobriété:</strong> un graphisme épuré mettant en évidence l'essentiel, sans animations inutiles et dérangeante.</li>
+        <li><strong>Lisibilité:</strong> structuration du texte en paragraphe et espacement suffisant des informations.</li>
+        <li><strong>Utilisabilité:</strong> chaque page doit pouvoir être atteinte en 3 clics, l'internaute doit toujours savoir où il se trouve.</li>
+        <li><strong>Rapidité:</strong> images optimisées pour un chargement rapide.</li>
+        <li><strong>Interopérabilité:</strong> la page doit pouvoir s'afficher correctement sur un maximum de navigateurs (c'est souvent un défi !).</li>
+      </ul>    
+    </section>
+    
+    <section class="slide" id="slide45">
+      <h2>Eléments de navigation</h2>
+      <ul>
+        <li>Les éléments de navigation sont des outils permettant au visiteur de savoir où il se situe dans le site et de se déplacer dans les rubriques.</li> 
+        <li>Il existe plusieurs moyens de mettre en œuvre des éléments de navigation:</li> 
+        <ul>
+          <li>Le <strong>fil d'Ariane</strong></li>
+          <li>La navigation par <strong>onglets</strong></li>
+          <li>Le <strong>plan du site</strong></li> 
+          <li>Les <strong>flèches</strong> de navigation</li>
+        </ul>
+      </ul>    
+    </section>
+    
+    <section class="slide" id="slide46">
+      <h2>Fil d'Ariane</h2>
+      <ul>
+        <li>Un fil d'Ariane se présente sous la forme suivante:<br/>
+        <a href=""><u>Accueil</u></a> &gt; <a href=""><u>Webmastering</u></a> &gt; <strong>Navigation</strong></li>
+        <li>Un fil d'Ariane possède les caractéristiques suivantes:</li>
+        <ul>
+          <li>Liens séparés par le caractère <code>&gt;</code>, afin de symboliser la notion de hiérarchie.</li>
+          <li>Dernier lien non cliquable. Il représente la page sur laquelle le visiteur se trouve.</li>
+        </ul>
+        <li>Le fil d'Ariane représente le chemin de navigation et permet à l'usager</li>
+        <ul>
+          <li>de se repérer dans le site</li>
+          <li>de remonter facilement aux rubriques principales</li>
+        </ul>
+      </ul>    
+    </section>
+       
+    <section class="slide" id="slide47">
+      <h2>Autres éléments de navigation</h2>
+      <ul>
+        <li>Les <strong>onglets</strong> sont des outils de navigation utiles permettant de distinguer des rubriques dans un site Web et de passer facilement de l'une à l'autre.</li>
+        <img src="../Figures/tabs.png" alt="Tabs" width="500px"/>
+        <li>Un <strong>plan du site</strong> (en anglais site map) représente sous forme textuelle ou graphique la structure des informations offertes par le site et permettra d'accéder facilement à n'importe quelle page.</li>
+        <li>Les <strong>flèches de navigation</strong> (suivant, précédent, retour au chapitre, retour à la page d'accueil) permettent de fournir une navigation intuitive à l'utilisateur.</li>
+      </ul>    
+    </section>
+    
+    <section class="slide" id="slide48">
+      <h2>Web design</h2>
+      <ul>
+        <li>Le terme <strong>webdesign</strong> désigne la discipline consistant à structurer les éléments graphiques d'un site Web afin de traduire, à travers une dimension esthétique, l'<strong>identité visuelle</strong> de la société ou de l'organisation.</li> 
+        <li>Il s'agit ainsi d'une étape de <strong>conception visuelle</strong>, par opposition à la <strong>conception fonctionnelle</strong> (ergonomie, navigation).</li> 
+        <li>Par extension le terme <strong>webdesigner</strong> désigne le métier consistant à concevoir le design d'un site Web.</li>
+        <li>Il est responsable de la création de <strong>modèles de pages</strong> (en anglais templates), servant de gabarits pour la création du site Web</li>
+        <li>Exemples de templates: <a href="http://godtemplates.com/webdesign.php">http://godtemplates.com/webdesign.php</a></li>      
+      </ul>    
+    </section>
+    
+    <section class="slide" id="slide49">
+      <h2>Dimension des pages (1/2)</h2>
+      <p>La taille de la page Web dépend essentiellement de la définition d'<strong>affichage</strong>:</p>    
+      <ul>
+        <li><strong>En terme de largeur:</strong> l'idéal est d'opter pour une valeur inférieure à la définition horizontale de la majorité des visiteurs, afin de ne pas les contraindre à faire défiler l'écran avec l'ascenseur horizontal.</li>
+        <li><strong>En terme d'hauteur:</strong> il est souhaitable de ne pas dépasser trois à cinq hauteurs d'écran. Les pages trop longues risquent de ne pas être lues en entier et sont plus longues à charger.</li>
+      </ul>
+    </section>
+    
+    <section class="slide" id="slide50">
+      <h2>Dimension des pages (2/2)</h2>
+      <p>Pour garantir un affichage optimal pour la majeure partie des visiteurs il existe plusieurs stratégies :</p>       
+      <ul>
+        <li>Choisir la plus petite largeur supportée par le plus grand nombre (entre 800 et 1024 pixels de largeur par exemple),</li> 
+        <li>Choisir une page comportant des tableaux invisibles de largeurs variables (définies en pourcentages),</li> 
+        <li>Détecter la résolution des visiteurs à l'aide d'un script (en javascript par exemple), et rediriger le visiteur vers une page de la bonne largeur.</li>
+        <ul>
+          <li>Inconvénient: il faut créer autant de pages que de largeurs souhaitées.</li>
+        </ul>
+      </ul>    
+    </section>
+    
+    <section class="slide" id="slide51">
+      <h2>Choix des couleurs</h2>
+      <ul>
+        <li>Il est conseillé de <strong>ne pas utiliser plus de trois couleurs différentes</strong> dans un site Web afin de respecter le critère de sobriété.</li> 
+        <li>Le choix des couleurs devra correspondre aux couleurs de l'organisation (notamment aux couleurs du logo).</li> 
+        <li>Un bon <strong>contraste</strong> entre la <strong>couleur d'avant-plan</strong> et la couleur dominante de l'<strong>arrière plan</strong> est nécessaire.</li>      
+      </ul>          
+    </section>
+       
+    <section class="slide" id="slide52">
+      <h2>Typographie</h2>
+      <p>Deux familles importantes:</p> 
+      <ul>
+        <li>polices <strong>à empattement</strong> ou <strong>sérif</strong></li> 
+        <ul>
+          <li>plus classiques, exemple: Times New Roman</li>
+          <li>adapté à un document imprimé, déconseillé pour le Web</li>
+        </ul>
+        <li>polices <strong>sans empattement</strong> ou <strong>sans-sérif</strong></li>
+        <ul>
+          <li>plus "moderne" ou plus technique, ex: Helvetica</li>
+          <li>adapté pour le Web</li>
+        </ul>
+      </ul> 
+      <blockquote>Une <strong>police</strong> se définit comme un ensemble de caractères d’un même type, c'est-à-dire de lettres, de chiffres, de symboles, de ponctuations, d’un graphisme homogène, dans une graisse et une taille déterminée.</blockquote>                    
+    </section>    
+           
+    <section class="slide" id="slide53">
       <h2>Questions?!</h2>    
-      <img src="/Users/fatemeh.borran/Documents/HEIG/Courses/CAI/2015-2016/Slides/Images/Chapitre0.png" alt="Questions?!">
+      <img src="../Figures/questions.png" alt="Questions?!"/>
     </section>
-         
-         
-         
-     
-     
-     
-     
-     
-     
-            
-    <section class="slide" id="markup">
-      <h2>The Markup</h2>
-      <p>Slides are just HTML elements with a class of <code>slide</code>.</p>
-<pre>
-<code>
-<xmp>
-<html>
-<body>This is my html inside html.</body>
-</html>
-</xmp>
-</code>
-</pre>
-      <pre><code>&lt;section class=&quot;slide&quot;&gt;
-  &lt;h2&gt;How to Make a Deck&lt;/h2&gt;
-  &lt;ol&gt;
-    &lt;li&gt;
-      &lt;h3&gt;Write Slides&lt;/h3&gt;
-      &lt;p&gt;Slide content is simple HTML.&lt;/p&gt;
-    &lt;/li&gt;
-    &lt;li&gt;
-      &lt;h3&gt;Choose Themes&lt;/h3&gt;
-      &lt;p&gt;One for slide styles and one for deck transitions.&lt;/p&gt;
-    &lt;/li&gt;
-    &hellip;
-  &lt;/ol&gt;
-&lt;/section&gt;</code></pre>
-    </section>
-
-    <section class="slide" id="themes">
-      <h2>Style Themes</h2>
-      <p>Customizes the colors, typography, and layout of slide&nbsp;content.</p>
-      <pre><code>&lt;link rel=&quot;stylesheet&quot; href=&quot;/path/to/css/style-theme.css&quot;&gt;</code></pre>
-      <h2>Transition Themes</h2>
-      <p>Defines transitions between slides using CSS3 transitions.  Less capable browsers fall back to cutaways. But <strong>you</strong> aren&rsquo;t using <em>those</em> browsers to give your presentations, are&nbsp;you&hellip;</p>
-      <pre><code>&lt;link rel=&quot;stylesheet&quot; href=&quot;/path/to/css/transition-theme.css&quot;&gt;</code></pre>
-    </section>
-
-    <section class="slide" id="extensions">
-      <h2>Extensions</h2>
-      <p>Core gives you basic slide functionality with left and right arrow navigation, but you may want more. Here are the ones included in this&nbsp;deck:</p>
-
-      <ul>
-        <li class="slide" id="extensions-goto">
-          <strong>deck.goto</strong>: Adds a shortcut key to jump to any slide number.  Hit g, type in the slide number, and hit&nbsp;enter.
-        </li>
-
-        <li class="slide" id="extensions-menu">
-          <strong>deck.menu</strong>: Adds a menu view, letting you see all slides in a grid. Hit m to toggle to menu view, continue navigating your deck, and hit m to return to normal view. Touch devices can double-tap the deck to switch between&nbsp;views.
-        </li>
-
-        <li class="slide" id="extensions-navigation">
-          <strong>deck.navigation</strong>: Adds clickable left and right buttons for the less keyboard&nbsp;inclined.
-        </li>
-
-        <li class="slide" id="extensions-status">
-          <strong>deck.status</strong>: Adds a page number indicator. (current/total)
-        </li>
-
-        <li class="slide" id="extensions-scale">
-          <strong>deck.scale</strong>: Scales each slide to fit within the deck container using CSS Transforms for those browsers that support them.
-        </li>
-      </ul>
-
-      <p class="slide" id="extension-folders">Each extension folder in the download package contains the necessary JavaScript, CSS, and HTML&nbsp;files. For a complete list of extension modules included in deck.js, check out the&nbsp;<a href="http://imakewebthings.github.com/deck.js/docs">documentation</a>.</p>
-    </section>
-
-    <section class="slide" id="nested">
-      <h2>Nested Slides</h2>
-      <p>That last slide had a few steps.  To create substeps in slides, just nest them:</p>
-      <pre><code>&lt;section class=&quot;slide&quot;&gt;
-  &lt;h2&gt;Extensions&lt;/h2&gt;
-  &lt;p&gt;Core gives you basic slide functionality...&lt;/p&gt;
-  &lt;ul&gt;
-    &lt;li class=&quot;slide&quot;&gt;
-      &lt;h3&gt;deck.goto&lt;/h3&gt;
-      &lt;p&gt;Adds a shortcut key to jump to any slide number...&lt;/p&gt;
-    &lt;/li&gt;
-    &lt;li class=&quot;slide&quot;&gt;...&lt;/li&gt;
-    &lt;li class=&quot;slide&quot;&gt;...&lt;/li&gt;
-    &lt;li class=&quot;slide&quot;&gt;...&lt;/li&gt;
-  &lt;/ul&gt;
-&lt;/section&gt;</code></pre>
-    </section>
-
-    <section class="slide" id="elements-images">
-      <h2>Other Elements: Images</h2>
-      <img src="http://placekitten.com/600/375" alt="Kitties">
-      <pre><code>&lt;img src=&quot;http://placekitten.com/600/375&quot; alt=&quot;Kitties&quot;&gt;</code></pre>
-    </section>
-
-    <section class="slide" id="elements-blockquotes">
-      <h2>Other Elements: Blockquotes</h2>
-      <blockquote cite="http://example.org">
-        <p>Food is an important part of a balanced diet.</p>
-        <p><cite>Fran Lebowitz</cite></p>
-      </blockquote>
-      <pre><code>&lt;blockquote cite=&quot;http://example.org&quot;&gt;
-  &lt;p&gt;Food is an important part of a balanced diet.&lt;/p&gt;
-  &lt;p&gt;&lt;cite&gt;Fran Lebowitz&lt;/cite&gt;&lt;/p&gt;
-&lt;/blockquote&gt;</code></pre>
-    </section>
-
-
-    <section class="slide" id="elements-videos">
-      <h2>Other Elements: Video Embeds</h2>
-      <p>Embed videos from your favorite online video service or with an HTML5 video&nbsp;element.</p>
-
-      <iframe src="http://player.vimeo.com/video/1063136?title=0&amp;byline=0&amp;portrait=0" width="400" height="225" frameborder="0"></iframe>
-
-      <pre><code>&lt;iframe src=&quot;http://player.vimeo.com/video/1063136?title=0&amp;amp;byline=0&amp;amp;portrait=0&quot; width=&quot;400&quot; height=&quot;225&quot; frameborder=&quot;0&quot;&gt;&lt;/iframe&gt;</code></pre>
-    </section>
-
-    <section class="slide" id="digging-deeper">
-      <h2>Digging Deeper</h2>
-      <p>If you want to learn about making your own themes, extending deck.js, and more, check out the&nbsp;<a href="../docs/">documentation</a>.</p>
-    </section>
-
+                                                                                                    
     <!-- deck.navigation snippet -->
     <div aria-role="navigation">
       <a href="#" class="deck-prev-link" title="Previous">&#8592;</a>
@@ -393,11 +565,15 @@
     </div>
 
     <!-- deck.status snippet -->    
-    <p class="deck-status" aria-role="status">
-      <span class="deck-status-current"></span>
+    <p class="deck-status">
+      <span class="var-title">Année 2015-2016</span>    
+      -      
+      <span class="var-author">Fatemeh Borran</span> 
+      -
+      <span class="deck-status-current"></span> 
       /
-      <span class="deck-status-total"></span>
-    </p>
+      <span class="deck-status-total"></span>     
+    </p>    
 
     <!-- deck.goto snippet -->
     <form action="." method="get" class="goto-form">
@@ -408,15 +584,15 @@
     </form>
   </div>
 
-<script src="../jquery.min.js"></script>
+<script src="../deck.js-latest/jquery.min.js"></script>
 
 <!-- Deck Core and extensions -->
-<script src="../core/deck.core.js"></script>
-<script src="../extensions/menu/deck.menu.js"></script>
-<script src="../extensions/goto/deck.goto.js"></script>
-<script src="../extensions/status/deck.status.js"></script>
-<script src="../extensions/navigation/deck.navigation.js"></script>
-<script src="../extensions/scale/deck.scale.js"></script>
+<script src="../deck.js-latest/core/deck.core.js"></script>
+<script src="../deck.js-latest/extensions/menu/deck.menu.js"></script>
+<script src="../deck.js-latest/extensions/goto/deck.goto.js"></script>
+<script src="../deck.js-latest/extensions/status/deck.status.js"></script>
+<script src="../deck.js-latest/extensions/navigation/deck.navigation.js"></script>
+<script src="../deck.js-latest/extensions/scale/deck.scale.js"></script>
 
 <!-- Initialize the deck -->
 <script>
