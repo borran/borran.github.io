@@ -252,9 +252,14 @@ img, iframe, video {
 video, iframe, img {
   display: block;
   margin: 0 auto;
+  align: center;
 }
 
-p, blockquote, iframe, img, ul, ol, pre, video {
+p, blockquote, iframe, img, pre, video {
+  margin: 0;
+}
+
+ul, ol {
   margin-bottom: 1em;
 }
 
@@ -262,8 +267,12 @@ pre {
   white-space: pre;
   white-space: pre-wrap;
   word-wrap: break-word;
-  padding: 1em;
-  border: 1px solid #888;
+  padding: 0.5em;
+  border: 2px solid #888;
+}
+
+xmp {
+  margin: 0;
 }
 
 em {
@@ -316,7 +325,7 @@ blockquote {
   font-style: italic;
   padding: 1em 2em;
   color: #000;
-  border: 5px solid #ccc;
+  border: 3px solid #ccc;
 }
 blockquote p {
   margin: 0;
@@ -386,4 +395,22 @@ a:hover, a:focus {
 }
 .deck-menu .deck-current, .no-touch .deck-menu .slide:hover {
   background: #ddf;
+}
+
+.left-column, .right-column{
+  float:left;
+}
+.left-column{
+  width:80%; 
+}
+.right-column{
+  width:10%; 
+}
+div{
+  padding:10px;
+}
+
+img {
+    display: block;
+    margin: 0 auto;
 }
