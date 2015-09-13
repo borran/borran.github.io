@@ -1,0 +1,60 @@
+p
+{
+	color: blue; 
+	/* Les paragraphes seront en bleu */
+}
+
+h1
+{
+	color: blue;
+}
+em
+{
+	color: blue;
+}
+
+h1, em
+{
+	color: blue;
+}
+
+.introduction
+{
+	color: blue;
+}
+
+#logo
+{
+	/* Indiquez les propriétés CSS ici */
+}
+
+.salutations
+{
+	color: blue;
+}
+
+.block
+{
+	color: blue;
+}
+
+p
+{
+	font-size: 14px; /* paragraphes de taille 14 pixels */
+}
+h1
+{
+	font-size: 40px; /* titres de taille 40 pixels */
+}
+
+
+p
+{
+	font-size: small;
+}
+h1
+{
+	font-size: large;
+}
+
+
