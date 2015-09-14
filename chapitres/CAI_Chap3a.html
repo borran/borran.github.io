@@ -60,13 +60,8 @@
     </section>
 
     <section class="slide" id="slide3">
-      <h2>HTML, qu'est-ce que c'est? (1/4)</h2>        
-      <table>
-        <tr>
-          <td><img src="../Figures/firefox.png" alt="Firefox" width="40px"/></td>        
-          <td>http://en.wikipedia.org/wiki/Main_Page</td>
-        </tr>
-      </table>
+      <h2>HTML, qu'est-ce que c'est? (1/4)</h2>       
+      <p><img src="../Figures/firefox.png" alt="Firefox" width="40px" style="float:left"/> <a href="http://en.wikipedia.org/wiki/Main_Page">http://en.wikipedia.org/wiki/Main_Page</a>:</p>
       <img src="../HTML/wikipedia.png" alt="Wikipedia"/>           
     </section>
 
@@ -85,7 +80,7 @@
     <section class="slide" id="slide6">
       <h2>HTML, qu'est-ce que c'est? (4/4)</h2>
       <ul>
-        <li>HTML (HyperText Markup Langage) est un <strong>langage de description de document</strong> (≠ langage de programmation).</li>
+        <li><strong>HTML</strong> (<em>HyperText Markup Langage</em>) est un <strong>langage de description de document</strong> (≠ langage de programmation).</li>
         <li>Il est interprété par le <strong>navigateur Web</strong> pour représenter graphiquement une page Web.</li>
         <li>Une page Web est un fichier contenant du <strong>texte</strong> et du <strong>code HTML</strong> et possédant l'extension <code>.html</code> ou <code>.htm</code>.</li>
       </ul>    
@@ -97,18 +92,13 @@
       <ul>
         <li>Un fichier HTML contient du texte ainsi qu'un certain nombre de <strong>balises</strong> (tag en anglais) permettant de définir la <strong>structure du document</strong>.</li>
         <li>Dans un document HTML, les balises sont encadrées par les caractères <code>&lt;</code> et <code>&gt;</code>.</li>
-        <pre>Voici un exemple de texte normal contenant <code>&lt;b&gt;</code>à la fois<code>&lt;/b&gt;</code> du contenu textuel <code>&lt;i&gt;</code>normal<code>&lt;/i&gt;</code> et un certain nombre de <code>&lt;u&gt;</code>balises HTML<code>&lt;/u&gt;</code>.</pre> 
+        <pre>Voici un exemple de texte normal contenant <code>&lt;strong&gt;</code>à la fois<code>&lt;/strong&gt;</code> du contenu textuel <code>&lt;em&gt;</code>normal<code>&lt;/em&gt;</code> et un certain nombre de <code>&lt;u&gt;</code>balises HTML<code>&lt;/u&gt;</code>.</pre> 
         <li>Les balises sont définies de manière (<em>plus ou moins</em>) standard dans le langage HTML. On ne peut pas utiliser n'importe quelle balise!</li>
-        <table>        
-          <tr>
-            <td width="50px"><img src="../HTML/correct.png" alt="Correct" width="40px"/></td>
-            <td><code style="color:green">&lt;html&gt;, &lt;head&gt;, &lt;body&gt;, &lt;span&gt;, &lt;table&gt;,...</code></td>
-          </tr>
-          <tr>
-            <td width="50px"><img src="../HTML/faux.png" alt="Faux" width="40px"/></td>
-            <td><code style="color:red">&lt;maBalise1&gt;, &lt;gras&gt;, &lt;italique&gt;, &lt;rouge&gt;,...</code></td>
-          </tr>
-        </table>    
+        <img src="../HTML/correct.png" alt="Correct" width="40px" style="float:left"/>
+        <code style="color:green">&lt;html&gt;, &lt;head&gt;, &lt;body&gt;, &lt;span&gt;, &lt;table&gt;,...</code>
+        <br/>
+        <img src="../HTML/faux.png" alt="Faux" width="40px" style="float:left"/>
+        <code style="color:red">&lt;maBalise1&gt;, &lt;gras&gt;, &lt;italique&gt;, &lt;rouge&gt;,...</code>  
       </ul>    
     </section>
 
@@ -116,8 +106,8 @@
       <h2>Balises &lt;ouvrantes&gt; et &lt;/fermantes&gt;</h2>
       <ul>
         <li>La zone d'activité d'une balise est délimitée par ses balises <strong>ouvrante</strong> (normale) et <strong>fermante</strong> (où le nom est précédé d’un /).</li>
-        <li>Ainsi, sachant que les balises <code>&lt;b&gt;</code>, <code>&lt;i&gt;</code> et <code>&lt;u&gt;</code> permettent de formater du texte respectivement en <strong>gras</strong>, <em>italique</em> et <u>souligné</u>:</li>
-        <pre>Voici un exemple de texte normal contenant <code>&lt;b&gt;</code>à la fois<code>&lt;/b&gt;</code> du contenu textuel <code>&lt;i&gt;</code>normal<code>&lt;/i&gt;</code> et un certain nombre de <code>&lt;u&gt;</code>balises HTML<code>&lt;/u&gt;</code>.</pre>     
+        <li>Ainsi, sachant que les balises <code>&lt;strong&gt;</code>, <code>&lt;em&gt;</code> et <code>&lt;u&gt;</code> permettent de formater du texte respectivement en <strong>gras</strong>, <em>italique</em> et <u>souligné</u>:</li>
+        <pre>Voici un exemple de texte normal contenant <code>&lt;strong&gt;</code>à la fois<code>&lt;/strong&gt;</code> du contenu textuel <code>&lt;em&gt;</code>normal<code>&lt;/em&gt;</code> et un certain nombre de <code>&lt;u&gt;</code>balises HTML<code>&lt;/u&gt;</code>.</pre>     
         <li>S’affichera dans le navigateur:</li>
         <pre><code>Voici un exemple de texte normal contenant <strong>à la fois</strong> du contenu textuel <em>normal</em> et un certain nombre de <u>balises HTML</u>.</code></pre>         
       </ul>           
@@ -125,9 +115,9 @@
     
     <section class="slide" id="slide9">
       <h2>Balises &lt;ouvrantes&gt; et &lt;/fermantes&gt;</h2>      
-      <table>
-        <tr><td><img src="../HTML/attention.png" alt="Faux" width="80px"/></td><td><pre>Une balise ouverte doit toujours être refermée, même si les navigateurs sont en général forcés d'être tolérants à ce sujet.</pre></td></tr>
-      </table>
+      <blockquote>
+      <img src="../HTML/attention.png" alt="Faux" width="80px" style="float:left"/>
+      Une balise ouverte doit <strong>toujours</strong> être refermée, même si les navigateurs sont en général forcés d'être tolérants à ce sujet.</blockquote>
       <ul>
         <li>Certaines balises ne contiennent pas de texte. C'est le cas de la balise <code>&lt;br&gt;</code> permettant de spécifier un retour chariot (saut à la ligne).</li>
         <li>Comme cette balise n'encadre pas de texte, on devrait écrire systématiquement <code>&lt;br&gt;&lt;/br&gt;</code> pour respecter la contrainte de fermeture des balises.</li>
@@ -142,14 +132,12 @@
         <li>Certaines balises peuvent contenir des <strong>attributs</strong> qui permettent de définir des propriétés supplémentaires.</li>
         <li>Les attributs apparaissent au sein de la balise ouvrante, sous la forme <code>nomAttribut="valeurAttribut"</code>. Si plusieurs attributs sont utilisés, ils sont séparés par un espace.</li>
         <li>Par exemple, la balise <code>&lt;p&gt;</code> permet de définir un paragraphe et elle possède entre autres un attribut align permettant de spécifier l'alignement du paragraphe (left, right ou center).</li>
-        <table>
-         <tr><td width="95%">
 <pre><code><xmp><p align="left">Paragraphe aligné à gauche.</p>
 <p align="right">Paragraphe aligné à droite.</p>
 <p align="center">Paragraphe aligné au centre.</p>
-</xmp></code></pre></td>
-<td><a href="../HTML/paragraphe.html" target="_blank"><img src="../HTML/run.svg" alt="Run" width="100px"/></a></td></tr>
-      </table>
+</xmp></code></pre>
+<a href="../HTML/paragraphe.html" target="_blank">
+<img src="../HTML/try-it-now.png" alt="TryItNow" width="120px" style="float:left"/></a>
       </ul> 
     </section>
 
@@ -157,16 +145,11 @@
       <h2>Syntaxe HTML</h2> 
       <ul>
         <li>Des balises HTML peuvent être imbriquées les unes dans les autres, mais <strong>jamais se chevaucher</strong>!</li>
-        <table>        
-          <tr>
-            <td width="50px"><img src="../HTML/correct.png" alt="Correct" width="40px"/></td>
-            <td><code style="color:green">&lt;u&gt;mon texte &lt;b&gt;bien formaté&lt;/b&gt;&lt;/u&gt;</code></td>
-          </tr>
-          <tr>
-            <td width="50px"><img src="../HTML/faux.png" alt="Faux" width="40px"/></td>
-            <td><code style="color:red">&lt;u&gt;mon texte &lt;b&gt;mal formaté&lt;/u&gt;&lt;/b&gt;</code></td>
-          </tr>
-        </table>           
+        <img src="../HTML/correct.png" alt="Correct" width="40px" style="float:left"/>
+        <code style="color:green">&lt;u&gt;mon texte &lt;b&gt;bien formaté&lt;/b&gt;&lt;/u&gt;</code>
+        <br/>
+        <img src="../HTML/faux.png" alt="Faux" width="40px" style="float:left"/>
+        <code style="color:red">&lt;u&gt;mon texte &lt;b&gt;mal formaté&lt;/u&gt;&lt;/b&gt;</code>         
         <li>Les règles de syntaxe du langage HTML ont été définies par le W3C, et codées dans une série de fichiers appelés <strong>DTD</strong> (Document Type Definition), qui spécifient notamment:</li>
         <ul>
           <li>Les noms des balises admises;</li>
@@ -180,7 +163,6 @@
       <h2>Structure d'une page Web</h2>
       <ul>
         <li>Une page HTML contient toujours au minimum les balises <code>&lt;html&gt;</code>, <code>&lt;head&gt;</code> et <code>&lt;body&gt;</code>, imbriquées comme présenté ci-dessous:</li>
-      </ul>
 <pre><code><xmp><!DOCTYPE html>
 <html>
    <head>
@@ -189,7 +171,8 @@
    <body>
       texte du document + commandes de formatage
    </body>
-</html></xmp></code></pre>           
+</html></xmp></code></pre>
+      </ul>           
     </section>
     
     <section class="slide" id="slide13">
@@ -233,33 +216,30 @@
       <h2>Listes à puces</h2>
       <ul>
         <li>Une <strong>liste</strong> est délimitée par la balise <code>&lt;ul&gt;</code> (<emp>Unordered List</emp>) ou la balise <code>&lt;ol&gt;</code> (Ordered List).</li>
-        <li>Les lignes sont délimitées par <code>&lt;li&gt;</code> (<emp>List Item</emp>).</li>
-      </ul> 
-      <table>
-      <tr><td width="95%">      
+        <li>Les lignes sont délimitées par <code>&lt;li&gt;</code> (<emp>List Item</emp>).</li>    
 <pre><code><xmp>Le Schbörtch farci aux pruneaux:
 <ul>
    <li>50g de pruneaux</li>
    <li>1Kg de beurre</li>
    <li>500g de graisse de porc</li>
 </ul>      
-</xmp></code></pre></td>
-<td><a href="../HTML/liste.html" target="_blank"><img src="../HTML/run.svg" alt="Run" width="100px"/></a></td></tr>
-      </table>
+</xmp></code></pre>
+<a href="../HTML/liste.html" target="_blank">
+<img src="../HTML/try-it-now.png" alt="TryItNow" width="120px" style="float:left"/></a>
+      </ul>
     </section>
     
     <section class="slide" id="slide17">
       <h2>Liens hypertextes</h2> 
       <ul>
         <li>Un <strong>lien hypertexte</strong> est défini en utilisant la balise <code>&lt;a&gt;</code> (anchor). Le texte du lien (cliquable) est le texte placé entre les balises ouvrante et fermante <code>&lt;a&gt;</code> et <code>&lt;/a&gt;</code>.</li>
-        <li>On utilise l'attribut <code>href</code> pour indiquer la cible du lien, en spécifiant son <strong>chemin d'accès</strong>.</li>
-      <table>
-      <tr><td width="95%">      
+        <li>On utilise l'attribut <code>href</code> pour indiquer la cible du lien, en spécifiant son <strong>chemin d'accès</strong>.</li>     
 <pre><code><xmp><a href="http://www.perdu.com">Un site</a><br/>
 <a href="accueil.html">Page d’accueil</a>  
-</xmp></code></pre></td>
-<td><a href="../HTML/link.html" target="_blank"><img src="../HTML/run.svg" alt="Run" width="100px"/></a></td></tr>
-      </table>
+</xmp></code></pre>
+<a href="../HTML/link.html" target="_blank">
+<img src="../HTML/try-it-now.png" alt="TryItNow" width="120px" style="float:left"/></a>
+<br/>
       <li>En ajoutant l'attribut <code>target</code> avec la valeur <code>_blank</code>, le lien ouvrira la page cible dans une nouvelle fenêtre.</li>        
       </ul>      
     </section>
@@ -267,29 +247,23 @@
     <section class="slide" id="slide18">
       <h2>Davantage sur les liens hypertextes</h2>
       <ul>
-        <li><strong>Lien vers un fichier à télécharger:</strong> ouvre une fenêtre de téléchargement de fichier (en principe).</li>
-      <table>
-      <tr><td width="95%">         
-<pre><code><xmp><a href="fichier.zip">cliquez ici pour télécharger le fichier</a></xmp></code></pre></td>
-<td><a href="../HTML/zip.html" target="_blank"><img src="../HTML/run.svg" alt="Run" width="80px"/></a></td></tr>
-      </table>        
-        <li><strong>Lien d'email:</strong> ouvre le client de messagerie par défaut avec certains champs pré-remplis (destinataire, sujet et contenu du message).</li>
-      <table>
-      <tr><td width="95%">         
+        <li><strong>Lien vers un fichier à télécharger:</strong> ouvre une fenêtre de téléchargement de fichier (en principe).</li>        
+<pre><code><xmp><a href="fichier.zip">cliquez ici pour télécharger le fichier</a></xmp></code></pre>
+<a href="../HTML/zip.html" target="_blank">
+<img src="../HTML/try-it-now.png" alt="TryItNow" width="120px" style="float:left"/></a>
+<br/>
+        <li><strong>Lien d'email:</strong> ouvre le client de messagerie par défaut avec certains champs pré-remplis (destinataire, sujet et contenu du message).</li>      
 <pre><code><xmp><a href="mailto:info@heig-vd.ch?subject=Info&body=texte">Contact</a> 
-</xmp></code></pre></td>
-<td><a href="../HTML/zip.html" target="_blank"><img src="../HTML/run.svg" alt="Run" width="80px"/></a></td></tr>
-      </table>            
+</xmp></code></pre>
+<a href="../HTML/zip.html" target="_blank">
+<img src="../HTML/try-it-now.png" alt="TryItNow" width="120px" style="float:left"/></a>         
       </ul>     
     </section>
 
     <section class="slide" id="slide19">
       <h2>Bookmarks</h2> 
       <ul>
-        <li>On utilise un bookmark dans une page HTML très longue pour sauter d'un endroit à autre à l'intérieur de même page ou d'une autre page.</li>
-      </ul>
-      <table>
-      <tr><td width="95%">         
+        <li>On utilise un bookmark dans une page HTML très longue pour sauter d'un endroit à autre à l'intérieur de même page ou d'une autre page.</li>      
 <pre><code><xmp><html>
 <head>
    <meta charset="utf-8"/>
@@ -310,9 +284,10 @@
        <p>Le tir à l'arc est ...</p>
 </body>
 </html>
-</xmp></code></pre></td>
-<td><a href="../HTML/grandePage.html" target="_blank"><img src="../HTML/run.svg" alt="Run" width="100px"/></a></td></tr>
-      </table>            
+</xmp></code></pre>
+<a href="../HTML/grandePage.html" target="_blank">
+<img src="../HTML/try-it-now.png" alt="TryItNow" width="120px" style="float:left"/></a>
+      </ul>            
     </section>
 
     <section class="slide" id="slide20">
@@ -366,18 +341,16 @@
       <h2>Images</h2>
       <ul>
         <li>Une <strong>image</strong> peut être affichée dans une page HTML en utilisant la balise <code>&lt;img&gt;</code>. Cette balise ne contient pas de texte, c'est pourquoi on la referme directement en l'écrivant <code>&lt;img/&gt;</code>.</li>
-        <li>On utilise l'attribut <code>src</code> pour indiquer l'emplacement de l'image en spécifiant son <strong>chemin d'accès</strong>.</li>
-      <table>
-      <tr><td width="95%">         
+        <li>On utilise l'attribut <code>src</code> pour indiquer l'emplacement de l'image en spécifiant son <strong>chemin d'accès</strong>.</li>        
 <pre><code><xmp><html>
    <body>
       <img src="pince.png"/>
       <p>Lorem ipsum...</p>  
    </body>
 </html>
-</xmp></code></pre></td>
-<td><a href="../HTML/image.html" target="_blank"><img src="../HTML/run.svg" alt="Run" width="100px"/></a></td></tr>
-      </table>        
+</xmp></code></pre>
+<a href="../HTML/image.html" target="_blank">
+<img src="../HTML/try-it-now.png" alt="TryItNow" width="120px" style="float:left"/></a>     
       </ul>           
     </section>
        
@@ -398,62 +371,155 @@
       <h2>Tableaux (1/5)</h2>
       <ul>
         <li>On utilise souvent les <strong>tableaux</strong> pour positionner les différents éléments d’une page Web (même si ce n'est en réalité pas recommandé).</li>
-        <li>Mais comment produire un tableau en deux dimensions, alors que le texte d'un fichier HTML n'a qu'une dimension?</li>        
-      </ul>     
-      <table border="2">
-        <tr><td>Carmen</td><td>33</td><td>Espagne</td></tr>
-        <tr><td>Michelle</td><td>26</td><td>Etat-Unis</td></tr>
-      </table>
+        <li>Mais comment produire un tableau en deux dimensions, alors que le texte d'un fichier HTML n'a qu'une dimension?</li> 
+        <br/>            
+        <table border="1" style="width:50%">
+          <tr><td>Carmen</td><td>33</td><td>Espagne</td></tr>
+          <tr><td>Michelle</td><td>26</td><td>Etat-Unis</td></tr>
+        </table>
+      </ul>      
     </section>
        
     <section class="slide" id="slide25">
       <h2>Tableaux (2/5)</h2>
-           
+      <p>Pour représenter une table en HTML, trois balises différentes doivent être utilisées, <strong>en respectant des règles d'imbrication</strong> bien précises:</p>     
+      <ul>
+        <li><code>table</code>: permet d’indiquer le début et la fin d’une table;</li>
+        <li><code>tr</code>: (Table Row) permet d'indiquer le début et la fin d’une ligne de la table, imbriquées entre les balises <code>table</code>;</li>
+        <li><code>td</code>: (Table Division) permet d'indiquer le début et la fin d'une cellule de la table, imbriquées entre les balises <code>tr</code>.</li>
+        <li><th> : (Table Header) permet d’indiquer l’en-tête.</li>
+<pre><code><xmp>
+<table>
+  <tr>
+    <td>Cellule d'un tableau</td>
+    <td>Autre cellule</td>
+  </tr>
+</table>
+</xmp></code></pre>
+<a href="../HTML/table.html" target="_blank">
+<img src="../HTML/try-it-now.png" alt="TryItNow" width="120px" style="float:left"/></a> 
+      </ul>
     </section>
     
     <section class="slide" id="slide26">
       <h2>Tableaux (3/5)</h2>
-           
+      <ul>
+        <li>On peut bien entendu ajouter autant de lignes que nécessaire, mais chaque ligne doit contenir le même nombre de cellules.</li>
+        <li>On peut ajouter un titre au tableau en utilisant la balise <code>caption</code>.</li>
+<pre><code><xmp>
+<table>
+  <tr><th>Nom</th><th>Age</th><th>Pays</th></tr>
+  <tr><td>Carmen</td><td>33</td><td>Espagne</td></tr>
+  <tr><td>Michelle</td><td>26</td><td>Etat-Unis</td></tr>
+</table>
+</xmp></code></pre>
+<a href="../HTML/table.html" target="_blank">
+<img src="../HTML/try-it-now.png" alt="TryItNow" width="120px" style="float:left"/></a>           
     </section>
        
     <section class="slide" id="slide27">
       <h2>Tableaux (4/5)</h2>
-           
+      <p>Ci-dessous, quelques attributs utiles acceptés dans la balise <code>table</code> (il en existe bien d'autres):</p>
+      <ul>
+        <li><code>border</code>: permet de spécifier la largeur de bordure des cellules du tableau (en nombre de pixels);</li>
+        <li><code>width</code> et <code>height</code>: permet de spécifier les dimensions de la table (en nombre de pixels ou en pourcentage de la taille de la fenêtre);</li>
+        <li><code>cellpadding</code>: permet de spécifier une marge à l'intérieur des cellules de la table (en nombre de pixels).</li>           
     </section>
     
     <section class="slide" id="slide28">
       <h2>Tableaux (5/5)</h2>
-           
+      <ul>
+        <li>Ci-dessous, quelques attributs utiles acceptés dans la balise <code>td</code> (il en existe également bien d'autres):</li>
+        <ul>
+          <li><code>width</code> et <code>height</code>: permettent de spécifier les dimensions de la cellule (en nombre de pixels ou en pourcentage de la taille de la table);</li>
+          <li><code>align</code>: permet de spécifier l'alignement horizontal du texte de la cellule (left, right ou center);</li>
+          <li><code>valign</code>: permet de spécifier l'alignement vertical du texte de la cellule (top, bottom ou middle).</li>
+        </ul>
+        <li>On peut fusionner les cellules de tableau</li>
+        <ul>
+          <li><code>colspan</code>: permet de fusionner les colonnes (horizontalement)</li>
+          <li><code>rowspan</code>: permet de fusionner les lignes (verticalement)</li>
+          <li>Mais il faut faire attention au nombre de <code>td</code> et <code>tr</code> dans le reste du tableau!</li>
+        </ul>
+      </ul>   
     </section>
        
     <section class="slide" id="slide29">
       <h2>Balises et attributs des tableaux (1/2)</h2>
-           
+       <img src="../HTML/table.png" alt="Table"/></a>     
     </section>
     
     <section class="slide" id="slide30">
       <h2>Balises et attributs des tableaux (2/2)</h2>
-           
+<pre><code><xmp>
+<table border="1" width="600">
+   <tr> 
+      <td height="38" width="100">  </td>
+      <td height="38" width="100">  </td>
+      <td height="38" width="100">  </td>
+      <td height="38" width="100">  </td>
+      <td height="38" width="100">  </td>
+      <td height="38" width="100">  </td>
+   </tr>
+   <tr> 
+      <td rowspan="2" width="100">  </td>
+      <td colspan="3" rowspan="2">  </td>
+      <td height="86" width="100">  </td>
+      <td height="86" width="100">  </td>
+   </tr>
+   <tr> 
+      <td height="95" width="100">  </td>
+      <td height="95" width="100">  </td>
+   </tr>
+   <tr> 
+      <td colspan="6" height="93">  </td>
+   </tr>
+</table>
+</xmp></code></pre>     
+<a href="../HTML/table.html" target="_blank">
+<img src="../HTML/try-it-now.png" alt="TryItNow" width="120px" style="float:left"/></a>
     </section>
        
     <section class="slide" id="slide31">
       <h2>Tableaux imbriquées</h2>
-           
+      <p>Une cellule peut contenir tout type d’éléments HTML, y compris un autre tableau. Certaines mises en page présentent des assemblages complexes de tableaux en cascade.</p>
+      <img src="../HTML/table_imbriquee.png" alt="TableImbriquee"/>                
     </section>
 
     <section class="slide" id="slide32">
       <h2>Quelques considérations générales</h2>
-           
+      <ul>
+        <li><em>Rappel</em>: les différents éléments définis dans le langage HTML peuvent en général être imbriqués les uns dans les autres.</li>
+        <li>Ainsi il est bien entendu possible de:
+        <ul>
+          <li>Placer un lien dans une liste;</li>
+          <li>Placer une image, un lien hypertexte ou une liste dans une cellule de table;</li>
+          <li>Utiliser les balises <code>strong</code>, <code>em</code> et <code>u</code> pour formater un texte se trouvant dans une cellule de tableau;</li>
+        </ul>
+        <li>On peut utiliser CSS pour formater les lignes et les colonnes de tableaux.</li>
+      </ul>           
     </section>
        
     <section class="slide" id="slide33">
       <h2>Comment vérifier le code HTML?</h2>
-           
+      <ul>
+        <li>Il existe un éditeur en ligne pour HTML5:</li>
+        <p><a href="http://www.tutorialspoint.com/try_html_online.php">http://www.tutorialspoint.com/try_html_online.php</a></p>
+        <li>Il existe un validateur pour HTML: <a href="http://validator.w3.org">http://validator.w3.org</a></li>
+        <li>Vous pouvez valider votre page web de trois façons différentes, c'est pour cela qu'il y a trois onglets:</li> 
+        <ul>
+          <li>adresse (URL)</li>
+          <li>envoi du fichier <code>.html</code></li>
+          <li>copier-coller du code HTML</li>
+        </ul>
+        <li>Si vous envoyez votre code HTML et que tout se passe bien, le validateur va vous répondre avec le message suivant:</li>
+        <img src="../HTML/validated.png" alt="Validated"/>           
+      </ul>
     </section>
     
     <section class="slide" id="slide34">
       <h2>Questions?!</h2>    
-      <img src="../Figures/chapitre0.png" alt="Questions?!"/>
+      <img src="../Figures/questions.png" alt="Questions?!"/>
     </section>
 
     <!-- deck.navigation snippet -->
