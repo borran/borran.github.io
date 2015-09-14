@@ -61,7 +61,7 @@
 
     <section class="slide" id="slide3">
       <h2>HTML, qu'est-ce que c'est? (1/4)</h2>       
-      <p><img src="../Figures/firefox.png" alt="Firefox" width="40px" style="float:left"/> <a href="http://en.wikipedia.org/wiki/Main_Page">http://en.wikipedia.org/wiki/Main_Page</a>:</p>
+      <p><img src="../Figures/firefox.png" alt="Firefox" width="40px" style="float:left"/> <a href="http://en.wikipedia.org/wiki/Main_Page" target="_blank">http://en.wikipedia.org/wiki/Main_Page</a>:</p>
       <img src="../HTML/wikipedia.png" alt="Wikipedia"/>           
     </section>
 
@@ -73,7 +73,7 @@
     
     <section class="slide" id="slide5">
       <h2>HTML, qu'est-ce que c'est? (3/4)</h2>    
-      <p>HTML+CSS:</p>
+      <p>HTML+CSS+JavaScript:</p>
       <img src="../HTML/wikipedia_Source.png" alt="Wikipeida_Source"/>           
     </section>
 
@@ -255,7 +255,7 @@
         <li><strong>Lien d'email:</strong> ouvre le client de messagerie par défaut avec certains champs pré-remplis (destinataire, sujet et contenu du message).</li>      
 <pre><code><xmp><a href="mailto:info@heig-vd.ch?subject=Info&body=texte">Contact</a> 
 </xmp></code></pre>
-<a href="../HTML/zip.html" target="_blank">
+<a href="../HTML/email.html" target="_blank">
 <img src="../HTML/try-it-now.png" alt="TryItNow" width="120px" style="float:left"/></a>         
       </ul>     
     </section>
@@ -300,7 +300,7 @@
         <ul>
           <li><strong>Chemin relatif:</strong> Indiquer l'emplacement relatif de la page cible par rapport à la page dans laquelle se trouve le chemin d’accès, avec:</li>
           <ul>
-            <li><code>.</code> pour répertoire courant</li>          
+            <li><code>.</code> pour dossier courant</li>          
             <li><code>..</code> pour remonter d'un niveau</li>
             <li>nom de dossier/fichier pour descendre d'un niveau</li>
             <li><code>/</code>pour les séparer (Mac/Linux) <code>\</code> (Windows)</li>
@@ -387,16 +387,15 @@
         <li><code>table</code>: permet d’indiquer le début et la fin d’une table;</li>
         <li><code>tr</code>: (Table Row) permet d'indiquer le début et la fin d’une ligne de la table, imbriquées entre les balises <code>table</code>;</li>
         <li><code>td</code>: (Table Division) permet d'indiquer le début et la fin d'une cellule de la table, imbriquées entre les balises <code>tr</code>.</li>
-        <li><th> : (Table Header) permet d’indiquer l’en-tête.</li>
-<pre><code><xmp>
-<table>
+        <li><code>th</code>: (Table Header) permet d’indiquer l’en-tête.</li>
+<pre><code><xmp><table border="1">
   <tr>
     <td>Cellule d'un tableau</td>
     <td>Autre cellule</td>
   </tr>
 </table>
 </xmp></code></pre>
-<a href="../HTML/table.html" target="_blank">
+<a href="../HTML/table1.html" target="_blank">
 <img src="../HTML/try-it-now.png" alt="TryItNow" width="120px" style="float:left"/></a> 
       </ul>
     </section>
@@ -406,14 +405,26 @@
       <ul>
         <li>On peut bien entendu ajouter autant de lignes que nécessaire, mais chaque ligne doit contenir le même nombre de cellules.</li>
         <li>On peut ajouter un titre au tableau en utilisant la balise <code>caption</code>.</li>
-<pre><code><xmp>
-<table>
-  <tr><th>Nom</th><th>Age</th><th>Pays</th></tr>
-  <tr><td>Carmen</td><td>33</td><td>Espagne</td></tr>
-  <tr><td>Michelle</td><td>26</td><td>Etat-Unis</td></tr>
+<pre><code><xmp><table border="1">
+  <caption>Liste des Utilisateurs</caption>    
+  <tr>
+    <th>Nom</th>
+    <th>Age</th>
+    <th>Pays</th>
+  </tr>
+  <tr>
+    <td>Carmen</td>
+    <td>33</td>
+    <td>Espagne</td>
+  </tr>
+  <tr>
+    <td>Michelle</td>
+    <td>26</td>
+    <td>Etat-Unis</td>
+  </tr>
 </table>
 </xmp></code></pre>
-<a href="../HTML/table.html" target="_blank">
+<a href="../HTML/table2.html" target="_blank">
 <img src="../HTML/try-it-now.png" alt="TryItNow" width="120px" style="float:left"/></a>           
     </section>
        
@@ -445,14 +456,13 @@
     </section>
        
     <section class="slide" id="slide29">
-      <h2>Balises et attributs des tableaux (1/2)</h2>
+      <h2>Exemple des tableaux (1/2)</h2>
        <img src="../HTML/table.png" alt="Table"/></a>     
     </section>
     
     <section class="slide" id="slide30">
-      <h2>Balises et attributs des tableaux (2/2)</h2>
-<pre><code><xmp>
-<table border="1" width="600">
+      <h2>Exemple des tableaux (2/2)</h2>
+<pre><code><xmp><table border="2" width="600">
    <tr> 
       <td height="38" width="100">  </td>
       <td height="38" width="100">  </td>
@@ -483,7 +493,7 @@
     <section class="slide" id="slide31">
       <h2>Tableaux imbriquées</h2>
       <p>Une cellule peut contenir tout type d’éléments HTML, y compris un autre tableau. Certaines mises en page présentent des assemblages complexes de tableaux en cascade.</p>
-      <img src="../HTML/table_imbriquee.png" alt="TableImbriquee"/>                
+      <img src="../HTML/table_imbriquee.png" alt="TableImbriquee" width="700px"/>                
     </section>
 
     <section class="slide" id="slide32">
@@ -504,8 +514,8 @@
       <h2>Comment vérifier le code HTML?</h2>
       <ul>
         <li>Il existe un éditeur en ligne pour HTML5:</li>
-        <p><a href="http://www.tutorialspoint.com/try_html_online.php">http://www.tutorialspoint.com/try_html_online.php</a></p>
-        <li>Il existe un validateur pour HTML: <a href="http://validator.w3.org">http://validator.w3.org</a></li>
+        <p><a href="http://www.tutorialspoint.com/try_html_online.php" target="_blank">http://www.tutorialspoint.com/try_html_online.php</a></p>
+        <li>Il existe un validateur pour HTML: <a href="http://validator.w3.org" target="_blank">http://validator.w3.org</a></li>
         <li>Vous pouvez valider votre page web de trois façons différentes, c'est pour cela qu'il y a trois onglets:</li> 
         <ul>
           <li>adresse (URL)</li>
