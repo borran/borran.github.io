@@ -57,92 +57,301 @@
 
     <section class="slide" id="slide3">
       <h2>Balises embarquées</h2>
-      
+      <ul>
+        <li>Image (déjà vu en Chapitre3a)</li>
+        <li>Audio/Vidéo</li>
+        <li>Embed/Object</li>
+        <li>Frames</li>
+        <li>Etc.</li>
+      </ul>
     </section>
 
     <section class="slide" id="slide4">
       <h2>Audio</h2>
-            
+      <ul>
+        <li>La balise <code>audio</code> permet d'ajouter du son ou de la musique à la page.</li>
+        <li>L'attribut <code>src</code> permet de spécifier le fichier audio.</li>
+        <li>L'attribut type permet de spécifier le type de fichier audio: <code>audio/mp3</code>, <code>audio/ogg</code>, <code>audio/wav</code>.</li>
+        <li>L'attribut <code>controls</code> indique que les commandes audio doivent être affichées (comme play, pause, etc.).</li>
+<pre><code><xmp><!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="utf-8">   
+      <title>Audio</title>      
+   </head>
+   <body>
+      <p>Exemple d'audio:</p>   
+      <audio src="horse.ogg" type="audio/ogg" controls>
+         Your browser does not support the audio tag.
+      </audio>
+   </body>
+</html></xmp></code></pre>
+<a href="../HTML5/audio.html" target="_blank">
+<img src="../HTML/try-it-now.png" alt="TryItNow" width="120px" style="float:left"/></a>
+      </ul>      
     </section>
  
     <section class="slide" id="slide5">
       <h2>Vidéo</h2>
-            
+      <ul>
+        <li>La balise <code>video</code> permet d'ajouter un vidéo dans la page.</li>
+        <li>L'attribut <code>src</code> permet de spécifier le fichier vidéo.</li>
+        <li>L'attribut type permet de spécifier le type de fichier vidéo: <code>video/mp4</code>, <code>video/ogg</code>, <code>video/webM</code>.</li>
+        <li>L'attribut <code>controls</code> indique que les commandes vidéo doivent être affichées (comme play, pause, etc.).</li>
+<pre><code><xmp><!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="utf-8">   
+      <title>Audio</title>      
+   </head>
+   <body>
+      <p>Exemple de vidéo:</p>
+      <video src="movie.mp4" type="video/mp4" width="320" height="240">
+         Your browser does not support the video tag.
+      </video>
+   </body>        
+</html></xmp></code></pre>
+<a href="../HTML5/video.html" target="_blank">
+<img src="../HTML/try-it-now.png" alt="TryItNow" width="120px" style="float:left"/></a>                
+      </ul>
     </section>
     
     <section class="slide" id="slide6">
       <h2>Embed/Object</h2>
-            
+      <ul>
+        <li>La balise <code>embed</code> définit un conteneur pour une application externe ou un contenu interactif (un plug-in).</li>
+        <li>L'attribut <code>src</code> indique l'adresse du fichier externe à intégrer.</li>
+        <li>La balise <code>objet</code> represente une ressource externe qui, selon le type de la resource, sera traité différamment: image, audio, vidéo, etc.</li>
+<pre><code><xmp><!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="utf-8">   
+      <title>Embed</title>      
+   </head>
+   <body>
+      <p>Exemple de embed:</p>
+      <embed src="http://www.gamedesign.jp/flash/chatnoir/chatnoir.swf"/>
+   </body>      
+</html></xmp></code></pre>
+<a href="../HTML5/embed.html" target="_blank">
+<img src="../HTML/try-it-now.png" alt="TryItNow" width="120px" style="float:left"/></a>                
+      </ul>  
     </section>
         
     <section class="slide" id="slide7">
       <h2>Frames</h2>
-      
+      <ul>
+        <li>La notion de frame permet de créer un navigateur au sein d'un autre navigateur. Ceci permet d'ouvrir plusieurs pages en parallèles et de parcourir une page sans changer les contenus d'autres pages.</li>
+        <li>La balise <code>iframe</code> (inline frame) est utilisé pour insérer un frame.</li>
+        <li>L'attribut <code>src</code> permet de définir l'adresse de la page que frame doit contenir. L'attribut <code>name</code> spécifie le nom de frame.</li>
+        <li>Les attributs <code>width</code> et <code>height</code> (en pixel/pourcentage) peuvent être utilisés pour définir la largeur et l'hauteur de frame.</li>
+        <li>La balise <code>iframe</code> ne peut pas être utilisé à l’intérieur de la balise <code>a</code>.</li>
+        <li>Pour faire face à des navigateurs qui ne supportent pas <code>iframe</code>, on peut ajouter un texte entre la balise d'ouverture <code>&lt;iframe&gt;</code> et la fermeture <code>&lt;/iframe&gt;</code>.</li>
+        <li><code>&lt;iframe name="myframe" src="source.html"/&gt;</code> n'est pas admit.</li>
+      </ul>
     </section>
 
     <section class="slide" id="slide8">
       <h2>Frames: exemple</h2>
-            
+<pre><code><xmp><!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="utf-8">   
+      <title>Frames</title>      
+   </head>
+   <body>
+      <iframe src="http://www.heig-vd.ch/" width="100%" height="350">
+      </iframe>
+      <br/>
+      <iframe src="http://www.w3schools.com/html/default.asp" 
+      	width="100%" height="350px">
+      </iframe>
+   </body>      
+</html></xmp></code></pre>
+<a href="../HTML5/frames.html" target="_blank">
+<img src="../HTML/try-it-now.png" alt="TryItNow" width="120px" style="float:left"/></a>
+<img src="../HTML5/framesOutput.png" alt="FramesOutput" style="float:right"/>            
     </section>
  
     <section class="slide" id="slide9">
       <h2>Sommaire</h2>
-            
+      <ul>
+        <li>Balises embarquées (embedded tags)</li>
+        <li>Formulaires</li>
+        <li>La mise en page</li>
+      </ul>            
     </section>
     
     <section class="slide" id="slide10">
       <h2>Formulaires</h2>
-            
+      <ul>
+        <li>Les formulaires sont des éléments HTML permettant de récupérer des données auprès des visiteurs d'une page Web.</li>
+        <li>Grâce à eux, on peut créer une certaine interactivité avec les visiteurs:</li>
+        <ul>
+          <li>Demande de renseignements personnels (adresse, email, …);</li>
+          <li>Fournir l'accès à une zone privée (nom d'utilisateur, mot de passe);</li>
+          <li>Menus, choix de rubriques, choix de liens;</li>
+          <li>Zone de texte pour forums, blogs, livre d'or;</li>
+          <li>Questionnaires, sondages, etc.</li>
+        </ul>
+      </ul>   
+      <img src="../HTML/formulaireOutput1.png" alt="FormulaireOutput"/>         
     </section>
     
     <section class="slide" id="slide11">
       <h2>Exemples de formulaires</h2>
-      
+      <img src="../HTML5/formulaire.png" alt="Formulaire" width="700px"/> 
     </section>
 
     <section class="slide" id="slide12">
       <h2>Utilisation des formulaires</h2>
-            
+      <ul>
+        <li>Mettre à disposition du visiteur des zones de textes, des choix, des informations</li>
+        <li>Récupérer les données qui sont fournies par le visiteur</li>
+        <li>Valider, traiter, classer ces données</li>
+        <li>Les stocker, les afficher ou les réutiliser dans un autre formulaire</li>
+      </ul>        
     </section>
  
     <section class="slide" id="slide13">
       <h2>Balise de formulaire</h2>
-            
+      <ul>
+        <li>La balise <code>form</code> permet de définir un formulaire.</li>
+        <li>Tout le contenu du formulaire doit se trouver entre <code>&lt;form&gt;</code> et <code>&lt;/form&gt;</code>.</li>
+        <li>On y placera différentes balises spécifiques aux formulaires, comme par exemple:</li>
+        <ul>
+          <li>Des champs de saisie de texte;</li>
+          <li>Des cases à cocher ou boutons radio;</li>
+          <li>Des listes déroulantes;</li>
+          <li>Un bouton de validation.</li>
+        </ul>
+        <li>Seules les données saisies dans les éléments placés dans la zone d'activité de <code>form</code> pourront être envoyées puis récupérées.</li>
+        <li>La balise <code>fieldset</code> est utilisée pour regrouper des éléments liés à un formulaire.</li>
+        <li>La balise <code>legend</code> définit une légende pour les éléments de <code>fieldset</code>.</li>
+      </ul>            
     </section>
     
     <section class="slide" id="slide14">
-      <h2>Attributs de la balise <form></h2>
-            
+      <h2>Attributs de la balise <code>&lt;form&gt;</code></h2>
+      <ul>
+        <li><code>enctype:</code> Spécifie le type de données (ex: <code>enctype="text/plain"</code>);</li>
+        <li><code>action:</code> Désigne l'adresse du script qui va traiter les données, ou l'email;</li>
+        <p>Par exemple avec un script en PHP: <code>action="mon_script.php"</code> ou pour un envoi par email: <code>action="mailto:email@domaine.com"</code>;</p>
+        <li><code>method:</code> Spécifie la manière dont les données doivent être transmises. Il peut prendre 2 valeurs: <code>post</code> ou <code>get</code>. On utilise presque toujours la méthode <code>post</code>.</li>
+        <ul>
+          <li>La méthode <code>post</code> envoie les données du formulaire dans le corps de la requête HTTP (voir Chapitre2).</li>
+          <li>La méthode get ajoute les données dans l'URL de la page d'envoi (ex : <code>"mon_script.php?nom=toto&pass=hello"</code>) et elle est limitée à 255 caractères.</li>
+        </ul>
+        <li><code>name:</code> Précise un nom pour le formulaire.</li>
+<pre><code><xmp><form action="mailto:email@domaine.com" method="post" enctype="text/plain">
+  ...(éléments du formulaire ici) ...
+</form></xmp></code></pre>    
+      </ul>
     </section>
     
     <section class="slide" id="slide15">
-      <h2>Dans la zone d'activité de <form></h2>
-      
+      <h2>Dans la zone d'activité de <code>&lt;form&gt;</code></h2>
+      <ul>
+        <li>La balise <code>form</code> constitue en quelque sorte un conteneur permettant de regrouper des éléments qui vont permettre à l'utilisateur de choisir ou de saisir des données.</li>
+        <li>Il est possible d'insérer n'importe quel élément HTML de base dans une balise <code>form</code> (textes, boutons, tableaux, liens,...).</li>
+        <li>Il est surtout intéressant d'insérer des éléments interactifs, tels que:</li>
+        <ul>
+          <li>La balise <code>input</code>: divers boutons et champs de saisie;</li>
+          <li>La balise <code>textarea</code>: une zone de saisie;</li>
+          <li>La balise <code>select</code>: une liste à choix multiples.</li>
+          <li>La balise <code>label</code>: définie un label pour un <code>input</code>.</li>
+        </ul>
+      </ul>
     </section>
 
     <section class="slide" id="slide16">
       <h2>Eléments interactifs de formulaires (1/5)</h2>
-            
+      <ul>
+        <li>Champ de texte</li>
+        <pre><code><xmp><input type="text" name="nom" size="50"/></xmp></code></pre>
+        <li>Champ de texte avec un label</li>
+<pre><code><xmp><label for="nom">Votre nom</label> : 
+<input type="text" name="nom" size="50"/>
+</xmp></code></pre>
+        <li>Zone de texte</li>
+        <pre><code><xmp><textarea name="nom" rows="4" cols="40">Valeur par défaut</textarea></xmp></code></pre>
+      </ul>            
     </section>
  
     <section class="slide" id="slide17">
       <h2>Eléments interactifs de formulaires (2/5)</h2>
-            
+      <p>Listes déroulantes</p>     
+<pre><code><xmp><select name="jour" size="1">
+  <option>lundi</option>
+  <option>mardi</option>
+  <option>mercredi</option>
+  <option>jeudi</option>
+  <option>vendredi</option>
+</select></xmp></pre></code>
+<a href="../HTML5/.html" target="_blank">
+<img src="../HTML/try-it-now.png" alt="TryItNow" width="120px" style="float:left"/></a>  
+<br/>
+<pre><code><xmp><select name="jour" size="5">
+  <option>lundi</option>
+  <option>mardi</option>
+  <option>mercredi</option>
+  <option>jeudi</option>
+  <option>vendredi</option>                                      
+</select></xmp></pre></code> 
+<a href="../HTML5/.html" target="_blank">
+<img src="../HTML/try-it-now.png" alt="TryItNow" width="120px" style="float:left"/></a>  
     </section>
     
     <section class="slide" id="slide18">
       <h2>Eléments interactifs de formulaires (3/5)</h2>
-            
+      <p>Boutons radio (pour un choix unique parmi plusieurs possibles).    
+      <pre><code><xmp><input type="radio" name="nom du groupe" value="valeur"/></xmp></code></pre>
+      </p>
+      <ul>
+        <li>L’attribut <code>name</code> permet de spécifier à quel groupe d’options appartient l’élément (la sélection est unique au sein d’un même groupe).</li>
+        <li>L’attribut <code>value</code> contient la valeur qui sera retournée par le formulaire si l’option est sélectionnée.</li>
+        <li>On peut ajouter l’attribut <code>checked="checked"</code> pour indiquer l’option qui doit être sélectionnée par défaut (voir exemple ci-dessous).</li>
+<pre><code><xmp><input type="radio" name="couleur" value="r" checked="checked"/>rouge<br/>
+<input type="radio" name="couleur" value="v"/>vert<br/>
+<input type="radio" name="couleur" value="v"/>bleu<br/></xmp></code></pre>
+<a href="../HTML5/.html" target="_blank">
+<img src="../HTML/try-it-now.png" alt="TryItNow" width="120px" style="float:left"/></a>  
+      </ul>
     </section>
 
     <section class="slide" id="slide19">
       <h2>Eléments interactifs de formulaires (4/5)</h2>
-            
+      <p>Cases à cocher (pour plusieurs choix possibles parmi plusieurs).</p>
+      <pre><code><xmp><input type="checkbox" name="nom" value="valeur si cochée"/></xmp></code></pre>
+      <ul>
+        <li>L'attribut <code>name</code> permet de spécifier le nom de la case à cocher (retourné avec la valeur si la case est cochée lorsque le formulaire est envoyé).</li>
+        <li>L'attribut <code>value</code> contient la valeur qui sera retournée par le formulaire si l’option est sélectionnée.</li>
+        <li>On peut ajouter l'attribut <code>checked="checked"</code> pour indiquer les cases qui doivent être cochées par défaut.</li>          
+<pre><code><xmp><input type="checkbox" name="choix" value="1"/>glace vanille<br/>
+<input type="checkbox" name="choix" value="2"/>chantilly<br/>
+<input type="checkbox" name="choix" value="3"/>chocolat chaud<br/>
+<input type="checkbox" name="choix" value="4"/>biscuit<br/></xmp></code></pre>      
+<a href="../HTML5/.html" target="_blank">
+<img src="../HTML/try-it-now.png" alt="TryItNow" width="120px" style="float:left"/></a>  
+      </ul>  
     </section>
     
     <section class="slide" id="slide20">
       <h2>Eléments interactifs de formulaires (5/5)</h2>
-            
+      <ul>
+        <li>Boutons spéciaux:</li>
+        <pre><code><xmp><input type="submit" name="nom" value="Envoyer"/></xmp></code></pre>
+        <ul>
+          <li><strong>Submit</strong> permet d'envoyer le formulaire selon les informations données par l'attribut action de la balise <code>form</code>. Il en faut obligatoirement un dans un formulaire!</li>
+          <li><strong>Reset</strong> est moins utilisé, il permet de réinitialiser les champs du formulaire.</li>
+        </ul>
+        <li>Boutons cachés (ne s'affichent pas à l'écran)</li>
+        <pre><code><xmp><input type="hidden" name="mask" value="fantomas"/></xmp></code></pre>
+        <p>Intérêt: un script peut y placer une valeur qu'il retrouvera lorsque le formulaire lui sera renvoyé.</p>
+        <li>Autre type de input de HTML5:</li>
+        <p><a href="http://cdn.sixrevisions.com/demos/0345-new_html5_form_input_types/new-html5-form-input-types.html?">http://cdn.sixrevisions.com/demos/0345-new_html5_form_input_types/new-html5-form-input-types.html?
+</a></p>
+      </ul>      
     </section>
 
     <section class="slide" id="slide21">
@@ -152,84 +361,201 @@
 
     <section class="slide" id="slide22">
       <h2>Exemple de formulaire (1/3)</h2>
-            
+      <p>Ci-dessous, un exemple de formulaire. Les différents éléments ont été placés dans une table, afin de les aligner proprement (cf. code des 2 slides suivants).</p>  
+      <br/> 
+      <img src="../HTML/formulaireOutput.png" alt="FormulaireOutput"/>   
     </section>
  
     <section class="slide" id="slide23">
       <h2>Exemple de formulaire (2/3)</h2>
-            
+<pre><code><xmp><!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">   
+    <title>Fromulaire</title>
+  </head>
+  <body>
+    <form method=post action="script.php">
+      <fieldset>
+        <legend>Enregistrement d'un utilisateur</legend>
+        <table>
+          <tr>
+            <td>Nom</td>
+            <td><input type=text name="nom"/></td>
+          </tr>
+          <tr>
+            <td>Prénom</td>
+            <td><input type=text name="prenom"/></td>
+          </tr>
+          <tr>
+            <td>Sexe</td>
+            <td>Homme : <input type=radio name="sexe" value="M"/><br/>
+            Femme : <input type=radio name="sexe" value="F"/></td>
+          </tr>
+          ...
+</xmp></code></pre>               
     </section>
     
     <section class="slide" id="slide24">
       <h2>Exemple de formulaire (3/3)</h2>
-            
+<pre><code><xmp>...
+          <tr>
+            <td>Fonction</td>
+            <td>
+              <select name="fonction">
+                <option VALUE="enseignant">Enseignant</option>
+                <option VALUE="etudiant">Etudiant</option>
+                <option VALUE="ingenieur">Ingénieur</option>
+                <option VALUE="retraite">Retraité</option>
+                <option VALUE="autre">Autre</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td>Commentaires</td>
+            <td>
+              <textarea rows="3" name="commentaires">
+                Tapez ici vos commentaires</textarea>
+            </td>
+            </tr>
+            <tr>
+              <td colspan=2><input type="submit" value="Envoyer"/></td>
+            </tr>
+          </table>
+        </fieldset>
+      </form>
+   </body>
+</html></xmp></code></pre>      
+<a href="../HTML5/.html" target="_blank">
+<img src="../HTML/try-it-now.png" alt="TryItNow" width="120px" style="float:left"/></a>              
     </section>
 
     <section class="slide" id="slide25">
       <h2>Sommaire</h2>
-            
+      <ul>
+        <li>Balises embarquées (embedded tags)</li>
+        <li>Formulaires</li>
+        <li>La mise en page</li>
+      </ul>                        
     </section>
     
     <section class="slide" id="slide26">
       <h2>La mise en page</h2>
-            
+      <p>Comment structurer sa page?</p>
+      <ul>
+        <li>En utilisant les tableaux (cf. labo1)</li>
+        <li>En utilisant les frames et les tableaux</li>
+        <li>En utilisant les balises de HTML5</li>
+        <li>En utilisant les balises de HTML5 et CSS (cf. Chapitre4)</li>            
+      </ul>
     </section>
 
     <section class="slide" id="slide27">
       <h2>HTML5</h2>
-      
+      <ul>
+        <li>HTML4 en 1999, beaucoup de changements depuis...</li>
+        <li>Cooperation entre le World Wide Web Consortium (W3C) et le Web Hypertext Application Technology Working Group (WHATWG).</li>
+        <li>WHATWG travaillait sur de nouveaux formulaires et applications, le W3C sur XHTML 2. En 2006, ils ont décidé de coopérer pour créer HTML5.</li>
+        <li>Forte implication des industriels et fabriquants de navigateurs.</li>      
+      </ul>
     </section>
 
     <section class="slide" id="slide28">
       <h2>Mise en Page: Structure</h2>
-            
+      <ul>
+        <li>Les balises de structure HTML5:</li>
+        <ul>
+          <li><code>header</code></li>
+          <li><code>nav</code></li>
+          <li><code>section</code></li>
+          <li><code>article</code></li>
+          <li><code>aside</code></li>
+          <li><code>footer</code></li>
+        </ul>
+        <li>Application de CSS standard</li>
+        <li>CSS partageable</li>
+        <li>Reconnaissance par les navigateurs</li>
+        <li>Proposition d'un rendu spécifique</li>
+        <li>Idéal pour la table des matières et page perso.</li>            
     </section>
  
     <section class="slide" id="slide29">
-      <h2>Mise en Page: Structure <header></h2>
-            
+      <h2>Mise en Page: Structure <code>&lt;header&gt;</code></h2>
+      <img src="../HTML5/header.png" alt="Header"/>      
     </section>
     
     <section class="slide" id="slide30">
-      <h2>Mise en Page: Structure <footer></h2>
-            
+      <h2>Mise en Page: Structure <code>&lt;footer&gt;</code></h2>
+      <img src="../HTML5/footer.png" alt="Footer"/>       
     </section>
 
     <section class="slide" id="slide31">
-      <h2>Mise en Page: Structure <nav></h2>
-            
+      <h2>Mise en Page: Structure <code>&lt;nav&gt;</code></h2>
+      <img src="../HTML5/nav.png" alt="Nav"/>      
     </section>
     
     <section class="slide" id="slide32">
-      <h2>Mise en Page: Structure <section></h2>
-            
+      <h2>Mise en Page: Structure <code>&lt;section&gt;</code></h2>
+      <img src="../HTML5/section.png" alt="Section"/>             
     </section>
     
     <section class="slide" id="slide33">
-      <h2>Mise en Page: Structure <aside></h2>
-            
+      <h2>Mise en Page: Structure <code>&lt;aside&gt;</code></h2>
+      <img src="../HTML5/aside.png" alt="Aside"/>             
     </section>
 
     <section class="slide" id="slide34">
-      <h2>Mise en Page: Structure <article></h2>
-            
+      <h2>Mise en Page: Structure <code>&lt;article&gt;</code></h2>
+      <img src="../HTML5/article.png" alt="Article"/>             
     </section>
     
     <section class="slide" id="slide35">
       <h2>Structure HTML5 : exemple (1/2)</h2>
-            
+      <img src="../HTML5/structureOutput.png" alt="StructureOutput"/>             
     </section>
        
     <section class="slide" id="slide36">
       <h2>Structure HTML5 : exemple (2/2)</h2>
-            
+<pre><code><xmp><!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8"> 
+    <title>Structure HTML5</title>      
+  </head>
+  <body>
+    <header id="header">
+      <img src="header.jpg" width="20%" height="20%"/>
+    </header>
+    <nav id="nav">
+      <a href="http://www.w3schools.com/html/default.asp" target="content">HTML</a> |
+      <a href="http://www.w3schools.com/css/" target="content">CSS</a> |
+      <a href="http://www.w3schools.com/php/" target="content">PHP</a> |
+      <a href="http://www.w3schools.com/js/" target="content">Java Script</a>
+    </nav>
+    <section id="section">      
+      <iframe name="content" width="100%" height="400"></iframe>
+    </section>
+    <aside id="aside">
+      Les logiciels nécessaires:
+      <ul>
+        <li>NotePad++</li>
+        <li>Firefox</li>
+        <li>EasyPHP</li>
+      </ul>
+    </aside>
+    <footer id="footer">
+      Cours AP-CAI @ 2014-2015
+    </footer>
+  </body>
+</html></xmp></code></pre> 
+<a href="../HTML5/video.html" target="_blank">
+<img src="../HTML/try-it-now.png" alt="TryItNow" width="120px" style="float:left"/></a>             
     </section>                
          
     <section class="slide" id="slide37">
       <h2>Questions?!</h2>    
-      <img src="../Figures/chapitre0.png" alt="Questions?!"/>
+      <img src="../Figures/questions.png" alt="Questions?!"/>
     </section>
-
                                                 
     <!-- deck.navigation snippet -->
     <div aria-role="navigation">
