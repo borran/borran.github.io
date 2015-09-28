@@ -165,6 +165,7 @@
         <li><em>Rappel</em>: Internet est un réseau de réseaux. En général, il n’existe pas de ligne directe entre deux ordinateurs. Les données envoyées d'un ordinateur à un autre doivent donc transiter par plusieurs intermédiaires (routeurs, switchs, hubs, ...).</li>
         <li>Pour qu'un ordinateur puisse envoyer des données à un autre ordinateur, il doit connaître l'<strong>adresse</strong> de son destinataire et l'inscrire sur le paquet de données envoyé.</li>
         <li>Cette adresse est appelée <strong>adresse IP</strong>.</li>
+        <img src="../Figures/TCPIP.png" alt="TCP/IP"/>
       </ul>           
     </section>  
     
@@ -184,7 +185,7 @@
     <section class="slide" id="slide12">
       <h2>Protocole TCP/IP (4/5)</h2>
       <ul>
-        <li>Le protocole <strong>TCP</strong> (<em>Transmission Control Protocol</em>) permet d'établir une connexion fiable entre deux ordinateurs. Il se charge <em>notamment</em> de:</li>
+        <li>Le protocole <strong>TCP</strong> (<em>Transmission Control Protocol</em>) permet d'établir une connexion <strong>fiable</strong> entre deux ordinateurs. Il se charge <em>notamment</em> de:</li>
         <ul>
           <li>Remettre dans le bon ordre des paquets transmis par le protocole IP (ceux-ci peuvent suivre des routes différentes, et donc arriver à destination dans le désordre).</li>
           <li>Redemander des paquets égarés (il se peut qu'un intermédiaire tombe en panne, ou qu'une ligne soit momentanément interrompue).</li>
@@ -518,6 +519,7 @@ Content-Type: text/html
         <li>On appelle <strong>résolution de noms de domaines</strong> (ou <em>résolution d'adresses</em>) la corrélation entre les adresses IP et le nom de domaine associé.</li>
         <li>Lorsqu'une application souhaite se connecter à un serveur connu par son nom de domaine celle-ci va interroger un serveur de noms défini dans sa configuration réseau.</li>
         <li>Chaque machine connectée au réseau possède en effet dans sa configuration les adresses IP de plusieurs serveurs de noms de son fournisseur d'accès.</li>
+        <img src="../Figures/dns.gif" alt="DNS"/>
       </ul>                 
     </section>  
         
