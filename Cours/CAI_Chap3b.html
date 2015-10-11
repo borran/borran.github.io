@@ -58,7 +58,7 @@
     <section class="slide" id="slide3">
       <h2>Balises embarquées</h2>
       <ul>
-        <li>Image (déjà vu en Chapitre3a)</li>
+        <li>Image (déjà vu en Chapitre3a <code>img</code>)</li>
         <li>Audio/Vidéo</li>
         <li>Embed/Object</li>
         <li>Frames</li>
@@ -71,20 +71,21 @@
       <ul>
         <li>La balise <code>audio</code> permet d'ajouter du son ou de la musique à la page.</li>
         <li>L'attribut <code>src</code> permet de spécifier le fichier audio.</li>
-        <li>L'attribut type permet de spécifier le type de fichier audio: <code>audio/mp3</code>, <code>audio/ogg</code>, <code>audio/wav</code>.</li>
-        <li>L'attribut <code>controls</code> indique que les commandes audio doivent être affichées (comme play, pause, etc.).</li>
+        <li>L'attribut <code>type</code> permet de spécifier le type de fichier audio: <code>audio/mp3</code>, <code>audio/ogg</code>, <code>audio/wav</code>.</li>
+        <li>L'attribut <code>controls</code> indique que les commandes audio doivent être affichées (comme <em>play</em>, <em>pause</em>, etc.).</li>
+        <img src="../HTML5/audioOutput.png" style="float:right"/>       
 <pre><code><xmp><!DOCTYPE html>
 <html>
-   <head>
-      <meta charset="utf-8">   
-      <title>Audio</title>      
-   </head>
-   <body>
-      <p>Exemple d'audio:</p>   
-      <audio src="horse.ogg" type="audio/ogg" controls>
-         Your browser does not support the audio tag.
-      </audio>
-   </body>
+  <head>
+    <meta charset="utf-8">   
+    <title>Audio</title>     
+  </head>
+  <body>
+    <p>Exemple d'audio:</p>   
+    <audio src="horse.ogg" type="audio/ogg" controls>
+      Your browser does not support the audio tag.
+    </audio>
+  </body>
 </html></xmp></code></pre>
 <a href="../HTML5/audio.html" target="_blank">
 <img src="../HTML/try-it-now.png" alt="TryItNow" width="120px" style="float:left"/></a>
@@ -96,20 +97,22 @@
       <ul>
         <li>La balise <code>video</code> permet d'ajouter un vidéo dans la page.</li>
         <li>L'attribut <code>src</code> permet de spécifier le fichier vidéo.</li>
-        <li>L'attribut type permet de spécifier le type de fichier vidéo: <code>video/mp4</code>, <code>video/ogg</code>, <code>video/webM</code>.</li>
-        <li>L'attribut <code>controls</code> indique que les commandes vidéo doivent être affichées (comme play, pause, etc.).</li>
+        <li>L'attribut <code>type</code> permet de spécifier le type de fichier vidéo: <code>video/mp4</code>, <code>video/ogg</code>, <code>video/webM</code>.</li>
+        <li>L'attribut <code>controls</code> indique que les commandes vidéo doivent être affichées (comme <em>play</em>, <em>pause</em>, etc.).</li>
+        <img src="../HTML5/videoOutput.png" style="float:right"/>
 <pre><code><xmp><!DOCTYPE html>
 <html>
-   <head>
-      <meta charset="utf-8">   
-      <title>Audio</title>      
-   </head>
-   <body>
-      <p>Exemple de vidéo:</p>
-      <video src="movie.mp4" type="video/mp4" width="320" height="240">
-         Your browser does not support the video tag.
-      </video>
-   </body>        
+  <head>
+    <meta charset="utf-8">   
+    <title>Vidéo</title>      
+  </head>
+  <body>
+    <p>Exemple de vidéo:</p>
+    <video src="movie.mp4" type="video/mp4" 
+      width="320" height="240" controls>
+      Your browser does not support the video tag.
+    </video>
+  </body>        
 </html></xmp></code></pre>
 <a href="../HTML5/video.html" target="_blank">
 <img src="../HTML/try-it-now.png" alt="TryItNow" width="120px" style="float:left"/></a>                
@@ -121,17 +124,18 @@
       <ul>
         <li>La balise <code>embed</code> définit un conteneur pour une application externe ou un contenu interactif (un plug-in).</li>
         <li>L'attribut <code>src</code> indique l'adresse du fichier externe à intégrer.</li>
-        <li>La balise <code>objet</code> represente une ressource externe qui, selon le type de la resource, sera traité différamment: image, audio, vidéo, etc.</li>
+        <li>La balise <code>object</code> represente une ressource externe qui, selon le type de la resource, sera traité différamment: image, audio, vidéo, etc.</li>
+        <img src="../HTML5/embedOutput.png" style="float:right"/>
 <pre><code><xmp><!DOCTYPE html>
 <html>
-   <head>
-      <meta charset="utf-8">   
-      <title>Embed</title>      
-   </head>
-   <body>
-      <p>Exemple de embed:</p>
-      <embed src="http://www.gamedesign.jp/flash/chatnoir/chatnoir.swf"/>
-   </body>      
+  <head>
+    <meta charset="utf-8">   
+    <title>Embed</title>      
+  </head>
+  <body>
+    <p>Exemple de embed:</p>
+    <embed src="http://www.gamedesign.jp/flash/chatnoir/chatnoir.swf"/>
+  </body>      
 </html></xmp></code></pre>
 <a href="../HTML5/embed.html" target="_blank">
 <img src="../HTML/try-it-now.png" alt="TryItNow" width="120px" style="float:left"/></a>                
@@ -160,7 +164,7 @@
       <title>Frames</title>      
    </head>
    <body>
-      <iframe src="http://www.heig-vd.ch/" width="100%" height="350">
+      <iframe src="http://www.heig-vd.ch/" width="100%" height="350px">
       </iframe>
       <br/>
       <iframe src="http://www.w3schools.com/html/default.asp" 
@@ -170,32 +174,33 @@
 </html></xmp></code></pre>
 <a href="../HTML5/frames.html" target="_blank">
 <img src="../HTML/try-it-now.png" alt="TryItNow" width="120px" style="float:left"/></a>
-<img src="../HTML5/framesOutput.png" alt="FramesOutput" style="float:right"/>            
+<br/>
+<img src="../HTML5/framesOutput.png" alt="FramesOutput"/>            
     </section>
  
     <section class="slide" id="slide9">
       <h2>Sommaire</h2>
       <ul>
-        <li>Balises embarquées (embedded tags)</li>
-        <li>Formulaires</li>
+        <li><span style="color:gray">Balises embarquées (embedded tags)</span></li>
+        <li><strong>Formulaires</strong></li>
         <li>La mise en page</li>
       </ul>            
     </section>
     
     <section class="slide" id="slide10">
-      <h2>Formulaires</h2>
+      <h2>Formulaires</h2>      
       <ul>
         <li>Les formulaires sont des éléments HTML permettant de récupérer des données auprès des visiteurs d'une page Web.</li>
         <li>Grâce à eux, on peut créer une certaine interactivité avec les visiteurs:</li>
-        <ul>
-          <li>Demande de renseignements personnels (adresse, email, …);</li>
+        <img src="../HTML/formulaireOutput1.png" alt="FormulaireOutput" style="float:right"/>         
+        <ul>          
+          <li>Demande de renseignements personnels (adresse, email, ...);</li>
           <li>Fournir l'accès à une zone privée (nom d'utilisateur, mot de passe);</li>
           <li>Menus, choix de rubriques, choix de liens;</li>
           <li>Zone de texte pour forums, blogs, livre d'or;</li>
           <li>Questionnaires, sondages, etc.</li>
         </ul>
-      </ul>   
-      <img src="../HTML/formulaireOutput1.png" alt="FormulaireOutput"/>         
+      </ul>                 
     </section>
     
     <section class="slide" id="slide11">
@@ -204,13 +209,14 @@
     </section>
 
     <section class="slide" id="slide12">
-      <h2>Utilisation des formulaires</h2>
+      <h2>Utilisation des formulaires</h2>      
       <ul>
         <li>Mettre à disposition du visiteur des zones de textes, des choix, des informations</li>
         <li>Récupérer les données qui sont fournies par le visiteur</li>
         <li>Valider, traiter, classer ces données</li>
         <li>Les stocker, les afficher ou les réutiliser dans un autre formulaire</li>
-      </ul>        
+      </ul>              
+      <img src="../HTML5/form_usage.png" alt="FormulaireUsage" width="800px"/>
     </section>
  
     <section class="slide" id="slide13">
@@ -240,7 +246,7 @@
         <li><code>method:</code> Spécifie la manière dont les données doivent être transmises. Il peut prendre 2 valeurs: <code>post</code> ou <code>get</code>. On utilise presque toujours la méthode <code>post</code>.</li>
         <ul>
           <li>La méthode <code>post</code> envoie les données du formulaire dans le corps de la requête HTTP (voir Chapitre2).</li>
-          <li>La méthode get ajoute les données dans l'URL de la page d'envoi (ex : <code>"mon_script.php?nom=toto&pass=hello"</code>) et elle est limitée à 255 caractères.</li>
+          <li>La méthode <code>get</code> ajoute les données dans l'URL de la page d'envoi (ex : <code>"mon_script.php?nom=toto&pass=hello"</code>) et elle est limitée à 255 caractères.</li>
         </ul>
         <li><code>name:</code> Précise un nom pour le formulaire.</li>
 <pre><code><xmp><form action="mailto:email@domaine.com" method="post" enctype="text/plain">
@@ -265,64 +271,78 @@
     </section>
 
     <section class="slide" id="slide16">
-      <h2>Eléments interactifs de formulaires (1/5)</h2>
+      <h2>Eléments de formulaires (1/5)</h2>
       <ul>
         <li>Champ de texte</li>
         <pre><code><xmp><input type="text" name="nom" size="50"/></xmp></code></pre>
+        <a href="../HTML5/input_text1.html" target="_blank">
+        <img src="../HTML/try-it-now.png" alt="TryItNow" width="120px" style="float:left"/></a>
+        <img src="../HTML5/input_text1.png" style="float:right"/> 
+        <br/> 
+        <br/>                            
         <li>Champ de texte avec un label</li>
 <pre><code><xmp><label for="nom">Votre nom</label> : 
-<input type="text" name="nom" size="50"/>
+<input type="text" name="nom" size="50" value="Borran"/>
 </xmp></code></pre>
+		<a href="../HTML5/input_text2.html" target="_blank">
+		<img src="../HTML/try-it-now.png" alt="TryItNow" width="120px" style="float:left"/></a>
+		<img src="../HTML5/input_text2.png" style="float:right"/> 
+		<br/>         
+		<br/>
         <li>Zone de texte</li>
         <pre><code><xmp><textarea name="nom" rows="4" cols="40">Valeur par défaut</textarea></xmp></code></pre>
+<a href="../HTML5/input_textarea.html" target="_blank">
+<img src="../HTML/try-it-now.png" alt="TryItNow" width="120px" style="float:left"/></a>
+        <img src="../HTML5/input_textarea.png" style="float:right"/>
       </ul>            
     </section>
  
     <section class="slide" id="slide17">
-      <h2>Eléments interactifs de formulaires (2/5)</h2>
+      <h2>Eléments de formulaires (2/5)</h2>
       <p>Listes déroulantes</p>     
 <pre><code><xmp><select name="jour" size="1">
-  <option>lundi</option>
-  <option>mardi</option>
-  <option>mercredi</option>
-  <option>jeudi</option>
-  <option>vendredi</option>
-</select></xmp></pre></code>
-<a href="../HTML5/.html" target="_blank">
-<img src="../HTML/try-it-now.png" alt="TryItNow" width="120px" style="float:left"/></a>  
+  <option value="lundi">lundi</option>
+  <option value="mardi">mardi</option>
+  <option value="mercredi">mercredi</option>
+  <option value="jeudi">jeudi</option>
+  <option value="vendredi">vendredi</option>
+</select></xmp></code></pre>
+<a href="../HTML5/select1.html" target="_blank">
+<img src="../HTML/try-it-now.png" alt="TryItNow" width="120px" style="float:left"/></a>
+<img src="../HTML5/select1.png" style="float:right"/>
+<br/>
 <br/>
 <pre><code><xmp><select name="jour" size="5">
-  <option>lundi</option>
-  <option>mardi</option>
-  <option>mercredi</option>
-  <option>jeudi</option>
-  <option>vendredi</option>                                      
-</select></xmp></pre></code> 
-<a href="../HTML5/.html" target="_blank">
-<img src="../HTML/try-it-now.png" alt="TryItNow" width="120px" style="float:left"/></a>  
+  <option value="lundi">lundi</option>
+  <option value="mardi">mardi</option>
+  <option value="mercredi">mercredi</option>
+  <option value="jeudi">jeudi</option>
+  <option value="vendredi">vendredi</option>                                      
+</select></xmp></code></pre>
+<a href="../HTML5/select5.html" target="_blank">
+<img src="../HTML/try-it-now.png" alt="TryItNow" width="120px" style="float:left"/></a>
+<img src="../HTML5/select5.png" style="float:right"/> 
     </section>
     
     <section class="slide" id="slide18">
-      <h2>Eléments interactifs de formulaires (3/5)</h2>
-      <p>Boutons radio (pour un choix unique parmi plusieurs possibles).    
-      <pre><code><xmp><input type="radio" name="nom du groupe" value="valeur"/></xmp></code></pre>
-      </p>
+      <h2>Eléments de formulaires (3/5)</h2>
+      <p>Boutons radio (pour un choix unique parmi plusieurs possibles).</p>
       <ul>
         <li>L’attribut <code>name</code> permet de spécifier à quel groupe d’options appartient l’élément (la sélection est unique au sein d’un même groupe).</li>
         <li>L’attribut <code>value</code> contient la valeur qui sera retournée par le formulaire si l’option est sélectionnée.</li>
         <li>On peut ajouter l’attribut <code>checked="checked"</code> pour indiquer l’option qui doit être sélectionnée par défaut (voir exemple ci-dessous).</li>
 <pre><code><xmp><input type="radio" name="couleur" value="r" checked="checked"/>rouge<br/>
 <input type="radio" name="couleur" value="v"/>vert<br/>
-<input type="radio" name="couleur" value="v"/>bleu<br/></xmp></code></pre>
-<a href="../HTML5/.html" target="_blank">
-<img src="../HTML/try-it-now.png" alt="TryItNow" width="120px" style="float:left"/></a>  
+<input type="radio" name="couleur" value="b"/>bleu<br/></xmp></code></pre>
+<a href="../HTML5/radio.html" target="_blank">
+<img src="../HTML/try-it-now.png" alt="TryItNow" width="120px" style="float:left"/></a>
+<img src="../HTML5/radio.png" style="float:right"/> 
       </ul>
     </section>
 
     <section class="slide" id="slide19">
-      <h2>Eléments interactifs de formulaires (4/5)</h2>
+      <h2>Eléments de formulaires (4/5)</h2>
       <p>Cases à cocher (pour plusieurs choix possibles parmi plusieurs).</p>
-      <pre><code><xmp><input type="checkbox" name="nom" value="valeur si cochée"/></xmp></code></pre>
       <ul>
         <li>L'attribut <code>name</code> permet de spécifier le nom de la case à cocher (retourné avec la valeur si la case est cochée lorsque le formulaire est envoyé).</li>
         <li>L'attribut <code>value</code> contient la valeur qui sera retournée par le formulaire si l’option est sélectionnée.</li>
@@ -330,33 +350,42 @@
 <pre><code><xmp><input type="checkbox" name="choix" value="1"/>glace vanille<br/>
 <input type="checkbox" name="choix" value="2"/>chantilly<br/>
 <input type="checkbox" name="choix" value="3"/>chocolat chaud<br/>
-<input type="checkbox" name="choix" value="4"/>biscuit<br/></xmp></code></pre>      
-<a href="../HTML5/.html" target="_blank">
+<input type="checkbox" name="choix" value="4" checked="checked"/>biscuit<br/></xmp></code></pre>      
+<a href="../HTML5/checkbox.html" target="_blank">
 <img src="../HTML/try-it-now.png" alt="TryItNow" width="120px" style="float:left"/></a>  
+<img src="../HTML5/checkbox.png" style="float:right"/> 
       </ul>  
     </section>
     
     <section class="slide" id="slide20">
-      <h2>Eléments interactifs de formulaires (5/5)</h2>
+      <h2>Eléments de formulaires (5/5)</h2>
       <ul>
         <li>Boutons spéciaux:</li>
-        <pre><code><xmp><input type="submit" name="nom" value="Envoyer"/></xmp></code></pre>
         <ul>
           <li><strong>Submit</strong> permet d'envoyer le formulaire selon les informations données par l'attribut action de la balise <code>form</code>. Il en faut obligatoirement un dans un formulaire!</li>
+          <pre><code><xmp><input type="submit" name="nom" value="Envoyer"/></xmp></code></pre>
+          <a href="../HTML5/submit.html" target="_blank">
+          <img src="../HTML/try-it-now.png" alt="TryItNow" width="120px" style="float:left"/></a>            
+          <img src="../HTML5/submit.png" style="float:right">
+          <br/>
+          <br/>                                
           <li><strong>Reset</strong> est moins utilisé, il permet de réinitialiser les champs du formulaire.</li>
         </ul>
         <li>Boutons cachés (ne s'affichent pas à l'écran)</li>
         <pre><code><xmp><input type="hidden" name="mask" value="fantomas"/></xmp></code></pre>
-        <p>Intérêt: un script peut y placer une valeur qu'il retrouvera lorsque le formulaire lui sera renvoyé.</p>
-        <li>Autre type de input de HTML5:</li>
-        <p><a href="http://cdn.sixrevisions.com/demos/0345-new_html5_form_input_types/new-html5-form-input-types.html?">http://cdn.sixrevisions.com/demos/0345-new_html5_form_input_types/new-html5-form-input-types.html?
+        <a href="../HTML5/hidden.html" target="_blank">
+        <img src="../HTML/try-it-now.png" alt="TryItNow" width="120px" style="float:left"/></a>
+        <br/>                   
+        <p><em>Intérêt:</em> un script peut y placer une valeur qu'il retrouvera lorsque le formulaire lui sera renvoyé.</p>
+        <li>Autre type de input de HTML5: (voir avec <em>Chrome</em>)</li>
+        <p><a href="http://cdn.sixrevisions.com/demos/0345-new_html5_form_input_types/new-html5-form-input-types.html?" target="_blank">http://cdn.sixrevisions.com/demos/0345-new_html5_form_input_types/new-html5-form-input-types.html?
 </a></p>
       </ul>      
     </section>
 
     <section class="slide" id="slide21">
       <h2>Aperçu global des balises de formulaires</h2>
-      
+      <img src="../HTML5/form.png" alt="Formulaires"/>
     </section>
 
     <section class="slide" id="slide22">
@@ -403,11 +432,11 @@
             <td>Fonction</td>
             <td>
               <select name="fonction">
-                <option VALUE="enseignant">Enseignant</option>
-                <option VALUE="etudiant">Etudiant</option>
-                <option VALUE="ingenieur">Ingénieur</option>
-                <option VALUE="retraite">Retraité</option>
-                <option VALUE="autre">Autre</option>
+                <option value="enseignant">Enseignant</option>
+                <option value="etudiant">Etudiant</option>
+                <option value="ingenieur">Ingénieur</option>
+                <option value="retraite">Retraité</option>
+                <option value="autre">Autre</option>
               </select>
             </td>
           </tr>
@@ -426,16 +455,16 @@
       </form>
    </body>
 </html></xmp></code></pre>      
-<a href="../HTML5/.html" target="_blank">
+<a href="../HTML/formulaire.html" target="_blank">
 <img src="../HTML/try-it-now.png" alt="TryItNow" width="120px" style="float:left"/></a>              
     </section>
 
     <section class="slide" id="slide25">
       <h2>Sommaire</h2>
       <ul>
-        <li>Balises embarquées (embedded tags)</li>
-        <li>Formulaires</li>
-        <li>La mise en page</li>
+        <li><span style="color:gray">Balises embarquées (embedded tags)</span></li>
+        <li><span style="color:gray">Formulaires</span></li>
+        <li><strong>La mise en page</strong></li>
       </ul>                        
     </section>
     
@@ -443,9 +472,8 @@
       <h2>La mise en page</h2>
       <p>Comment structurer sa page?</p>
       <ul>
-        <li>En utilisant les tableaux (cf. labo1)</li>
-        <li>En utilisant les frames et les tableaux</li>
-        <li>En utilisant les balises de HTML5</li>
+        <li>En utilisant les tableaux (cf. Labo1)</li>
+        <li>En utilisant les frames et les tableaux (HTML4)</li>
         <li>En utilisant les balises de HTML5 et CSS (cf. Chapitre4)</li>            
       </ul>
     </section>
@@ -462,6 +490,7 @@
 
     <section class="slide" id="slide28">
       <h2>Mise en Page: Structure</h2>
+      <img src="../HTML5/structure.png" style="float:right"/>      
       <ul>
         <li>Les balises de structure HTML5:</li>
         <ul>
@@ -476,7 +505,8 @@
         <li>CSS partageable</li>
         <li>Reconnaissance par les navigateurs</li>
         <li>Proposition d'un rendu spécifique</li>
-        <li>Idéal pour la table des matières et page perso.</li>            
+        <li>Idéal pour la table des matières et page perso.</li>  
+      </ul>          
     </section>
  
     <section class="slide" id="slide29">
@@ -533,7 +563,7 @@
       <a href="http://www.w3schools.com/js/" target="content">Java Script</a>
     </nav>
     <section id="section">      
-      <iframe name="content" width="100%" height="400"></iframe>
+      <iframe name="content" width="100%" height="400px"></iframe>
     </section>
     <aside id="aside">
       Les logiciels nécessaires:
@@ -548,7 +578,7 @@
     </footer>
   </body>
 </html></xmp></code></pre> 
-<a href="../HTML5/video.html" target="_blank">
+<a href="../HTML5/structure.html" target="_blank">
 <img src="../HTML/try-it-now.png" alt="TryItNow" width="120px" style="float:left"/></a>             
     </section>                
          
