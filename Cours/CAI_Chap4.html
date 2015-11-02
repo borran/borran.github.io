@@ -53,6 +53,8 @@
         <li>Où écrire le CSS?</li>
         <li>Comment appliquer un style?</li>
         <li>Formattage du texte</li>
+        <li>Formattage des liens</li>        
+        <li>Formattage des listes</li>        
         <li>Formattage des tableaux</li>
         <li>La mise en page</li>
       </ul>
@@ -60,117 +62,570 @@
 
     <section class="slide" id="slide3">
       <h2>CSS, qu'est-ce que c'est ? (1/4)</h2>
-      
+      <p><a href="http://csszengarden.com" target="_blank">http://csszengarden.com</a> (HTML+CSS)</p>
+      <img src="../CSS/site.png" alt="HTML+CSS"/>
     </section>
 
     <section class="slide" id="slide4">
       <h2>CSS, qu'est-ce que c'est ? (2/4)</h2>
-         
+      <p>index.html (HTML)</p>
+      <img src="../CSS/html.png" alt="HTML"/>         
     </section>
 
     <section class="slide" id="slide5">
       <h2>CSS, qu'est-ce que c'est ? (3/4)</h2>
-      
+      <p>style.css (CSS)</p>
+      <img src="../CSS/css.png" alt="CSS"/>         
     </section>
 
     <section class="slide" id="slide6">
       <h2>CSS, qu'est-ce que c'est ? (4/4)</h2>
-         
+      <ul>
+        <li>CSS ou les feuilles de style en cascade (<em>Cascading Style Sheets</em>) 
+        forment un langage informatique qui décrit la présentation des documents HTML et XML.</li>
+        <li>Où écrire le CSS?</li>
+        <ol>
+          <li>Dans un fichier <code>.css</code> (méthode la plus recommandée).</li>
+          <li>Dans l’en-tête <code>head</code> du fichier HTML.</li>
+          <li>Directement dans les balises du fichier HTML via l'attribut <code>style</code>
+          (la méthode la moins recommandée).</li>
+        </ol>
+      </ul>  
     </section>
 
     <section class="slide" id="slide7">
-      <h2>CSS, dans un fichier .css</h2>
-      
+      <h2>1. CSS, dans un fichier <code>.css</code></h2>
+      <p>page1.html</p>
+      <img src="../CSS/page1.png" style="float:right" width="40%"/>       
+<pre><code><xmp><!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="utf-8">
+      <link rel="stylesheet" href="style1.css"/>
+      <title>Premiers tests du CSS</title>
+   </head>
+   <body>
+      <h1>Mon super site</h1>
+      <p>Bonjour et bienvenue sur mon site !</p>
+      <p>Pour le moment, mon site est un peu <em>vide</em>. 
+      Patientez encore un peu !</p>
+   </body>
+</html></xmp></code></pre>
+      <a href="../CSS/page1.html" target="_blank">
+      <img src="../HTML/try-it-now.png" alt="TryItNow" width="120px" style="float:left"/></a>
+      <br/>
+      <p>style1.css</p>      
+<pre><code><xmp>p
+{
+	color: blue; 
+	/* Les paragraphes seront en bleu */
+}
+</xmp></code></pre>
     </section>
 
     <section class="slide" id="slide8">
-      <h2>CSS, dans l’en-tête de HTML</h2>
-         
+      <h2>2. CSS, dans l’en-tête de HTML</h2>
+      <p>page2.html</p>
+      <img src="../CSS/page2.png" style="float:right" width="40%"/>       
+<pre><code><xmp><!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="utf-8">
+      <style>
+         p
+         {
+            color: blue;
+         }
+      </style>
+      <title>Premiers tests du CSS</title>
+   </head>
+   <body>
+      <h1>Mon super site</h1>
+      <p>Bonjour et bienvenue sur mon site !</p>
+      <p>Pour le moment, mon site est un peu <em>vide</em>. 
+      Patientez encore un peu !</p>
+   </body>
+</html></xmp></code></pre>
+      <a href="../CSS/page2.html" target="_blank">
+      <img src="../HTML/try-it-now.png" alt="TryItNow" width="120px" style="float:left"/></a>       
     </section>
 
     <section class="slide" id="slide9">
-      <h2>CSS, dans la balise HTML</h2>
-      
+      <h2>3. CSS, dans la balise HTML</h2>
+      <p>page3.html</p>
+      <img src="../CSS/page3.png" style="float:right" width="40%"/>  
+<pre><code><xmp><!DOCTYPE html>      
+<html>
+   <head>
+      <meta charset="utf-8">
+      <title>Premiers tests du CSS</title>
+   </head>
+   <body>
+      <h1>Mon super site</h1>
+      <p style="color: blue;">Bonjour et bienvenue sur mon site!</p>
+      <p>Pour le moment, mon site est un peu <em>vide</em>.
+      Patientez encore un peu !</p>
+   </body>
+</html></xmp></code></pre> 
+      <a href="../CSS/page3.html" target="_blank">
+      <img src="../HTML/try-it-now.png" alt="TryItNow" width="120px" style="float:left"/></a>       
+      <br/>
+      <p>Mais cette fois-ci, seul le texte du premier paragraphe sera coloré en bleu.</p>      
     </section>
 
     <section class="slide" id="slide10">
       <h2>Appliquer un style à plusieurs balises</h2>
-         
+      <p>Le code css suivant:</p>
+	  <img src="../CSS/page4.png" style="float:right" width="40%"/>       
+<pre><code><xmp>h1
+{
+	color: blue;
+}
+em
+{
+	color: blue;
+} 
+</xmp></code></pre> 
+<p>est équivalant à</p>        
+<pre><code><xmp>h1, em
+{
+	color: blue;
+}</xmp></code></pre>
     </section>
        
     <section class="slide" id="slide11">
       <h2>Appliquer un style aux balises spécifiques (1/2)</h2>
-      
+      <p>En utilisant les attributs spéciales: le sélecteur <code>class</code></p> 
+	  <img src="../CSS/page5.png" style="float:right" width="40%"/>       
+<pre><code><xmp><!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="utf-8">
+      <link rel="stylesheet" href="style5.css"/>
+      <title>Premiers tests du CSS</title>
+   </head>
+   <body>
+      <h1>Mon super site</h1>
+      <p class="introduction">Bonjour et bienvenue sur mon site !</p>
+      <p>Pour le moment, mon site est un peu <em>vide</em>. 
+      Patientez encore un peu !</p>
+   </body>
+</html></xmp></code></pre>
+      <a href="../CSS/page5.html" target="_blank">
+      <img src="../HTML/try-it-now.png" alt="TryItNow" width="120px" style="float:left"/></a>       
+      <br/>
+<pre><code><xmp>.introduction
+{
+	color: blue;
+}</xmp></code></pre>       
     </section>
 
     <section class="slide" id="slide12">
       <h2>Appliquer un style aux balises spécifiques (2/2)</h2>
-         
+      <p>En utilisant les attributs spéciales: le sélecteur <code>id</code></p>
+	  <img src="../CSS/page5.png" style="float:right" width="40%"/>       
+<pre><code><xmp><!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="utf-8">
+      <link rel="stylesheet" href="style6.css"/>
+      <title>Premiers tests du CSS</title>
+   </head>
+   <body>
+      <h1>Mon super site</h1>
+      <p id="introduction">Bonjour et bienvenue sur mon site !</p>
+      <p>Pour le moment, mon site est un peu <em>vide</em>. 
+      Patientez encore un peu !</p>
+   </body>
+</html></xmp></code></pre>
+      <a href="../CSS/page6.html" target="_blank">
+      <img src="../HTML/try-it-now.png" alt="TryItNow" width="120px" style="float:left"/></a>       
+      <br/>
+<pre><code><xmp>#introduction
+{
+	color: blue;
+}</xmp></code></pre> 
+	<p>Le <code>id</code> doit être unique dans une page, le sélecteur <code>id</code> est utilisé si vous voulez choisir un seul et unique élément.</p>               
     </section>
 
     <section class="slide" id="slide13">
-      <h2>Les balises universelles: <span></h2>
-      
+      <h2>Les balises universelles: <code>&lt;span&gt;</code></h2>
+      <p>La balise universelle <code>&lt;span&gt;</code> est une balise de type "in-line" qui fournit un moyen pour ajouter de style à une partie d'un texte ou d'une partie d'un document. Cette balise ne produit pas de changement visuel dans le texte par lui-même.</p>
+	  <img src="../CSS/page7.png" style="float:right"/>       
+<pre><code><xmp><!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="utf-8">
+      <link rel="stylesheet" href="style7.css"/>
+      <title>Premiers tests du CSS</title>
+   </head>
+   <body>
+      <h1>Mon super site</h1>
+      <p>Bonjour et <span class="salutation">bienvenue</span> sur mon site !</p>
+      <p>Pour le moment, mon site est un peu <em>vide</em>. 
+      Patientez encore un peu !</p>
+   </body>
+</html></xmp></code></pre> 
+      <a href="../CSS/page7.html" target="_blank">
+      <img src="../HTML/try-it-now.png" alt="TryItNow" width="120px" style="float:left"/></a>        
+      <br/>
+<pre><code><xmp>.salutations
+{
+	color: blue;
+}</xmp></code></pre>    
     </section>
 
     <section class="slide" id="slide14">
-      <h2>Les balises universelles: <div></h2>
-         
+      <h2>Les balises universelles: <code>&lt;div&gt;</code></h2>
+      <p>la balise universelle <code>&lt;div&gt;</code> est une balise de type "block" qui entoure un bloc de texte comme <code>&lt;p&gt;</code>, <code>&lt;h1&gt;</code>, etc. Cette balise crée un nouveau "bloc" dans la page et provoque donc obligatoirement un retour à la ligne.</p> 
+      <img src="../CSS/page8.png" style="float:right" width="40%"/>       
+<pre><code><xmp><!DOCTYPE html><html>
+   <head>
+      <meta charset="utf-8">
+      <link rel="stylesheet" href="style8.css"/>
+      <title>Premiers tests du CSS</title>
+   </head>
+   <body>
+      <div class="block">   
+         <h1>Mon super site</h1>
+         <p>Bonjour et bienvenue sur mon site !</p>
+         <p>Pour le moment, mon site est un peu <em>vide</em>. 
+            Patientez encore un peu !
+         </p>
+      </div>
+   </body>
+</html></xmp></code></pre> 
+      <a href="../CSS/page8.html" target="_blank">
+      <img src="../HTML/try-it-now.png" alt="TryItNow" width="120px" style="float:left"/></a>        
+      <br/>
+<pre><code><xmp>.block
+{
+	color: blue;
+}</xmp></code></pre>          
     </section>   
 
     <section class="slide" id="slide15">
       <h2>Les sélecteurs avancés</h2>
-      
+      <p>Syntax CSS:</p>
+<pre><code><xmp>balise1
+{
+	propriete1: valeur1;
+	propriete2: valuer2;
+}</xmp></code></pre>
+		<p>Au lieu de <code>balise1</code> on peut avoir (<code>A</code> et <code>B</code> sont deux balises distinctes.):</p>
+        <ul>
+          <li><code>*</code>: sélecteur universel (pour choisir toutes les balises)</li>
+          <li><code>A, B</code>: plusieurs balises (on sépare les balise par ',')</li>
+          <li><code>A B</code>: une balise contenue dans une autre (balise <code>B</code> à l'intérieur de la balise <code>A</code>)</li>
+          <li><code>A + B</code>: une balise qui en suit une autre (balise <code>B</code> placée immédiatement après la balise <code>A</code>)</li>
+          <li><code>A[attribut]</code>: une balise qui possède un attribut spécifié</li>
+          <li><code>A[attribut="valeur"]</code>: une balise, un attribut et une valeur exacte</li>
+        </ul>
     </section>
 
     <section class="slide" id="slide16">
       <h2>Formatage du Texte avec CSS: Taille</h2>
-         
+      <ul>             
+        <li>Taille absolue : en pixel</li> 
+<pre><code><xmp>p { font-size: 14px; /* paragraphes de taille 14 pixels */ }
+h1 { font-size: 40px; /* titres de taille 40 pixels */ }</xmp></code></pre>
+        <li>Taille relative :</li>  
+<pre><code><xmp>p { font-size: small; }
+h1 { font-size: large; }</xmp></code></pre>               
+        <ul>
+          <li><code>xx-small</code>: taille minuscule</li>
+          <li><code>x-small</code>: taille très petit</li>
+          <li><code>small</code>: taille petit</li>
+          <li><code>medium</code>: taille moyen</li>
+          <li><code>large</code>: taille grand</li>
+          <li><code>x-large</code>: taille très grand</li>
+          <li><code>xx-large</code>: taille gigantesque</li>
+        </ul>         
     </section>
 
     <section class="slide" id="slide17">
       <h2>Formatage du Texte avec CSS: Police</h2>
-      
+      <ul>
+        <li><strong><code>font-size</code>:</strong> <code>14px</code>, <code>small</code>, <code>0.8em</code>, <code>80%</code></li>
+        <li><strong><code>font-family</code>:</strong> <code>Arial</code>, <code>Arial Black</code>, <code>Comic Sans MS</code>, <code>Courier New</code>, etc.</li>
+        <li><strong><code>font-style</code>:</strong> <code>normal</code>, <code>italic</code>, <code>oblique</code></li>
+        <li><strong><code>font-weight</code>:</strong> <code>normal</code>, <code>bold</code> (en gras)</li>
+        <li><strong><code>text-decoration</code>:</strong> <code>underline</code> (souligné), <code>line-through</code> (barré), <code>overline</code> (ligne au-dessus), <code>blink</code> (clignotant), <code>none</code> (normal)</li>
+        <li><strong><code>text-align</code>:</strong> <code>left</code>, <code>center</code>, <code>right</code>, <code>justify</code> (comme dans les magazines et journaux)</li>   
+      </ul>
+      <p>Exemple:</p>
+      <img src="../CSS/page9.png" style="float:right" width="40%"/>
+<pre><code><xmp>h1 {
+    color: blue;
+    text-align: center;
+    text-decoration: underline;
+}
+</xmp></code></pre>      
     </section>
 
     <section class="slide" id="slide18">
       <h2>Formatage du Texte avec CSS: Couleur</h2>
-         
+      <ul>
+        <li><strong><code>color</code>:</strong> <code>maroon</code>, <code>#FFAA33</code>, <code>rgb(240,96,204)</code></li>
+        <li><strong><code>background-color</code>:</strong> <code>black</code></li>
+        <li><strong><code>background-image</code>:</strong> <code>url("nom.png")</code></li>
+        <li><strong><code>background-attachement</code>:</strong> <code>fixed</code>, <code>scroll</code> (image de fond défile avec le texte)</li>
+        <li><strong><code>background-position</code>:</strong> <code>top</code>, <code>bottom</code>, <code>left</code>, <code>center</code>, <code>right</code>, <code>30px 30px</code></li>
+        <li><strong><code>background-repeat</code>:</strong> <code>no-repeat</code>, <code>repeat-x</code>, <code>repeat-y</code>, <code>repeat</code></li>
+        <li><strong><code>opacity</code>:</strong> exemple <code>0.6</code> (1: totalement opaque; 0: totalement transparent)</li>        
+      </ul>         
+      <p>Exemple:</p> 
+      <img src="../CSS/page10.png" style="float:right" width="40%"/>   
+<pre><code><xmp>
+body
+{
+	background: url("soleil.png") fixed no-repeat top right
+}
+</xmp></code></pre>
     </section>   
      
     <section class="slide" id="slide19">
       <h2>Code hexadécimal de couleur (1/2)</h2>
-      
+      <ul>
+        <li>Les couleurs affichées sur un écran sont le résultat du mélange des 3 couleurs primaires (dites <strong>additives</strong>).
+        <ul>
+          <li>Ces couleurs sont le <span style="color:red">rouge</span>, le <span style="color:green">vert</span> et le <span style="color:blue">bleu</span>.</li>
+          <li>On parle des couleurs <strong>RVB</strong> en français (<strong>RGB</strong> en anglais pour <span style="color:red">red</span>, <span style="color:green">green</span> et <span style="color:blue">blue</span>).</li>
+        </ul>
+        <li>En faisant varier l'intensité de chaque couleur primaire, on peut retrouver toutes les couleurs souhaitées.</li> 
+<p><em>Remarque</em> : nous allons voir qu'en HTML, chaque couleur primaire peut avoir 256 degrés d'intensité, il est donc possible de définir plus de 16 millions de couleurs différentes.</p>      
+      </ul>
     </section>
 
     <section class="slide" id="slide20">
       <h2>Code hexadécimal de couleur (2/2)</h2>
-         
+      <ul>
+        <li>Pour définir une couleur, on utilise le caractère <code>#</code> suivi de six chiffres (0-9) ou lettres (A-F) :</li>
+        <ul>
+          <li>les deux premiers définissent l'intensité du rouge;</li>
+          <li>les deux suivants définissent l'intensité du vert;</li>
+          <li>les deux dernières définissent l'intensité du bleu.</li>
+        </ul>          
+        <li>Elles sont exprimées en format hexadécimal. Les valeurs de chaque couleur peuvent varier entre 0 et 255, ce qui se traduit en format hexadécimal (= base 16) de 00 à FF.</li>      
+<pre><code><xmp><p style="color:#FFFFFF">Texte en blanc</p>
+<p style="color:#000000">Texte en noir</p>
+<p style="color:#888888">Texte en gris</p>
+<p style="color:#FF0000">Texte en rouge</p></xmp></code></pre>
+      <a href="../CSS/colors.html" target="_blank">
+      <img src="../HTML/try-it-now.png" alt="TryItNow" width="120px" style="float:left"/></a>        
+      </ul>  
     </section>
 
     <section class="slide" id="slide21">
       <h2>Noms de couleurs</h2>
-         
+      <p>Les 16 noms de couleur définis par le W3C:</p>
+      <img src="../CSS/colors.png""/>    
+      <p>Tiré de <a href="http://www.w3.org/TR/html4/types.html#h-6.5" target="_blank">http://www.w3.org/TR/html4/types.html#h-6.5</a>.</p>
     </section>
     
     <section class="slide" id="slide22">
-      <h2>Formatage du Texte avec CSS: apparence dynamique</h2>
-         
-    </section>
-    
+      <h2>Formatage des Liens avec CSS (1/2)</h2>
+      <p>Comment changer l'apparence:</p>
+      <ul>
+        <li>Au survol: <code>hover</code></li>
+        <li>Lors du clique: <code>active</code></li>
+        <li>Lors du focus (élément sélectionné): <code>focus</code></li>
+        <li>Lorsqu'un lien a été consulté: <code>visited</code></li>
+      </ul>   
+      <p>Exemple CSS: (attention l'ordre est important!)</p>
+<pre><code><xmp>a /* Liens par défaut (non survolés) */
+{
+	color: red;
+}
+a:visited /* Quand le visiteur a déjà vu la page concernée */
+{
+	color: green;
+}
+a:hover /* Apparence au survol des liens */
+{
+	color: hotpink;
+}
+a:active /* Quand le visiteur clique sur le lien */
+{
+	color: blue;
+}
+a:focus /* Quand le visiteur sélectionne le lien */
+{
+	color: gray;
+}
+</xmp></code></pre>
+	</section>
+	
     <section class="slide" id="slide23">
-      <h2>Formatage des Tableaux avec CSS</h2>
-         
+      <h2>Formatage des Liens avec CSS (2/2)</h2>
+      <p>Exemple d'utilisation:</p>      
+<pre><code><xmp><h1>Quelques bonnes adresses</h1>
+<p>Vous connaissez <a href="https://www.google.ch/">Google</a>?</p>
+<p>Vous connaissez <a href="http://www.w3.org/">le W3C</a>?</p>
+<p>Vous connaissez <a href="https://openclassrooms.com/">le OpenClassrooms</a>?</p>      
+</xmp></code></pre> 
+      <a href="../CSS/liens.html" target="_blank">
+      <img src="../HTML/try-it-now.png" alt="TryItNow" width="120px" style="float:left"/></a>                
+      <img src="../CSS/liens.png" style="float:right" width="40%"/>       
     </section>
     
     <section class="slide" id="slide24">
-      <h2>La mise en page</h2>
-         
-    </section>
+      <h2>Formatage des Lists avec CSS</h2>
+      <p>Exemple CSS:</p>
+<pre><code><xmp>ul.a {
+    list-style-type: circle;
+}
+ul.b {
+    list-style-type: square;
+}
+ol.c {
+    list-style-type: upper-roman;
+}
+ol.d {
+    list-style-type: lower-alpha;
+}
+</xmp></pre></code>
+	<p>Exemple d'utilisation:</p>
+	<img src="../CSS/listes.png" style="float:right" width="40%"/> 
+<pre><code><xmp><p>Example of unordered lists:</p>
+<ul class="a">
+  <li>Coffee</li>
+  <li>Tea</li>
+  <li>Coca Cola</li>
+</ul>
+<ul class="b">
+  <li>Coffee</li>
+  <li>Tea</li>
+  <li>Coca Cola</li>
+</ul>
+<p>Example of ordered lists:</p>
+<ol class="c">
+  <li>Coffee</li>
+  <li>Tea</li>
+  <li>Coca Cola</li>
+</ol>
+<ol class="d">
+  <li>Coffee</li>
+  <li>Tea</li>
+  <li>Coca Cola</li>
+</ol>
+</xmp></code></pre>
+      <a href="../CSS/listes.html" target="_blank">
+      <img src="../HTML/try-it-now.png" alt="TryItNow" width="120px" style="float:left"/></a>                
+    </section>    
     
     <section class="slide" id="slide25">
+      <h2>Formatage des Tableaux avec CSS (1/2)</h2>
+      <ul>
+        <li><strong><code>border</code>:</strong> <code>1px solid black</code></li>
+        <li><strong><code>border-collapse</code>:</strong> <code>collapse</code>, <code>separate</code></li>
+        <li><strong><code>caption-side</code>:</strong> <code>top</code>, <code>bottom</code></li>
+      </ul>
+      <img src="../CSS/border.png" alt="border"/>               
+    </section>
+    
+    <section class="slide" id="slide26">
+      <h2>Formatage des Tableaux avec CSS (2/2)</h2>
+      <p>Exemple CSS:</p>
+<pre><code><xmp>table, th, td {
+   border: 1px solid green;
+}
+table {
+    border-collapse: collapse;
+}
+th {
+    background-color: green;
+    color: white;
+    padding: 15px;
+}
+td {
+    text-align: left;    
+}
+</xmp></code></pre>   
+	  <p>Exemple d'utilisation:</p>
+	  <img src="../CSS/tables.png" style="float:right" width="40%"/>
+<pre><code><xmp><table>
+  <tr>
+    <th>Firstname</th>
+    <th>Lastname</th>
+    <th>Savings</th>
+  </tr>
+  <tr>
+    <td>Peter</td>
+    <td>Griffin</td>
+    <td>$100</td>
+  </tr>
+  <tr>
+    <td>Lois</td>
+    <td>Griffin</td>
+    <td>$150</td>
+  </tr>
+  <tr>
+    <td>Joe</td>
+    <td>Swanson</td>
+    <td>$300</td>
+  </tr>
+</table>
+</xmp></code></pre>	  	           
+      <a href="../CSS/tables.html" target="_blank">
+      <img src="../HTML/try-it-now.png" alt="TryItNow" width="120px" style="float:left"/></a>                
+    </section> 
+       
+    <section class="slide" id="slide27">
+      <h2>La mise en page avec propriété <code>float</code></h2>
+      <p>Exemple CSS:</p>
+<pre><code><xmp>div {
+    border: 3px solid blue;
+    width: 620px;    
+}
+nav {
+    float: left;
+    width: 200px;
+    border: 3px dashed green;
+}
+section {
+    margin-left: 210px;
+    width: 400px;    
+    border: 3px dotted red;
+}
+</xmp></code></pre>   
+	  <p>Exemple d'utilisation:</p>
+	  <img src="../CSS/structure.png" style="float:right" width="40%"/>
+<pre><code><xmp><div>
+  <nav>
+    <h1>Nav</h1>
+  </nav> 
+  <section>
+    <h1>Section1</h1>
+  </section>
+  <section>
+    <h1>Section2</h1>
+  </section>
+</div>
+</xmp></code></pre>	  	           
+      <a href="../CSS/structure.html" target="_blank">
+      <img src="../HTML/try-it-now.png" alt="TryItNow" width="120px" style="float:left"/></a>      
+    </section> 
+           
+    <section class="slide" id="slide28">
+      <h2>La mise en page</h2>
+      <ul>
+        <li>On distingue deux type de balises en HTML:</li>
+        <ul>
+          <li>Le type <strong>block</strong> (<code>p</code>, <code>h1</code>,...): ces balises créent un retour à la ligne et occupent par défaut toute la largeur disponible. Elle se suivent de haut en bas.</li>
+          <li>Le type <strong>inline</strong> (<code>a</code>, <code>strong</code>, ...): ces balise délimitent du texte au milieu d'une ligne. Elle se suivent de gauche à droite.</li>
+        </ul>
+        <li>On peut modifier la taille d'une balise de type block avec les propriété CSS <code>width</code> (largeur) et <code>height</code> (hauteur).</li>
+        <li>On peut définir des minima et maxima autorisés pour la largeur et la hauteur: <code>min-width</code>, <code>max-width</code>, <code>min-height</code>, <code>max-height</code>.</li>
+        <li>Les éléments de la page disposent de marges intérieures (<code>padding</code>) et extérieurs (<code>margin</code>, <code>margin-top</code>, <code>margin-left</code>, etc.).</li>
+        <li>S'il y a trop de texte à l'intérieur d'un bloc de dimensions fixes, il y a le risque de débordement: On peut ajouter des barres de défilement avec la propriété CSS <code>overflow</code> ou de forcer la césure avec <code>word-wrap</code>.</li> 
+        <li>On utilise la propriété <code>float</code> pour placer un texte auteur des images:  <code>left</code>, <code>right</code>, <code>both</code></li>                
+      </ul>   
+    </section>     
+          
+    <section class="slide" id="slide29">
       <h2>Questions?!</h2>    
-      <img src="../Figures/chapitre0.png" alt="Questions?!"/>
+      <img src="../Figures/questions.png" alt="Questions?!"/>
     </section>
                                                   
     <!-- deck.navigation snippet -->
