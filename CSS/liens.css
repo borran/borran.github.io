@@ -1,0 +1,20 @@
+a /* Liens par défaut (non survolés) */
+{
+	color: red;
+}
+a:hover /* Apparence au survol des liens */
+{
+	color: hotpink;
+}
+a:active /* Quand le visiteur clique sur le lien */
+{
+	color: blue;
+}
+a:focus /* Quand le visiteur sélectionne le lien */
+{
+	color: gray;
+}
+a:visited /* Quand le visiteur a déjà vu la page concernée */
+{
+	color: green;
+}
