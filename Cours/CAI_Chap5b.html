@@ -49,37 +49,334 @@
     <section class="slide" id="slide2">
       <h2>Sommaire</h2>
       <ul>
-        <li>Internet, qu'est-ce que c'est?</li>
-        <li>Connexion à Internet</li>
-        <li>Services Internet</li>
-        <li>Le Web</li>
-        <li>Conception de pages Web</li>
+        <li>Transmettre des données de page en page</li>
+        <ul>
+          <li>Transmettre des données avec l'URL</li>
+          <li>Transmettre des données avec les formulaires</li>
+        </ul>
       </ul>
     </section>
 
     <section class="slide" id="slide3">
-      <h2>Qu'est-ce qu'Internet?</h2>
+      <h2>Transmettre des données avec l'URL</h2>
       <ul>
-        <li>Internet</li>
-          <ul>
-            <li>INTERconnected NETworks (en anglais)</li>
-            <li>une interconnexion de réseaux</li>
-          </ul>
+        <li>Exemple: comment chercher le mot <code>php</code> sur Google?</li>
+          <ol>
+            <li>Chercher avec l'interface de Google</li>
+            <li>Chercher directement avec l'URL: <a href="http://www.google.ch/search?q=php
+" target="_blank">http://www.google.ch/search?q=php</a></li>
+          </ol>
         </li>
-      </ul>
-      <blockquote cite="http://example.org">
-      <p>Internet est un réseau des réseaux.</p>
-      </blockquote>         
+        <li>Syntax:</li>
+        <code><font color="red">http://</font>nom_site<font color="red">/</font>nom_page<font color="red">?</font>param1<font color="red">=</font>val1<font color="red">&</font>param2<font color="red">=</font>val2</code>
+        <li>Exemple:</li>
+        <code>http://www.monsite.com/bonjour.php?nom=Dupont&prenom=Jean</code>
+      </ul>         
     </section>
 
     <section class="slide" id="slide4">
-      <h2>Et un réseau, qu'est-ce que c'est?</h2>
+      <h2>Exemple (avec l'URL)</h2> 
+      <p>Nous avons deux fichiers:</p>
       <ul>
-        <li>Un réseau d'ordinateurs est un ensemble d'ordinateurs connectés les uns aux autres par un moyen quelconque.</li>
+        <li><code>page.html</code></li>
+<pre><code><xmp><!DOCTYPE html>
+<html>
+  <head><title>Page</title></head>
+  <body>
+    <a href="bonjour.php?nom=Dupont&prenom=Jean">Dis-moi Bonjour!</a>
+  </body>
+</html>
+</xmp></code></pre>        
+        <li><code>bonjour.php</code></li>
+<pre><code><xmp><?php
+   echo "Bonjour " . $_GET['prenom']  . " " . $_GET['nom'] . "!";
+?>
+</xmp></code></pre> 
       </ul>
-      <img src="../Figures/reseau.png" alt="Réseau">             
+      <img src="../PHP/url_exemple.png" alt="URL Exemple"/>
+    </section>
+
+    <section class="slide" id="slide5">
+      <h2>Exemple (avec l'URL)</h2> 
+      <p>Nous avons deux fichiers:</p>
+      <ul>
+        <li><code>page.html</code></li>
+<pre><code><xmp><!DOCTYPE html>
+<html>
+  <head><title>Page</title></head>
+  <body>
+    <a href="bonjour.php?nom=Dupont&prenom=Jean">Dis-moi Bonjour!</a>
+  </body>
+</html>
+</xmp></code></pre>        
+        <li><code>bonjour.php</code></li>
+<pre><code><xmp><?php
+   if (isset($_GET['prenom']) AND isset($_GET['nom'])) {
+      echo 'Bonjour ' . $_GET['prenom'] . ' ' . $_GET['nom'] . ' !';
+   }
+   else { // Il manque des paramètres, on avertit le visiteur 
+      echo 'Il faut renseigner un nom et un prénom !';
+   } 
+?>
+</xmp></code></pre> 
+      </ul>
+    </section>
+
+    <section class="slide" id="slide6">
+      <h2>Transmettre des données avec l'URL</h2>    
+      <ul>
+        <li>Une URL représente l'adresse d'une page web (commençant généralement par <code>http://</code>)</li>
+        <li>Lorsqu'on fait un lien vers une page, il est possible d'ajouter des paramètres sous la forme
+        <code>nom_page.php?param1=val1&param2=val2</code>
+        qui seront transmis à la page.</li>
+        <li>La page <code>nom_page.php</code> dans l'exemple précédent recevra ces paramètres dans un tableau nommé <code>$_GET</code>:</li>
+        <ul>
+          <li><code>$_GET['param1']</code> aura pour valeur <code>val1</code>.</li>
+          <li><code>$_GET['param2']</code> aura pour valeur <code>val2</code>.</li>
+        </ul>
+        <li>Il faut pas faire confiance aux informations envoyé par l'URL, et il faut tester prudemment leur valeur avant de les utiliser.</li>
+      </ul>
+    </section>
+
+    <section class="slide" id="slide7">
+      <h2>Transmettre des données avec les formulaires</h2>    
+      <p>Rappel sur les formulaires:</p>
+      <ul>
+        <li>Les formulaires sont des éléments HTML permettant de récupérer des données auprès des visiteurs d'une page Web. Ils sont délimités par les balises <code>&lt;form&gt;</code> et <code>&lt;/form&gt;</code> (voir Chapitre3c).</li>
+        <li>L'attribut <code>action</code> permet de spécifier la page vers laquelle les données doivent être envoyées.</li>
+        <li>L'attribut <code>method</code> permet de spécifier si les données doivent être encodées dans l'URL (<code>method="GET"</code>) ou dans le corps de la requête HTTP (<code>method="POST"</code>).</li>
+        <li>On attribue un nom à chaque élément du formulaire à l'aide de leur attribut <code>name</code>.</li>
+      </ul>
+    </section>    
+
+    <section class="slide" id="slide8">
+      <h2>Récupérer des données</h2>  
+      <ul>
+        <li>PHP se charge de récupérer les données envoyées depuis un formulaire et de les placer dans une variable <strong>superglobale</strong> (variable un peu particulière propre au langage PHP).</li>
+        <li>Selon que la méthode du formulaire utilisée est <code>POST</code> ou <code>GET</code>, l'accès à une valeur d'un champ de formulaire nommé <code>nomChamp</code> s'écrit comme suit:</li>
+        <ul>
+          <li><code>$valeur = $_POST['nomChamp'];</code></li>
+          ou
+          <li><code>$valeur = $_GET['nomChamp'];</code></li>
+        </ul>
+      </ul>  
     </section>
     
+    <section class="slide" id="slide9">
+      <h2>Exemple (avec Formulaire)</h2>    
+      <p>Code d'un formulaire HTML basique, <code>form.html</code>:</p>
+<pre><code><xmp><!DOCTYPE html>
+<html>
+  <head><meta charset="utf-8"><title>Formulaire</title></head>
+  <body>
+    <form action="myPage.php" method="GET">
+      <table>
+        <tr>
+          <td>Nom : </td><td><input type="text" name="name"/></td>
+        </tr>
+        <tr>
+          <td>Prénom : </td><td><input type="text" name="surname"/></td>
+        </tr>
+        <tr>
+          <td></td><td><input type="submit"/></td>
+        </tr>
+      </table>
+    </form>
+  </body>
+</html>
+</xmp></code></pre>
+    </section>
+    
+    <section class="slide" id="slide10">
+      <h2>Exemple (page PHP)</h2>    
+      <p>Code de la page PHP chargée de récupérer les données du formulaire et de les afficher, <code>myPage.php</code>:</p>
+<pre><code><xmp><?php
+   $nom    = $_GET['name'];
+   $prenom = $_GET['surname'];
+?>
+<html>
+  <head>
+    <title>Ma page</title>
+  </head>
+  <body>
+    <h1>Bonjour <?php echo $prenom; ?> !</h1>
+    <p>Ton nom de famille est <b><?php echo $nom; ?></b>
+  </body>
+</html>
+</xmp></code></pre>      
+    </section>
+
+    <section class="slide" id="slide11">
+      <h2>Résultat de l'exemple</h2>    
+      <p><code>form.html</code></p>
+      <img src="../PHP/form.png" alt="form"/>
+      <p><code>myPage.php</code></p>  
+      <img src="../PHP/myPage.png" alt="myPage"/>    
+    </section>    
+
+    <section class="slide" id="slide12">
+      <h2>POST ou GET?</h2>    
+      <ul>
+        <li>La méthode <code>POST</code> est utilisée pour transmettre des données via un formulaire et passer en <strong>"caché"</strong> (via une deuxième requête HTTP, après la première qui demande la page html/php), on ne voit pas les données des variables explicitement.</li>
+        <li>Contrairement à <code>POST</code>, la méthode <code>GET</code> passe les variables via l'url (en une seule requête HTTP), les données sont donc "visible" dans l'adresse de la page.</li>
+        <li><em>Attention:</em> un URL est limitée à 255 caractères!</li>
+      </ul>
+    </section>
+
+    <section class="slide" id="slide13">
+      <h2>Variables superglobales</h2>  
+      <ul>
+        <li>Elles sont écrites en majuscules et commencent toutes, à une exception près, par un underscore <code>_</code>.</li>
+        <li>Elles sont des tableaux car elles contiennent généralement de nombreuses informations.</li>
+        <li>Elles sont automatiquement créées par PHP à chaque fois qu'une page est chargée. Elles existent donc sur toutes les pages et sont accessibles partout : au milieu de votre code, au début, dans les fonctions, etc.</li>
+        <li>Exemple: Le code <code>$_SERVER['REMOTE_ADDR']</code> nous donne l'adresse IP du client qui a demandé à voir la page, ce qui peut être utile pour l'identifier.</li>
+      </ul>  
+    </section>
+                        
+    <section class="slide" id="slide14">
+      <h2>Sessions</h2> 
+      <ul>
+        <li>Les sessions constituent un moyen de conserver/stocker des variables sur le serveur le temps de la présence d'un visiteur sur toutes les pages de votre site.</li>
+        <li>Ceci ne serait pas facile avec <code>GET</code> et <code>POST</code> car ils sont plutôt faits pour transmettre les informations une seule fois, d'une page à une autre.</li>
+        <li>Mais alors comment se fait-il que, lorsque je me connecte à ma boîte aux lettres Hotmail, le site ne me demande pas un mot de passe à chaque clic?</li>
+        <li>Comment Hotmail sait-il qu'il s'agit de requêtes HTTP envoyées par moi-même?</li>
+<pre><code><xmp>$_SESSION['prenom'] = "Fatemeh";
+$prenom = $_SESSION['prenom'];
+</xmp></code></pre>                
+      </ul>   
+    </section>
+    
+    <section class="slide" id="slide15">
+      <h2>Fonctions à connaître</h2>  
+      <ul>
+        <li>Dans une page PHP, pour pouvoir utiliser les variables de session, il faut <strong>toujours</strong> commencer par invoquer la méthode <code>session_start()</code>.</li>
+        <li><code>session_start()</code>: démarre le système de sessions. Si le visiteur vient d'arriver sur le site, alors un numéro de session est généré pour lui. Vous devez appeler cette fonction au tout début de chacune des pages où vous avez besoin des variables de session.</li>
+        <li><code>session_destroy()</code>: ferme la session du visiteur. Cette fonction est automatiquement appelée lorsque le visiteur ne charge plus de page de votre site pendant plusieurs minutes (c'est le <strong>timeout</strong>), mais vous pouvez aussi créer une page <strong>Déconnexion</strong> si le visiteur souhaite se déconnecter manuellement.</li>
+      </ul>  
+    </section>    
+
+    <section class="slide" id="slide16">
+      <h2>Exemple (création de session)</h2>    
+      <p>Code d'une page PHP chargée de créer deux variables de session, <code>saveSession.php</code>:</p>
+<pre><code><xmp><?php
+   session_start();
+   $_SESSION['nom']    = "Borran";
+   $_SESSION['prenom'] = "Fatemeh";
+?>
+<!DOCTYPE html>
+<html>
+  <head>
+	<meta charset="utf-8">
+    <title>Créer une session</title>
+  </head>
+  <body>
+    <b> Session créée ! </b>
+    <a href="restoreSession.php"> Autre page </a>
+  </body>
+</html>
+</xmp></code></pre>      
+    </section>
+
+    <section class="slide" id="slide17">
+      <h2>Exemple (récupération des valeurs)</h2>    
+      <p>Code de la page PHP chargée de récupérer les valeurs des deux variables de session, <code>restoreSession.php</code>:</p>      
+<pre><code><xmp><?php
+   session_start();
+   $nom    = $_SESSION['nom'];
+   $prenom = $_SESSION['prenom'];
+?>
+<!DOCTYPE html>
+<html>
+  <head>
+	<meta charset="utf-8">
+	<title>Restaurer une session</title>
+  </head>
+  <body>
+    <b> Contenu de la session : </b><br/><br/>
+    Nom : <b><?php echo($nom); ?></b><br/>
+    Prenom : <b><?php echo($prenom); ?></b>
+  </body>
+</html>
+</xmp></code></pre>       
+    </section>
+                                    
+    <section class="slide" id="slide18">
+      <h2>Exemple (utilisation)</h2>    
+      <p><code>saveSession.php</code></p>
+      <img src="../PHP/saveSession.png" alt="saveSession"/>
+      <p><code>restoreSession.php</code></p>
+      <img src="../PHP/restoreSession.png" alt="restoreSession"/>
+    </section>
+    
+    <section class="slide" id="slide19">
+      <h2>L'utilité des sessions</h2> 
+      <ul>
+        <li>Imaginez un script qui demande un login et un mot de passe pour qu'un visiteur puisse se "connecter" (s'authentifier). On peut enregistrer ces informations dans des variables de session et se souvenir de l'identifiant du visiteur sur toutes les pages du site!</li>
+        <li>Puisqu'on retient son login et que la variable de session n'est créée que s'il  réussi à s'authentifier, on peut l'utiliser pour restreindre certaines pages de notre site à certains visiteurs uniquement. Cela permet de créer toute une zone d'administration sécurisée : si la variable de session login existe, on affiche le contenu, sinon on affiche une erreur.</li>
+        <li>On se sert activement des sessions sur les sites de vente en ligne. Cela permet de gérer un "panier": on retient les produits que commande le client quelle que soit la page où il est. Lorsqu'il valide sa commande, on récupère ces informations et... on le fait payer.</li>
+      </ul>   
+    </section>    
+                                      
+    <section class="slide" id="slide20">
+      <h2>exemple.php (1/2)</h2>
+<pre><code><xmp><?php
+   session_start();
+   if (!isset($_POST['nom']) OR !isset($_POST['prenom']) 
+       OR !isset($_POST['sexe'])) {
+      if (!isset($_SESSION['nbr'])) {
+         $_SESSION['nbr'] = 0;
+      }
+      else {
+         $_SESSION['nbr'] = $_SESSION['nbr'] + 1;
+         echo "Cela fait " . $_SESSION['nbr'] . 
+              " fois que tous les champs ne sont pas remplis!<br/>";
+      }
+   }
+   else {
+      echo "Bonjour " . $_POST['prenom'] . " " . $_POST['nom'] . " <br/>";
+      $result = "";
+      if ($_POST['sexe'] == "F") {
+         $result = "une femme";
+      }
+      else {
+         $result = "un homme";
+      }
+      echo "Vous êtes {$result}";
+      session_destroy();
+   }
+?>
+</xmp></code></pre>          
+    </section>
+    
+    <section class="slide" id="slide21">
+      <h2>exemple.php (2/2)</h2>    
+<pre><code><xmp><!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Bonjour</title>
+  </head>
+  <body>	
+    <form method="post" action="exemple.php">
+      <label> Nom : </label>
+      <input type="text" name="nom"/><br/>
+      <label> Prenom : </label>
+      <input type="text" name="prenom"/><br/>
+      <label> Sexe :</label>
+      <input type="radio" name="sexe" value="F"/>Femme
+      <input type="radio" name="sexe" value="H"/>Homme<br/>
+      <input type="submit" value="Envoyer"/>
+    </form>						
+  </body>
+</html>
+</xmp></code></pre>        
+    </section>    
+                                                
+    <section class="slide" id="slide22">
+      <h2>Questions?!</h2>    
+      <img src="../Figures/questions.png" alt="Questions?!"/>
+    </section>
+        
     <!-- deck.navigation snippet -->
     <div aria-role="navigation">
       <a href="#" class="deck-prev-link" title="Previous">&#8592;</a>

@@ -49,37 +49,605 @@
     <section class="slide" id="slide2">
       <h2>Sommaire</h2>
       <ul>
-        <li>Internet, qu'est-ce que c'est?</li>
-        <li>Connexion à Internet</li>
-        <li>Services Internet</li>
-        <li>Le Web</li>
-        <li>Conception de pages Web</li>
+        <li>Pages statiques vs. dynamiques</li>
+        <li>Serveur Web</li>
+        <li>Bases du langage PHP</li>
+        <ul>
+          <li>Ecrire du code PHP</li>
+          <li>Séquence d'instructions</li>
+          <li>Variables (Simple, Composite)</li>
+          <li>Opérations (arithmétiques, logiques, comparaisons)</li>
+          <li>Fonction <code>echo</code></li>
+          <li>Sélection avec <code>if</code></li>
+          <li>Boucles <code>for</code> et <code>while</code></li>
+          <li>Fonction <code>isset</code></li>
+        </ul>
       </ul>
     </section>
 
     <section class="slide" id="slide3">
-      <h2>Qu'est-ce qu'Internet?</h2>
+      <h2>Pages statiques</h2>
       <ul>
-        <li>Internet</li>
-          <ul>
-            <li>INTERconnected NETworks (en anglais)</li>
-            <li>une interconnexion de réseaux</li>
-          </ul>
-        </li>
-      </ul>
-      <blockquote cite="http://example.org">
-      <p>Internet est un réseau des réseaux.</p>
-      </blockquote>         
+        <li><em>Rappel:</em> Jusqu'à présent, nous avons étudié HTML, qui est un langage permettant de décrire des pages Web.</li>
+        <li>HTML <u>seul</u> (i.e. sans l'aide d'un autre langage) ne permet de réaliser que des pages <strong>statiques</strong>:</li>
+        <ul>
+          <li>Un fichier HTML correspond à un et un seul contenu;</li>
+          <li>Pour créer un nouveau contenu, il faut créer un nouveau fichier.</li>
+        </ul>
+        <li>Mais alors comment sont faits les sites comme FlickR, FaceBook, Youtube, les moteurs de recherche ou les Blogs?</li>
+        <ul>
+          <li>Est-ce qu'ils sont constitués de milliers de fichiers HTML différents? Que se passerait-il alors si leur webmaster décidait d'ajouter une fonctionnalité (ex: voter pour une page)?</li>
+        </ul>          
+      </ul>       
     </section>
 
     <section class="slide" id="slide4">
-      <h2>Et un réseau, qu'est-ce que c'est?</h2>
+      <h2>Pages dynamiques</h2>
       <ul>
-        <li>Un réseau d'ordinateurs est un ensemble d'ordinateurs connectés les uns aux autres par un moyen quelconque.</li>
-      </ul>
-      <img src="../Figures/reseau.png" alt="Réseau">             
+        <li>Divers langages de programmation peuvent être utilisés <u>conjointement</u> avec HTML pour réaliser des pages Web <strong>dynamiques</strong>, où le contenu pourra varier en fonction:</li>
+        <ul>
+          <li>Des paramètres reçus depuis un formulaire;</li>
+          <li>Des informations récoltées sur le visiteur;</li>
+          <li>Du contenu d'une base de données;</li>
+          <li>Etc.</li>
+        </ul>
+        <li>Dans ce cours, nous aborderons le <strong>langage PHP</strong>.</li>
+        <li><em>Important:</em> La page Web affichée dans le navigateur est toujours en HTML. Mais son code HTML est en partie généré automatiquement à l'aide d'un <strong>script</strong>. Du point de vue de l'utilisateur, il n'y a aucune différence entre une page statique ou une page dynamique.</li>
+      </ul>            
     </section>
     
+    <section class="slide" id="slide5">
+      <h2>Pages statiques vs. dynamiques</h2>
+      <ul>
+        <li><strong>Pages statiques:</strong> exécutées uniquement sur le navigateur du client.</li>
+        <img src="../Figures/page_statique.png" alt="Page Statique"/>
+        <li><strong>Pages dynamiques:</strong> exécutées d'abord sur le serveur pour produire du HTML, puis sur le navigateur du client.</li>
+        <img src="../Figures/page_dynamique.png" alt="Page Dynamique"/>
+	  </ul>
+    </section>
+
+    <section class="slide" id="slide6">
+      <h2>Pages dynamiques avec PHP</h2>
+      <ul>
+        <li>PHP est un langage de <strong>script</strong>, que l'on incorpore dans une page HTML normale et qui est exécuté sur le <u>serveur Web</u>.</li>
+        <li>Lorsqu'un client envoie une requête pour obtenir une page PHP:</li>
+        <ol>
+          <li>Le serveur exécute le script PHP;</li>
+          <li>Le script va éventuellement envoyer des requêtes vers une <em>base de données</em> comme MySQL pour récupérer des données (<em>cet aspect ne sera pas traité dans ce cours</em>);</li>
+          <li>Sur la base de ces informations, le script PHP génère une page HTML standard;</li>
+          <li>Le serveur renvoie le code HTML ainsi généré au client, qui pourra l'afficher comme n'importe quelle page statique.</li>
+        </ol>
+      </ul>
+    </section>
+    
+    <section class="slide" id="slide7">
+      <h2>Visualisation de pages dynamiques</h2>
+      <ul>
+        <li>Comme nous l'avons vu, une page statique peut être visualisée directement depuis le navigateur Web.</li>
+        <li>Une page dynamique doit être interprétée avant de pouvoir être visualisée. Elle ne peut donc pas être visualisée depuis l'explorateur de fichiers.</li>
+        <li>Pour visualiser une page dynamique, on devra donc la placer sur un serveur Web capable d'interpréter le code dynamique.</li>        
+      </ul>
+      <img src="../Figures/page_php.png" alt="Page PHP"/>
+    </section>
+    
+    <section class="slide" id="slide8">
+      <h2>Serveur Web</h2>
+      <ul>
+        <li>Pour naviguer sur un site Web dynamique, celui-ci doit être <em>déployé</em> sur un serveur distant (hébergeur), ou sur un serveur local:</li>     
+        <a href="http://www.hostarea.ch/" target="_blank"><img src="../Figures/hostarea.png" alt="hostarea" style="float:right"/></a>         
+        <ul>        
+          <li>Chez un hébergeur Web supportant unlangage de script(ex: PHP, ASP, ...)</li>                                                     
+          <li>Sur sa machine en local en utilisant les logiciels</li>
+          <ul>
+            <li>Serveur WAMP (Windows) MAMP (MAC OS)</li>
+            <li>EasyPHP</li>            
+            <li>Apache HTTP serveur</li>
+          </ul> 
+          <a href="http://www.wampserver.com/" target="_blank"><img src="../Figures/wamp.png" alt="WAMP Server" style="float:left"/></a>
+          <a href="http://www.easyphp.org/" target="_blank"><img src="../Figures/easyphp.png" alt="EasyPHP"/></a>                         
+        </ul>
+        <li>Dans ce cours nous allonsutiliser un serveur local (avec EasyPHP).</li>
+      </ul>
+    </section>
+            
+    <section class="slide" id="slide9">
+      <h2>Serveur Web - EasyPHP</h2>
+      <ol>
+        <li>Installer EasyPHP sur sa machine;</li>
+        <li>Placer les fichiers du site dans le répertoire <code>www</code>;</li>
+        <li>Démarrer EasyPHP;</li>
+        <li>Accéder à son site avec l'adresse suivante:
+        <img src="../HTML/correct.png" alt="Correct" style="float:right"/>
+        </li> 
+        <code>http://127.0.0.1/maPage.php</code>
+        <li><em>Important:</em> si vous tentez d'accéder à la page par le système de fichiers, le code PHP ne sera pas interprété:
+        <img src="../HTML/faux.png" alt="Faux" style="float:right"/>
+        </li> 
+        <code>C:/wamp/www/maPage.php</code>
+      </ol>
+    </section>            
+              
+    <section class="slide" id="slide10">
+      <h2>Ecrire du code PHP (1/2)</h2>
+      <ul>
+        <li>Une page PHP est essentiellement identique à une page HTML. Comme pour HTML, il s'agit d'un simple fichier texte contenant du code.</li>
+        <ul>
+          <li>On donnera l'extension <code>.php</code> à une page PHP, au lieu de <code>.html</code> (pour indiquer au serveur qu'il doit interpréter la page avant de la retourner).</li>
+        </ul>
+        <li>On peut insérer du code PHP directement dans le code HTML, aux endroits où l'on souhaite appliquer des traitements dynamiques (calculs, affichages, ...).</li>
+        <li>Pour délimiter des zones de code PHP placés dans une page HTML, on utilise les délimiteurs <code>&lt;?php</code> et <code>?&gt;</code>.</li>
+      </ul>
+    </section>              
+    
+    <section class="slide" id="slide11">
+      <h2>Ecrire du code PHP (2/2)</h2>
+      <p>Le code PHP n'apparaît pas dans la page HTML reçue par le client. Seul le résultat de son interprétation apparaîtra.</p>
+<pre><code><xmp><?php
+   /* (une série d'instructions PHP ici ...)
+   (par exemple : récupération des données d'un formulaire) */
+?>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><?php (CODE PHP ICI) ?></title>
+  </head>
+  <body>
+    <h1> Bonjour <?php (CODE PHP ICI) ?> ! </h1>
+    <p> Voici une photo : </p>
+    <img src="<?php (CODE PHP ICI) ?>"/>
+  </body>
+</html>
+</xmp></code></pre>
+    </section>
+
+    <section class="slide" id="slide12">
+      <h2>Séquence d'instructions</h2>
+      <ul>
+        <li>Une instruction correspond à un ordre donné à PHP de la part du programmeur. Les instructions peuvent être de différentes natures:</li>
+        <ul>
+          <li>Définition d'une variable;</li>
+          <li>Appel d'une fonction;</li>
+          <li>Etc.</li>
+        </ul>
+        <li>Chaque instruction PHP doit être terminée par un point-virgule: <code>;</code>.</li>
+        <li>En général, on s'arrangera pour n'écrire qu'une instruction par ligne.</li>
+      </ul>
+    </section>
+
+    <section class="slide" id="slide13">
+      <h2>Variables</h2>
+      <ul>
+        <li>Tout comme en mathématiques, une variable est une boîte portant un <strong>nom symbolique</strong> et contenant une <strong>valeur</strong>.</li>
+        <li>Le nom d'une variable PHP <strong>commence toujours</strong> par le caractère <code>$</code>, suivi d'une lettre ou d'un trait de soulignement, puis d'une série de lettres, chiffres ou traits de soulignement.</li>
+        <li>Exemples de <font color="green">variable correcte</font>:
+        <img src="../HTML/correct.png" alt="Correct" style="float:right"/>        
+        </li>
+        <code style="color:green">$maVariable</code>, <code style="color:green">$i</code>, <code style="color:green">$nom_de_famille</code>, <code style="color:green">$j23</code>        
+        <li>Exemples de <font color="red">variable fausse</font>: 
+        <img src="../HTML/faux.png" alt="Faux" style="float:right"/>
+        </li>
+        <code style="color:red">$1234</code>, <code style="color:red">maVariable</code>, <code style="color:red">$test#1</code>, <code style="color:red">$ma variable</code>        
+      </ul>
+    </section>
+    
+    <section class="slide" id="slide14">
+      <h2>Types de variables: simples</h2>
+      <ul>
+        <li>Une variable PHP peut indifféremment contenir une valeur numérique, une chaîne de caractères, une valeur booléenne, etc.</li>
+        <li>On utilise l'opérateur <code>=</code> pour affecter une valeur à une variable (la valeur peut être calculée à partir d’une autre variable).</li>
+<pre><code><xmp><?php
+   $nom       = "Noël";                /* une chaîne de caractères */
+   $prenom    = "Bernie";              /* une chaîne de caractères */
+   $photo     = "Bernie_Portrait.jpg"; /* une chaîne de caractères */
+   $naissance = 1982;                  /* valeur numérique de type entier */
+   $age       = 2014 - $naissance;     /* valeur numérique de type entier */
+   $taille    = 1.78;                  /* valeur numérique de type décimal */
+   $en_vie    = true;                  /* valeur booléenne */
+   $marie     = false;                 /* valeur booléenne */
+?>
+</xmp></code></pre> 
+      </ul>     
+    </section>
+    
+    <section class="slide" id="slide15">
+      <h2>Types de variables: tableaux</h2>
+      <ul>
+        <li>Un tableau (ou un <strong>array</strong>) est une variable composée qui peut prendre plusieurs valeurs.</li>
+        <li>Il y a deux types de tableaux:</li>
+        <ul>
+          <li>Les tableaux numérotés</li>
+          <li>Les tableaux associatifs</li>
+        </ul>        
+      </ul>
+    </section>
+                        
+    <section class="slide" id="slide16">
+      <h2>Les tableaux numérotés</h2>
+      <p>Le code PHP suivant:</p>
+<pre><code><xmp><?php 
+   // La fonction array permet de créer un array 
+   $prenoms = array('François', 'Michel', 'Nicole');
+?> 
+</xmp></code></pre>      
+      <p>est équivalant à:</p>
+<pre><code><xmp><?php 
+   $prenoms[0] = 'François'; 
+   $prenoms[1] = 'Michel'; 
+   $prenoms[2] = 'Nicole';
+?> 
+</xmp></code></pre>  
+      <p>on peut afficher un élément du tableau en utilisant:</p>     
+<pre><code><xmp><?php 
+   echo $prenoms[1];
+?> 
+</xmp></code></pre>       
+    </section>            
+              
+    <section class="slide" id="slide17">
+      <h2>Les tableaux associatifs</h2>
+      <p>Le code PHP suivant:</p>      
+<pre><code><xmp><?php 
+   $coordonnees = array (
+      'prenom' => 'François',
+      'nom' => 'Dupont',
+      'adresse' => '3 Rue du Paradis', 
+      'ville' => 'Marseille'); 
+?> 
+</xmp></code></pre> 
+      <p>est équivalant à:</p>
+<pre><code><xmp><?php
+   $coordonnees['prenom'] = 'François'; 
+   $coordonnees['nom'] = 'Dupont'; 
+   $coordonnees['adresse'] = '3 Rue du Paradis'; 	
+   $coordonnees['ville'] = 'Marseille';
+?>
+</xmp></code></pre> 
+      <p>on peut afficher un élément du tableau en utilisant:</p>  
+<pre><code><xmp><?php 
+   echo $coordonnees['ville'];
+?>
+</xmp></code></pre> 
+      
+    </section>              
+    
+    <section class="slide" id="slide18">
+      <h2>Opérations arithmétiques</h2>
+      <p><strong>Opérations de base:</strong> addition (<code>+</code>); soustraction (<code>-</code>); multiplication (<code>*</code>); division (<code>/</code>); modulo (<code>%</code>)
+</p>
+<pre><code><xmp><?php
+   $nombre = 5 + 2; // La variable nombre prend la valeur 7
+   $nombre = 5 - 2; // La variable nombre prend la valeur 3
+   $nombre = 5 * 2; // La variable nombre prend la valeur 10
+   $nombre = 5 / 2; // La variable nombre prend la valeur 2
+   $nombre = 5 % 2; // La variable nombre prend la valeur 1
+   
+   // Allez on rajoute un peu de difficulté
+   $nombre = 5 + 2 * 3;     // La variable nombre prend la valeur 11
+   $nombre = (5 + 2) * 3;   // La variable nombre prend la valeur 21
+   $nombre = $nombre – 9.6; // La variable nombre prend la valeur 11.4
+?>
+</xmp></code></pre>
+    </section>
+    
+    <section class="slide" id="slide19">
+      <h2>Opérations logiques</h2>
+      <p><strong>Opérations de base:</strong> <code>AND</code> (et); <code>OR</code> (ou); <code>!</code> (inversion).</p>
+<pre><code><xmp><?php
+   $op1 = true;  // op1 est vrai
+   $op2 = false; // op2 est faux
+   // Opération et
+   $op3 = ($op1 AND $op1); // op3 est vrai
+   $op4 = ($op1 AND $op2); // op4 est faux
+   $op5 = ($op2 AND $op2); // op5 est faux
+   // Opération ou
+   $op6 = ($op1 OR $op1); // op6 est vrai
+   $op7 = ($op1 OR $op2); // op7 est vrai
+   $op8 = ($op2 OR $op2); // op8 est faux
+   // Opréation inversion
+   $op9 = ! $op1; // op9 est faux
+?>
+</xmp></code></pre>      
+    </section>
+
+    <section class="slide" id="slide20">
+      <h2>Opérations comparaisons</h2>
+      <p><strong>Opérations de base:</strong> <code>==</code> (égalité); <code>!=</code> (inégalité); <code>&lt;</code>; <code>&gt;</code>; <code>&lt;=</code>; <code>&gt;=</code></p>
+<pre><code><xmp><?php
+   $nombre1 = 2; 
+   $nombre2 = 5;
+   
+   $cond1 = ($nombre1 == $nombre2); // cond1 est faut
+   $cond2 = ($nombre1 != $nombre2); // cond2 est vrai
+   $cond3 = ($nombre1 < $nombre2);  // cond3 est vrai
+   $cond4 = ($nombre1 > $nombre2);  // cond4 est faut
+   $cond5 = ($nombre1 <= $nombre1); // cond5 est vrai
+   $cond6 = ($nombre2 >= $nombre2); // cond6 est vrai
+?>
+</xmp></code></pre>      
+    </section>
+    
+    <section class="slide" id="slide21">
+      <h2>Concaténation</h2>
+      <ul>
+        <li>On peut assembler du texte (chaine de caractères; string en anglais) et des variables.</li>
+        <li>Concaténation est une opération sur les chaines de caractères.</li>
+<pre><code><xmp><?php
+   $bonjour = "Hello";
+   $monde = " world!";
+   $salutation = $bonjour . $monde; 
+   // salutation prend la valeur "Hello world!"
+   $age = 17;
+   $texte = "Le visiteur a " . $age . " ans";
+   // texte prend la valeur "Le visiteur a 17 ans";
+?>
+</xmp></code></pre>
+      </ul>      
+    </section>
+    
+    <section class="slide" id="slide22">
+      <h2>La fonction <code>echo</code></h2>
+      <ul>
+        <li>PHP fournit un certain nombre de <strong>fonctions</strong> permettant en principe d'appliquer des traitements aux variables, et éventuellement de retourner une valeur.</li>
+        <li>Une fonction est caractérisée par un nom, suivi d'une paire de parenthèses dans lesquelles on placera éventuellement une série de paramètres.</li>
+        <li><code>echo $maVariable</code>: Permet d'afficher la valeur de la variable <code>$maVariable</code> dans le code HTML, à l'emplacement où l'instruction PHP apparaît dans le code.</li>
+        <li><code>echo "texte"</code>: Permet d'afficher le texte entre <code>"</code> et <code>"</code></li>
+<pre><code><xmp><?php
+   $texte = "On peut utiliser des \" dans texte.";
+   echo $texte; // On peut utiliser des " dans texte.
+?>
+</xmp></code></pre>       
+      </ul>
+    </section>
+                  
+    <section class="slide" id="slide23">
+      <h2>Exemple d'utilisation de <code>echo</code></h2>
+<pre><code><xmp><?php
+   $titre = "Page Personnelle de Bernie";
+   $nom   = "Bernie";
+   $photo = "Bernie_Portrait.jpg";
+?>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><?php echo $titre; ?></title>
+  </head>
+  <body>
+    <h1> Bonjour <?php echo $nom; ?> ! </h1>
+    <p> Voici une photo : </p>
+    <img src="<?php echo $photo; ?>"/>
+  </body>
+</html>
+</xmp></code></pre>     
+    </section>            
+              
+    <section class="slide" id="slide24">
+      <h2>Résultat de l'exemple précédent</h2>
+      <ul>
+        <li>Page reçue par le client lorsqu'il demande la page PHP au serveur Web.</li> 
+        <li>Notez qu'il ne voit que le résultat de l'exécution du script:</li>
+<pre><code><xmp><!DOCTYPE html>
+<html>
+  <head>
+    <title>Page Personnelle de Bernie</title>
+  </head>
+  <body>
+    <h1> Bonjour Bernie ! </h1>
+    <p> Voici une photo : </p>
+    <img src="Bernie_Portrait.jpg"/>
+  </body>
+</html>
+</xmp></code></pre> 
+      </ul>      
+    </section>              
+    
+    <section class="slide" id="slide25">
+      <h2>Sélection (1/2)</h2>
+      <ul>
+        <li>Une sélection (ou structure conditionnelle) est une structure de contrôle permettant de n'exécuter une série d’instructions que si une <strong>condition</strong> donnée est vraie.</li>
+        <li>On utilise le mot-clé <code>if</code> (si) pour effectuer une sélection en PHP. La syntaxe précise est la suivante:</li>
+<pre><code><xmp><?php
+   if (/* condition à tester */) {
+      /* instructions à exécuter si la condition est vraie */
+   }
+?>
+</xmp></code></pre>        
+        <li>On utilise des <strong>opérateurs de comparison</strong> pour créer une condition.</li>        
+      </ul>
+    </section>
+
+    <section class="slide" id="slide26">
+      <h2>Sélection (2/2)</h2>
+      <ul>
+        <li>Les mots-clé <code>else</code> (sinon) et <code>else if</code> (sinon si) s'utilisent en complément au <code>if</code>, et permettent de définir des blocs dans lesquels les instructions ne seront exécutées que si la condition du <code>if</code> précédent est fausse.</li>
+<pre><code><xmp><?php
+   if (/* condition 1 à tester */) {
+      /* instructions exécutées si la condition 1 est vraie */
+   } else if (/* condition 2 à tester */) {
+      /* instructions à exécutées si la condition 2 est vraie */
+   } else {
+      /* instructions exécutées si aucune des deux conditions n'est vraie */
+   }
+?>
+</xmp></code></pre>
+      </ul>      
+    </section>
+
+    <section class="slide" id="slide27">
+      <h2>Exemple de sélection</h2>
+<pre><code><xmp><?php
+   $prenom = "Bernie";
+   $nom = "Noel";
+?>
+<!DOCTYPE html>
+<html>
+  <head><title>Page Bonjour</title></head>
+  <body>
+    <?php 
+      if ($prenom == "Bernie") {
+         echo "<b>Bonjour Bernie !</b>";
+      } else {
+         echo "<b>Bonjour inconnu !</b>";
+      }
+    ?>
+  </body>
+</html>
+</xmp></code></pre>      
+    </section>
+    
+    <section class="slide" id="slide28">
+      <h2>Résultat de l'exemple précédent</h2>
+      <ul>
+        <li>Page reçue par le client lorsqu'il demande la page PHP au serveur Web. Notez que si la variable <code>$prenom</code> avait contenu une autre valeur que <code>"Bernie"</code>, le résultat aurait été différent.</li>         
+<pre><code><xmp><!DOCTYPE html>
+<html>
+  <head><title>Page Bonjour</title></head>
+  <body>
+    <b>Bonjour Bernie !</b>
+  </body>
+</html>
+</xmp></code></pre>
+      </ul>           
+    </section>
+    
+    <section class="slide" id="slide29">
+      <h2>Exemple de condition complexe</h2>
+      <ul>
+        <li>Une condition peut être relativement complexe. Avec les opérateur <code>AND</code> (et), <code>OR</code> (ou) et <code>!</code> (inversion) il est possible d'exprimer n'importe quelle condition logique.</li>
+<pre><code><xmp><?php
+   $prenom = "Ernest";
+   $nom    = "Noel";
+   $marie  = TRUE;
+   if (!marie OR ($prenom != "Bernie" AND $nom == "Noel")) {
+      echo "Soit tu n'es pas marié, soit tu es de
+            la famille de Bernie (mais pas Bernie),
+            ou alors tu es les deux à la fois !";
+   }
+?>
+</xmp></code></pre>      
+      </ul>
+    </section>
+                        
+    <section class="slide" id="slide30">
+      <h2>Boucles (1/2)</h2>
+      <ul>
+        <li>Une boucle permet de répéter des instructions plusieurs fois.</li>
+        <li>Ceci est pour un gain du temps et d’espace; en pratique indispensable.</li>
+        <li>Comment fonctionne une boucle?</li>
+        <ol>
+          <li>comme d'habitude, les instructions sont d'abord exécutées dans l'ordre, de haut en bas (flèche rouge);</li>
+          <li>à la fin des instructions, on retourne à la première (flèche verte);</li>
+          <li>on recommence à lire les instructions dans l'ordre (flèche rouge);</li>
+          <li>et on retourne à la première(flèche verte);</li>
+          <li>etc.,etc.</li>
+          <img src="../Figures/boucle.png" style="float:right"/>
+        </ol>        
+      </ul>
+    </section>            
+              
+    <section class="slide" id="slide31">
+      <h2>Boucles (2/2)</h2>
+      <ul>
+        <li>Le seul problème dans ce schéma est que ça ne s'arrête jamais!</li>
+        <li>Les instructions seraient réexécutées à l'infini! C'est pour cela que, quel que soit le type de boucle (<code>while</code> ou <code>for</code>), il faut indiquer une <strong>condition</strong>.</li>
+        <li>Tant que la condition est remplie, les instructions sont réexécutées.</li>
+        <li>Dès que la condition n'est plus remplie, on sort enfin de la boucle.</li>        
+      </ul>
+    </section>              
+    
+    <section class="slide" id="slide32">
+      <h2>Boucle <code>while</code></h2>
+      <ul>
+        <li><code>while</code> peut se traduire par "tant que".</li>
+        <li>Ici, on demande à PHP: <em>tant que <code>$continuer_boucle</code> est vrai, exécuter ces instructions</em>.</li>
+        <li>Les instructions qui sont répétées en boucle se trouvent entre les accolades <code>{</code> et <code>}</code>.</li>
+<pre><code><xmp><?php 
+   while ($continuer_boucle == true) {
+      // instruction à exécuter dans la boucle 
+   } 
+?> 
+</xmp></code></pre>      
+      </ul>
+    </section>
+
+    <section class="slide" id="slide33">
+      <h2>Exemple de boucle while</h2>
+<pre><code><xmp><?php 
+   $nombre_de_lignes = 1; 
+   while ($nombre_de_lignes <= 100) {
+      echo 'Ceci est la ligne n°' . $nombre_de_lignes . '<br/>';
+      $nombre_de_lignes++;
+   } 
+?> 
+</xmp></code></pre>      
+    </section>
+
+    <section class="slide" id="slide34">
+      <h2>Boucle <code>for</code></h2>
+      <ul>
+        <li><code>for</code> est un autre type de boucle, dans une forme un peu plus condensée et plus commode à écrire.</li>
+        <li>Cependant, sachez que <code>for</code> et <code>while</code> donnent le même résultat et servent à la même chose: répéter des instructions en boucle.</li>
+        <li>L'une peut paraître plus adaptée que l'autre dans certains cas, cela dépend aussi des goûts.</li>
+<pre><code><xmp><?php
+   for (initialisation; condition; mise-à-jour) {
+      // instruction à exécuter dans la boucle 
+   } 
+?> 
+</xmp></code></pre>
+      </ul>      
+    </section>
+    
+    <section class="slide" id="slide35">
+      <h2>Exemple de boucle <code>for</code></h2>
+<pre><code><xmp><?php 
+   for ($nombre_de_lignes = 1; $nombre_de_lignes <= 100; $nombre_de_lignes++) {
+      echo 'Ceci est la ligne n°' . $nombre_de_lignes . '<br/>'; 
+   } 
+?> 
+</xmp></code></pre>       
+    </section>
+    
+    <section class="slide" id="slide36">
+      <h2>Boucle <code>while</code> ou <code>for</code>?</h2>
+      <ul>
+        <li>La boucle <code>while</code> est plus simple et plus flexible: on peut faire tous les types de boucles avec mais on peut oublier de faire certaines étapes comme l'incrémentation de la variable!</li>
+        <li>En revanche, <code>for</code> est bien adapté quand on doit compter le nombre de fois que l'on répète les instructions et il permet de ne pas oublier de faire l'incrémentation pour augmenter la valeur de la variable!</li>
+        <li>Si vous hésitez entre les deux, il suffit simplement de vous poser la question suivante: <strong>"Est-ce que je sais d'avance combien de fois je veux que mes instructions soient répétées?"</strong>. Si la réponse est oui, alors la boucle <code>for</code> est tout indiquée. Sinon, alors il vaut mieux utiliser la boucle <code>while</code>.</li>
+      </ul>
+    </section>            
+            
+    <section class="slide" id="slide37">
+      <h2>La fonction <code>isset</code></h2>
+      <ul>
+        <li><code>isset($maVariable)</code>: Permet de savoir si la variable <code>$maVariable</code> a été définie au préalable (si elle contient une valeur).</li>
+        <li>On utilisera en général cette fonction dans la condition d'une sélection pour savoir si une variable peut être utilisée (si elle vient d'un formulaire notamment).</li>
+<pre><code><xmp><?php 
+   if ( ! isset($test) ) {
+      echo "La variable $test n'est pas définie !";
+   } else {
+      echo "La variable $test vaut : " . $test;
+   }
+?>
+</xmp></code></pre> 
+      </ul>     
+    </section>            
+              
+    <section class="slide" id="slide38">
+      <h2>Références</h2>
+      <ul>
+        <li>Manuel de référence du langage PHP: 
+        <a href="http://www.php.net/manual/fr/" target="_blank">http://www.php.net/manual/fr/</a></li>
+        <li>Un tutoriel en anglais sur W3Schools: 
+        <a href="http://www.w3schools.com/php/php_intro.asp" target="_blank">http://www.w3schools.com/php/php_intro.asp</a></li>
+        <li>Editeur enligne pour PHP: 
+        <a href="http://phpfiddle.org/" target="_blank">http://phpfiddle.org/</a></li>
+      </ul>
+    </section>              
+    
+    <section class="slide" id="slide39">
+      <h2>Questions?!</h2>    
+      <img src="../Figures/questions.png" alt="Questions?!"/>
+    </section>
+        
     <!-- deck.navigation snippet -->
     <div aria-role="navigation">
       <a href="#" class="deck-prev-link" title="Previous">&#8592;</a>
