@@ -7,7 +7,6 @@
 	$texte = "Le visiteur a " . $age . " ans";
 	// $texte = "Le visiteur a 17 ans";
 ?>
-
 <!DOCTYPE html>
 <html>
   <head>

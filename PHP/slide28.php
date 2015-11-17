@@ -1,6 +1,5 @@
 <?php
    $prenom = "Bernie";
-   $nom = "Noël";
 ?>
 <!DOCTYPE html>
 <html>

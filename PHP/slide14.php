@@ -15,6 +15,6 @@
     <h1> Bonjour <?php echo($nom); ?> ! </h1>
     <p> Ton prénom est <?php echo($prenom); ?> </p>
     <p> Ta date de naissance est <?php echo($naissance); ?>. </p>
-    <p> Tu as <?php echo(2014 - $naissance); ?> ans! </p>
+    <p> Tu as <?php echo(2015 - $naissance); ?> ans! </p>
   </body>
 </html>

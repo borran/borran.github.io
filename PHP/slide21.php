@@ -1,16 +1,13 @@
 <?php
 	$nombre1 = 2; 
 	$nombre2 = 5;
-
-	$cond1 = ($nombre1 == $nombre2); // $cond1 est faut
+	$cond1 = ($nombre1 == $nombre2); // $cond1 est faux
 	$cond2 = ($nombre1 != $nombre2); // $cond2 est vrai
 	$cond3 = ($nombre1 < $nombre2);  // $cond3 est vrai
-	$cond4 = ($nombre1 > $nombre2);  // $cond4 est faut
+	$cond4 = ($nombre1 > $nombre2);  // $cond4 est faux
 	$cond5 = ($nombre1 <= $nombre1); // $cond5 est vrai
 	$cond6 = ($nombre2 >= $nombre2); // $cond6 est vrai
 ?>
-
-
 <!DOCTYPE html>
 <html>
   <head>

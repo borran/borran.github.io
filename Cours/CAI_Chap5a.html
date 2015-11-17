@@ -64,7 +64,7 @@
         </ul>
       </ul>
     </section>
-
+    
     <section class="slide" id="slide3">
       <h2>Pages statiques</h2>
       <ul>
@@ -80,7 +80,7 @@
         </ul>          
       </ul>       
     </section>
-
+    
     <section class="slide" id="slide4">
       <h2>Pages dynamiques</h2>
       <ul>
@@ -105,7 +105,7 @@
         <img src="../Figures/page_dynamique.png" alt="Page Dynamique"/>
 	  </ul>
     </section>
-
+    
     <section class="slide" id="slide6">
       <h2>Pages dynamiques avec PHP</h2>
       <ul>
@@ -136,8 +136,8 @@
         <li>Pour naviguer sur un site Web dynamique, celui-ci doit être <em>déployé</em> sur un serveur distant (hébergeur), ou sur un serveur local:</li>     
         <a href="http://www.hostarea.ch/" target="_blank"><img src="../Figures/hostarea.png" alt="hostarea" style="float:right"/></a>         
         <ul>        
-          <li>Chez un hébergeur Web supportant unlangage de script(ex: PHP, ASP, ...)</li>                                                     
-          <li>Sur sa machine en local en utilisant les logiciels</li>
+          <li>Chez un hébergeur Web supportant un langage de script(ex: PHP, ASP, ...)</li>                                                     
+          <li>Sur sa machine en local en utilisant un des logiciels:</li>
           <ul>
             <li>Serveur WAMP (Windows) MAMP (MAC OS)</li>
             <li>EasyPHP</li>            
@@ -146,10 +146,10 @@
           <a href="http://www.wampserver.com/" target="_blank"><img src="../Figures/wamp.png" alt="WAMP Server" style="float:left"/></a>
           <a href="http://www.easyphp.org/" target="_blank"><img src="../Figures/easyphp.png" alt="EasyPHP"/></a>                         
         </ul>
-        <li>Dans ce cours nous allonsutiliser un serveur local (avec EasyPHP).</li>
+        <li>Dans ce cours nous allons utiliser un serveur local (avec EasyPHP).</li>
       </ul>
     </section>
-            
+
     <section class="slide" id="slide9">
       <h2>Serveur Web - EasyPHP</h2>
       <ol>
@@ -203,7 +203,8 @@
     <section class="slide" id="slide12">
       <h2>Séquence d'instructions</h2>
       <ul>
-        <li>Une instruction correspond à un ordre donné à PHP de la part du programmeur. Les instructions peuvent être de différentes natures:</li>
+        <li>Une instruction correspond à un ordre donné à PHP de la part du programmeur.</li> 
+        <li>Les instructions peuvent être de différentes natures:</li>
         <ul>
           <li>Définition d'une variable;</li>
           <li>Appel d'une fonction;</li>
@@ -234,7 +235,7 @@
       <h2>Types de variables: simples</h2>
       <ul>
         <li>Une variable PHP peut indifféremment contenir une valeur numérique, une chaîne de caractères, une valeur booléenne, etc.</li>
-        <li>On utilise l'opérateur <code>=</code> pour affecter une valeur à une variable (la valeur peut être calculée à partir d’une autre variable).</li>
+        <li>On utilise l'opérateur <code>=</code> pour affecter une valeur à une variable (la valeur peut être calculée à partir d'une autre variable).</li>
 <pre><code><xmp><?php
    $nom       = "Noël";                /* une chaîne de caractères */
    $prenom    = "Bernie";              /* une chaîne de caractères */
@@ -244,12 +245,59 @@
    $taille    = 1.78;                  /* valeur numérique (décimal) */
    $en_vie    = true;                  /* valeur booléenne */
    $marie     = false;                 /* valeur booléenne */
-?>
-</xmp></code></pre> 
+?></xmp></code></pre> 
       </ul>     
     </section>
-    
+
     <section class="slide" id="slide15">
+      <h2>Types de variables: simples (exemple1)</h2>    
+<pre><code><xmp><?php
+   $titre = "Page Personnelle de Bernie";
+   $nom   = "Bernie";
+   $photo = "Bernie_Portrait.jpg";
+?>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><?php echo($titre); ?></title>
+  </head>
+  <body>
+    <h1> Bonjour <?php echo($nom); ?> ! </h1>
+    <p> Voici une photo : </p>
+    <img src="<?php echo($photo); ?>" border="0"/>
+  </body>
+</html></xmp></code></pre>    
+      <a href="http://localhost/CAI/slide11.php" target="_blank">
+      <img src="../HTML/try-it-now.png" alt="TryItNow" width="120px" style="float:left"/></a>      
+    </section>
+
+    <section class="slide" id="slide16">
+      <h2>Types de variables: simples (exemple2)</h2>    
+<pre><code><xmp><?php
+   $titre = "Page Personnelle de Bernie";
+   $nom       = "Noël";
+   $prenom    = "Bernie";
+   $photo     = "Bernie_Portrait.jpg";
+   $naissance = 1982;
+?>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title><?php echo($titre); ?></title>
+  </head>
+  <body>
+    <h1> Bonjour <?php echo($nom); ?> ! </h1>
+    <p> Ton prénom est <?php echo($prenom); ?> </p>
+    <p> Ta date de naissance est <?php echo($naissance); ?>. </p>
+    <p> Tu as <?php echo(2015 - $naissance); ?> ans! </p>
+  </body>
+</html></xmp></code></pre>    
+      <a href="http://localhost/CAI/slide14.php" target="_blank">
+      <img src="../HTML/try-it-now.png" alt="TryItNow" width="120px" style="float:left"/></a>      
+    </section>
+            
+    <section class="slide" id="slide17">
       <h2>Types de variables: tableaux</h2>
       <ul>
         <li>Un tableau (ou un <strong>array</strong>) est une variable composée qui peut prendre plusieurs valeurs.</li>
@@ -259,36 +307,58 @@
           <li>Les tableaux associatifs</li>
         </ul>        
       </ul>
-    </section>
-                        
-    <section class="slide" id="slide16">
+    </section>                           
+
+    <section class="slide" id="slide18">
       <h2>Les tableaux numérotés</h2>
       <p>Le code PHP suivant:</p>
 <pre><code><xmp><?php 
    // La fonction array permet de créer un array 
-   $prenoms = array('François', 'Michel', 'Nicole');
+   $prenoms = array('François', 'Michel', 'Nicole');
 ?> 
 </xmp></code></pre>      
       <p>est équivalant à:</p>
 <pre><code><xmp><?php 
-   $prenoms[0] = 'François'; 
+   $prenoms[0] = 'François'; 
    $prenoms[1] = 'Michel'; 
    $prenoms[2] = 'Nicole';
 ?> 
-</xmp></code></pre>  
+</xmp></code></pre>           
       <p>on peut afficher un élément du tableau en utilisant:</p>     
 <pre><code><xmp><?php 
    echo $prenoms[1];
 ?> 
-</xmp></code></pre>       
+</xmp></code></pre>        
     </section>            
-              
-    <section class="slide" id="slide17">
+
+    <section class="slide" id="slide19">
+      <h2>Les tableaux numérotés (exemple) </h2>
+<pre><code><xmp><?php
+   $titre = "Array";
+   $prenoms = array ('François', 'Michel', 'Nicole');
+?>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title><?php echo($titre); ?></title>
+  </head>
+  <body>
+    <p> $prenoms[0] = <?php echo $prenoms[0] ?> </p>
+    <p> $prenoms[1] = <?php echo $prenoms[1] ?> </p>
+    <p> $prenoms[2] = <?php echo $prenoms[2] ?> </p>    
+  </body>
+</html></xmp></code></pre>  
+      <a href="http://localhost/CAI/slide16.php" target="_blank">
+      <img src="../HTML/try-it-now.png" alt="TryItNow" width="120px" style="float:left"/></a>           
+    </section>   
+        
+    <section class="slide" id="slide20">
       <h2>Les tableaux associatifs</h2>
       <p>Le code PHP suivant:</p>      
 <pre><code><xmp><?php 
    $coordonnees = array (
-      'prenom' => 'François',
+      'prenom' => 'François',
       'nom' => 'Dupont',
       'adresse' => '3 Rue du Paradis', 
       'ville' => 'Marseille'); 
@@ -306,11 +376,37 @@
 <pre><code><xmp><?php 
    echo $coordonnees['ville'];
 ?>
-</xmp></code></pre> 
-      
+</xmp></code></pre>       
     </section>              
-    
-    <section class="slide" id="slide18">
+        
+    <section class="slide" id="slide21">
+      <h2>Les tableaux associatifs (exemple) </h2>
+<pre><code><xmp><?php
+   $titre = "Array";
+   $coordonnees = array (
+      'prenom' => 'François', 
+      'nom' => 'Dupont', 
+      'adresse' => '3 Rue du Paradis', 
+      'ville' => 'Marseille');
+?>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title><?php echo($titre); ?></title>
+  </head>
+  <body> 
+    <p> $coordonnees['prenom'] = <?php echo $coordonnees['prenom']; ?> </p>
+    <p> $coordonnees['nom'] = <?php echo $coordonnees['nom']; ?> </p>
+    <p> $coordonnees['adresse'] = <?php echo $coordonnees['adresse']; ?> </p> 
+    <p> $coordonnees['ville'] = <?php echo $coordonnees['ville']; ?> </p>              
+  </body>
+</html></xmp></code></pre>  
+      <a href="http://localhost/CAI/slide18.php" target="_blank">
+      <img src="../HTML/try-it-now.png" alt="TryItNow" width="120px" style="float:left"/></a>           
+    </section>       
+                     
+    <section class="slide" id="slide22">
       <h2>Opérations arithmétiques</h2>
       <p><strong>Opérations de base:</strong> addition (<code>+</code>); soustraction (<code>-</code>); multiplication (<code>*</code>); division (<code>/</code>); modulo (<code>%</code>)
 </p>
@@ -329,7 +425,37 @@
 </xmp></code></pre>
     </section>
     
-    <section class="slide" id="slide19">
+    <section class="slide" id="slide23">
+      <h2>Opérations arithmétiques (exemple)</h2>
+<pre><code><xmp><?php
+   $nombre = 5 + 2; // La variable nombre prend la valeur 7
+   $nombre = 5 - 2; // La variable nombre prend la valeur 3
+   $nombre = 5 * 2; // La variable nombre prend la valeur 10
+   $nombre = 5 / 2; // La variable nombre prend la valeur 2
+   $nombre = 5 % 2; // La variable nombre prend la valeur 1
+   
+   // Allez on rajoute un peu de difficulté
+   $nombre1 = 5 + 2 * 3;      // La variable nombre prend la valeur 11
+   $nombre2 = (5 + 2) * 3;    // La variable nombre prend la valeur 21
+   $nombre3 = $nombre2 - 9.6; // La variable nombre prend la valeur 11.4
+?>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Opérations arithmétiques</title>
+  </head>
+  <body>    
+    <p> $nombre1 = <?php echo $nombre1; ?> </p>
+    <p> $nombre2 = <?php echo $nombre2; ?> </p>
+    <p> $nombre3 = <?php echo $nombre3; ?> </p>             
+  </body>
+</html></xmp></code></pre>  
+      <a href="http://localhost/CAI/slide19.php" target="_blank">
+      <img src="../HTML/try-it-now.png" alt="TryItNow" width="120px" style="float:left"/></a>           
+    </section> 
+        
+    <section class="slide" id="slide24">
       <h2>Opérations logiques</h2>
       <p><strong>Opérations de base:</strong> <code>AND</code> (et); <code>OR</code> (ou); <code>!</code> (inversion).</p>
 <pre><code><xmp><?php
@@ -349,24 +475,94 @@
 </xmp></code></pre>      
     </section>
 
-    <section class="slide" id="slide20">
+    <section class="slide" id="slide25">
+      <h2>Opérations logiques (exemple)</h2>
+<pre><code><xmp><?php
+   $op1 = true;  // op1 est vrai
+   $op2 = false; // op2 est faux
+   // Opération et
+   $op3 = ($op1 AND $op1); // op3 est vrai
+   $op4 = ($op1 AND $op2); // op4 est faux
+   $op5 = ($op2 AND $op2); // op5 est faux
+   // Opération ou
+   $op6 = ($op1 OR $op1); // op6 est vrai
+   $op7 = ($op1 OR $op2); // op7 est vrai
+   $op8 = ($op2 OR $op2); // op8 est faux
+   // Opréation inversion
+   $op9 = ! $op1; // op9 est faux
+?>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Opérations logiques</title>
+  </head>
+  <body>    
+    <p> $op1 = <?php echo $op1; ?> </p>
+    <p> $op2 = <?php echo $op2; ?> </p>
+    <p> $op3 = <?php echo $op3; ?> </p>
+    <p> $op4 = <?php echo $op4; ?> </p>
+    <p> $op5 = <?php echo $op5; ?> </p>
+    <p> $op6 = <?php echo $op6; ?> </p>                           
+    <p> $op7 = <?php echo $op7; ?> </p>    
+    <p> $op8 = <?php echo $op8; ?> </p>    
+    <p> $op9 = <?php echo $op9; ?> </p>    
+  </body>
+</html>
+</xmp></code></pre> 
+      <a href="http://localhost/CAI/slide20.php" target="_blank">
+      <img src="../HTML/try-it-now.png" alt="TryItNow" width="120px" style="float:left"/></a>      
+    </section>
+    
+    <section class="slide" id="slide26">
       <h2>Opérations comparaisons</h2>
       <p><strong>Opérations de base:</strong> <code>==</code> (égalité); <code>!=</code> (inégalité); <code>&lt;</code>; <code>&gt;</code>; <code>&lt;=</code>; <code>&gt;=</code></p>
 <pre><code><xmp><?php
    $nombre1 = 2; 
    $nombre2 = 5;
    
-   $cond1 = ($nombre1 == $nombre2); // cond1 est faut
+   $cond1 = ($nombre1 == $nombre2); // cond1 est faux
    $cond2 = ($nombre1 != $nombre2); // cond2 est vrai
    $cond3 = ($nombre1 < $nombre2);  // cond3 est vrai
-   $cond4 = ($nombre1 > $nombre2);  // cond4 est faut
+   $cond4 = ($nombre1 > $nombre2);  // cond4 est faux
    $cond5 = ($nombre1 <= $nombre1); // cond5 est vrai
    $cond6 = ($nombre2 >= $nombre2); // cond6 est vrai
 ?>
 </xmp></code></pre>      
     </section>
-    
-    <section class="slide" id="slide21">
+
+    <section class="slide" id="slide27">
+      <h2>Opérations comparaisons (exemple)</h2>
+<pre><code><xmp><?php
+   $nombre1 = 2; 
+   $nombre2 = 5;
+   $cond1 = ($nombre1 == $nombre2); // cond1 est faux
+   $cond2 = ($nombre1 != $nombre2); // cond2 est vrai
+   $cond3 = ($nombre1 < $nombre2);  // cond3 est vrai
+   $cond4 = ($nombre1 > $nombre2);  // cond4 est faux
+   $cond5 = ($nombre1 <= $nombre1); // cond5 est vrai
+   $cond6 = ($nombre2 >= $nombre2); // cond6 est vrai
+?>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Opérations logiques</title>
+  </head>
+  <body>    
+    <p> $cond1 = <?php echo $cond1; ?> </p>
+    <p> $cond2 = <?php echo $cond2; ?> </p>
+    <p> $cond3 = <?php echo $cond3; ?> </p>
+    <p> $cond4 = <?php echo $cond4; ?> </p>
+    <p> $cond5 = <?php echo $cond5; ?> </p>
+    <p> $cond6 = <?php echo $cond6; ?> </p>   
+  </body>
+</html></xmp></code></pre>
+      <a href="http://localhost/CAI/slide21.php" target="_blank">
+      <img src="../HTML/try-it-now.png" alt="TryItNow" width="120px" style="float:left"/></a>       
+    </section>
+
+    <section class="slide" id="slide28">
       <h2>Concaténation</h2>
       <ul>
         <li>On peut assembler du texte (chaine de caractères; string en anglais) et des variables.</li>
@@ -384,22 +580,50 @@
       </ul>      
     </section>
     
-    <section class="slide" id="slide22">
+    <section class="slide" id="slide29">
+      <h2>Concaténation (exemple)</h2>
+<pre><code><xmp><?php 
+   $bonjour = "Hello";
+   $monde = " world!";
+   $salutation = $bonjour . $monde; 
+   // $salutation prend la valeur "Hello world!"
+   $age = 17;
+   $texte = "Le visiteur a " . $age . " ans";
+   // $texte = "Le visiteur a 17 ans";
+?>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Concatenation</title>
+  </head>
+  <body>    
+    <p> $salutation = <?php echo $salutation; ?> </p>
+    <p> $texte = <?php echo $texte; ?> </p>  
+  </body>
+</html>
+</xmp></code></pre>     
+      <a href="http://localhost/CAI/slide22.php" target="_blank">
+      <img src="../HTML/try-it-now.png" alt="TryItNow" width="120px" style="float:left"/></a>       
+    </section>
+             
+    <section class="slide" id="slide30">
       <h2>La fonction <code>echo</code></h2>
       <ul>
         <li>PHP fournit un certain nombre de <strong>fonctions</strong> permettant en principe d'appliquer des traitements aux variables, et éventuellement de retourner une valeur.</li>
         <li>Une fonction est caractérisée par un nom, suivi d'une paire de parenthèses dans lesquelles on placera éventuellement une série de paramètres.</li>
-        <li><code>echo $maVariable</code>: Permet d'afficher la valeur de la variable <code>$maVariable</code> dans le code HTML, à l'emplacement où l'instruction PHP apparaît dans le code.</li>
-        <li><code>echo "texte"</code>: Permet d'afficher le texte entre <code>"</code> et <code>"</code></li>
+        <li><code>echo($maVariable)</code>: Permet d'afficher la valeur de la variable <code>$maVariable</code> dans le code HTML, à l'emplacement où l'instruction PHP apparaît dans le code.</li>
+        <li><code>echo("texte")</code>: Permet d'afficher le texte entre <code>"</code> et <code>"</code></li>
 <pre><code><xmp><?php
    $texte = "On peut utiliser des \" dans texte.";
-   echo $texte; // On peut utiliser des " dans texte.
+   echo($texte); // On peut utiliser des " dans texte.
 ?>
-</xmp></code></pre>       
+</xmp></code></pre>
+        <li>On peut ne pas mettre les parenthèses quand il y a un seul paramètre. Donc <code>echo($texte);</code> est équivalant à <code>echo $texte;</code></li>        
       </ul>
     </section>
                   
-    <section class="slide" id="slide23">
+    <section class="slide" id="slide31">
       <h2>Exemple d'utilisation de <code>echo</code></h2>
 <pre><code><xmp><?php
    $titre = "Page Personnelle de Bernie";
@@ -417,10 +641,12 @@
     <img src="<?php echo $photo; ?>"/>
   </body>
 </html>
-</xmp></code></pre>     
+</xmp></code></pre> 
+      <a href="http://localhost/CAI/slide11.php" target="_blank">
+      <img src="../HTML/try-it-now.png" alt="TryItNow" width="120px" style="float:left"/></a>    
     </section>            
               
-    <section class="slide" id="slide24">
+    <section class="slide" id="slide32">
       <h2>Résultat de l'exemple précédent</h2>
       <ul>
         <li>Page reçue par le client lorsqu'il demande la page PHP au serveur Web.</li> 
@@ -437,10 +663,12 @@
   </body>
 </html>
 </xmp></code></pre> 
-      </ul>      
+      <a href="http://localhost/CAI/slide11.php" target="_blank">
+      <img src="../HTML/try-it-now.png" alt="TryItNow" width="120px" style="float:left"/></a>
+      </ul>            
     </section>              
     
-    <section class="slide" id="slide25">
+    <section class="slide" id="slide33">
       <h2>Sélection (1/2)</h2>
       <ul>
         <li>Une sélection (ou structure conditionnelle) est une structure de contrôle permettant de n'exécuter une série d’instructions que si une <strong>condition</strong> donnée est vraie.</li>
@@ -455,7 +683,7 @@
       </ul>
     </section>
 
-    <section class="slide" id="slide26">
+    <section class="slide" id="slide34">
       <h2>Sélection (2/2)</h2>
       <ul>
         <li>Les mots-clé <code>else</code> (sinon) et <code>else if</code> (sinon si) s'utilisent en complément au <code>if</code>, et permettent de définir des blocs dans lesquels les instructions ne seront exécutées que si la condition du <code>if</code> précédent est fausse.</li>
@@ -472,15 +700,16 @@
       </ul>      
     </section>
 
-    <section class="slide" id="slide27">
+    <section class="slide" id="slide35">
       <h2>Exemple de sélection</h2>
 <pre><code><xmp><?php
    $prenom = "Bernie";
-   $nom = "Noel";
 ?>
 <!DOCTYPE html>
 <html>
-  <head><title>Page Bonjour</title></head>
+  <head>
+    <title>Page Bonjour</title>
+  </head>
   <body>
     <?php 
       if ($prenom == "Bernie") {
@@ -491,25 +720,32 @@
     ?>
   </body>
 </html>
-</xmp></code></pre>      
+</xmp></code></pre>   
+      <a href="http://localhost/CAI/slide28.php" target="_blank">
+      <img src="../HTML/try-it-now.png" alt="TryItNow" width="120px" style="float:left"/></a>   
     </section>
     
-    <section class="slide" id="slide28">
+    <section class="slide" id="slide36">
       <h2>Résultat de l'exemple précédent</h2>
       <ul>
-        <li>Page reçue par le client lorsqu'il demande la page PHP au serveur Web. Notez que si la variable <code>$prenom</code> avait contenu une autre valeur que <code>"Bernie"</code>, le résultat aurait été différent.</li>         
+        <li>Page reçue par le client lorsqu'il demande la page PHP au serveur Web.</li> 
+        <li>Notez que si la variable <code>$prenom</code> avait contenu une autre valeur que <code>"Bernie"</code>, le résultat aurait été différent.</li>         
 <pre><code><xmp><!DOCTYPE html>
 <html>
-  <head><title>Page Bonjour</title></head>
+  <head>
+    <title>Page Bonjour</title>
+  </head>
   <body>
     <b>Bonjour Bernie !</b>
   </body>
 </html>
 </xmp></code></pre>
+      <a href="http://localhost/CAI/slide28.php" target="_blank">
+      <img src="../HTML/try-it-now.png" alt="TryItNow" width="120px" style="float:left"/></a>
       </ul>           
     </section>
-    
-    <section class="slide" id="slide29">
+ 
+    <section class="slide" id="slide37">
       <h2>Exemple de condition complexe</h2>
       <ul>
         <li>Une condition peut être relativement complexe. Avec les opérateur <code>AND</code> (et), <code>OR</code> (ou) et <code>!</code> (inversion) il est possible d'exprimer n'importe quelle condition logique.</li>
@@ -523,43 +759,45 @@
             ou alors tu es les deux à la fois !";
    }
 ?>
-</xmp></code></pre>      
+</xmp></code></pre> 
+      <a href="http://localhost/CAI/slide30.php" target="_blank">
+      <img src="../HTML/try-it-now.png" alt="TryItNow" width="120px" style="float:left"/></a>     
       </ul>
     </section>
-                        
-    <section class="slide" id="slide30">
+        
+    <section class="slide" id="slide38">
       <h2>Boucles (1/2)</h2>
       <ul>
         <li>Une boucle permet de répéter des instructions plusieurs fois.</li>
-        <li>Ceci est pour un gain du temps et d’espace; en pratique indispensable.</li>
+        <li>Ceci est pour un gain du temps et d'espace; en pratique indispensable.</li>
         <li>Comment fonctionne une boucle?</li>
         <ol>
-          <li>comme d'habitude, les instructions sont d'abord exécutées dans l'ordre, de haut en bas (flèche rouge);</li>
-          <li>à la fin des instructions, on retourne à la première (flèche verte);</li>
-          <li>on recommence à lire les instructions dans l'ordre (flèche rouge);</li>
-          <li>et on retourne à la première(flèche verte);</li>
+          <li>comme d'habitude, les instructions sont d'abord exécutées dans l'ordre, de haut en bas (flèche rouge);</li>
+          <li>à la fin des instructions, on retourne à la première (flèche verte);</li>
+          <li>on recommence à lire les instructions dans l'ordre (flèche rouge);</li>
+          <li>et on retourne à la première (flè̀che verte);</li>
           <li>etc.,etc.</li>
-          <img src="../Figures/boucle.png" style="float:right"/>
+          <img src="../Figures/boucle.png" style="float:right"/>          
         </ol>        
       </ul>
-    </section>            
-              
-    <section class="slide" id="slide31">
+    </section> 
+             
+    <section class="slide" id="slide39">
       <h2>Boucles (2/2)</h2>
       <ul>
-        <li>Le seul problème dans ce schéma est que ça ne s'arrête jamais!</li>
-        <li>Les instructions seraient réexécutées à l'infini! C'est pour cela que, quel que soit le type de boucle (<code>while</code> ou <code>for</code>), il faut indiquer une <strong>condition</strong>.</li>
-        <li>Tant que la condition est remplie, les instructions sont réexécutées.</li>
-        <li>Dès que la condition n'est plus remplie, on sort enfin de la boucle.</li>        
+        <li>Le seul problème dans ce sché́ma est que ça ne s'arrête jamais!</li>
+        <li>Les instructions seraient réexé́cuté́es à̀ l'infini! C'est pour cela que, quel que soit le type de boucle (<code>while</code> ou <code>for</code>), il faut indiquer une <strong>condition</strong>.</li>
+        <li>Tant que la condition est remplie, les instructions sont ré́exé́cuté́es.</li>
+        <li>Dès que la condition n'est plus remplie, on sort enfin de la boucle.</li>        
       </ul>
     </section>              
-    
-    <section class="slide" id="slide32">
+ 
+    <section class="slide" id="slide40">
       <h2>Boucle <code>while</code></h2>
       <ul>
         <li><code>while</code> peut se traduire par "tant que".</li>
-        <li>Ici, on demande à PHP: <em>tant que <code>$continuer_boucle</code> est vrai, exécuter ces instructions</em>.</li>
-        <li>Les instructions qui sont répétées en boucle se trouvent entre les accolades <code>{</code> et <code>}</code>.</li>
+        <li>Ici, on demande à PHP: <em>tant que <code>$continuer_boucle</code> est vrai, exécuter ces instructions</em>.</li>
+        <li>Les instructions qui sont répé́té́es en boucle se trouvent entre les accolades <code>{</code> et <code>}</code>.</li>
 <pre><code><xmp><?php 
    while ($continuer_boucle == true) {
       // instruction à exécuter dans la boucle 
@@ -568,8 +806,8 @@
 </xmp></code></pre>      
       </ul>
     </section>
-
-    <section class="slide" id="slide33">
+      
+    <section class="slide" id="slide41">
       <h2>Exemple de boucle <code>while</code></h2>
 <pre><code><xmp><?php 
    $nombre_de_lignes = 1; 
@@ -578,15 +816,17 @@
       $nombre_de_lignes++;
    } 
 ?> 
-</xmp></code></pre>      
+</xmp></code></pre>  
+      <a href="http://localhost/CAI/slide34.php" target="_blank">
+      <img src="../HTML/try-it-now.png" alt="TryItNow" width="120px" style="float:left"/></a>    
     </section>
-
-    <section class="slide" id="slide34">
+    
+    <section class="slide" id="slide42">
       <h2>Boucle <code>for</code></h2>
       <ul>
-        <li><code>for</code> est un autre type de boucle, dans une forme un peu plus condensée et plus commode à écrire.</li>
-        <li>Cependant, sachez que <code>for</code> et <code>while</code> donnent le même résultat et servent à la même chose: répéter des instructions en boucle.</li>
-        <li>L'une peut paraître plus adaptée que l'autre dans certains cas, cela dépend aussi des goûts.</li>
+        <li><code>for</code> est un autre type de boucle, dans une forme un peu plus condensé́e et plus commode à̀ é́crire.</li>
+        <li>Cependant, sachez que <code>for</code> et <code>while</code> donnent le même résultat et servent à la mê̂me chose: ré́pé́ter des instructions en boucle.</li>
+        <li>L'une peut paraître plus adapté́e que l'autre dans certains cas, cela dé́pend aussi des goûts.</li>
 <pre><code><xmp><?php
    for (initialisation; condition; mise-à-jour) {
       // instruction à exécuter dans la boucle 
@@ -595,27 +835,29 @@
 </xmp></code></pre>
       </ul>      
     </section>
-    
-    <section class="slide" id="slide35">
+           
+    <section class="slide" id="slide43">
       <h2>Exemple de boucle <code>for</code></h2>
 <pre><code><xmp><?php 
    for ($nombre_de_lignes = 1; $nombre_de_lignes <= 100; $nombre_de_lignes++) {
       echo 'Ceci est la ligne n°' . $nombre_de_lignes . '<br/>'; 
    } 
 ?> 
-</xmp></code></pre>       
+</xmp></code></pre>
+      <a href="http://localhost/CAI/slide36.php" target="_blank">
+      <img src="../HTML/try-it-now.png" alt="TryItNow" width="120px" style="float:left"/></a>       
     </section>
     
-    <section class="slide" id="slide36">
+    <section class="slide" id="slide44">
       <h2>Boucle <code>while</code> ou <code>for</code>?</h2>
       <ul>
-        <li>La boucle <code>while</code> est plus simple et plus flexible: on peut faire tous les types de boucles avec mais on peut oublier de faire certaines étapes comme l'incrémentation de la variable!</li>
-        <li>En revanche, <code>for</code> est bien adapté quand on doit compter le nombre de fois que l'on répète les instructions et il permet de ne pas oublier de faire l'incrémentation pour augmenter la valeur de la variable!</li>
-        <li>Si vous hésitez entre les deux, il suffit simplement de vous poser la question suivante: <strong>"Est-ce que je sais d'avance combien de fois je veux que mes instructions soient répétées?"</strong>. Si la réponse est oui, alors la boucle <code>for</code> est tout indiquée. Sinon, alors il vaut mieux utiliser la boucle <code>while</code>.</li>
+        <li>La boucle <code>while</code> est plus simple et plus flexible: on peut faire tous les types de boucles avec mais on peut oublier de faire certaines étapes comme l'incrémentation de la variable!</li>
+        <li>En revanche, <code>for</code> est bien adapté́ quand on doit compter le nombre de fois que l'on répè̀te les instructions et il permet de ne pas oublier de faire l'incrémentation pour augmenter la valeur de la variable!</li>
+        <li>Si vous hésitez entre les deux, il suffit simplement de vous poser la question suivante: <strong>"Est-ce que je sais d'avance combien de fois je veux que mes instructions soient répé́té́es?"</strong>. Si la réponse est oui, alors la boucle <code>for</code> est tout indiquée. Sinon, alors il vaut mieux utiliser la boucle <code>while</code>.</li>
       </ul>
-    </section>            
-            
-    <section class="slide" id="slide37">
+    </section> 
+
+    <section class="slide" id="slide45">
       <h2>La fonction <code>isset</code></h2>
       <ul>
         <li><code>isset($maVariable)</code>: Permet de savoir si la variable <code>$maVariable</code> a été définie au préalable (si elle contient une valeur).</li>
@@ -628,10 +870,12 @@
    }
 ?>
 </xmp></code></pre> 
+      <a href="http://localhost/CAI/slide38.php" target="_blank">
+      <img src="../HTML/try-it-now.png" alt="TryItNow" width="120px" style="float:left"/></a>
       </ul>     
     </section>            
               
-    <section class="slide" id="slide38">
+    <section class="slide" id="slide46">
       <h2>Références</h2>
       <ul>
         <li>Manuel de référence du langage PHP: 
@@ -643,11 +887,11 @@
       </ul>
     </section>              
     
-    <section class="slide" id="slide39">
+    <section class="slide" id="slide47">
       <h2>Questions?!</h2>    
       <img src="../Figures/questions.png" alt="Questions?!"/>
     </section>
-        
+                                         
     <!-- deck.navigation snippet -->
     <div aria-role="navigation">
       <a href="#" class="deck-prev-link" title="Previous">&#8592;</a>

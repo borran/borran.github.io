@@ -12,7 +12,6 @@
 	// Opréation inversion
 	$op9 = ! $op1; // $op9 est faux
 ?>
-
 <!DOCTYPE html>
 <html>
   <head>

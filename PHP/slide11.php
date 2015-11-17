@@ -11,6 +11,6 @@
   <body>
     <h1> Bonjour <?php echo($nom); ?> ! </h1>
     <p> Voici une photo : </p>
-    <img src="<?php echo($photo); ?>" border="0"/>
+    <img src="<?php echo($photo); ?>"/>
   </body>
 </html>
