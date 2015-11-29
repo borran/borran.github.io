@@ -75,18 +75,21 @@
     </section>
 
     <section class="slide" id="slide4">
-      <h2>Exemple (avec l'URL)</h2> 
+      <h2>Exemple avec l'URL</h2> 
       <p>Nous avons deux fichiers:</p>
       <ul>
-        <li><code>page.html</code></li>
+        <li><code>index.html</code></li>
 <pre><code><xmp><!DOCTYPE html>
 <html>
-  <head><title>Page</title></head>
+  <head><title>Index</title></head>
   <body>
     <a href="bonjour.php?nom=Dupont&prenom=Jean">Dis-moi Bonjour!</a>
   </body>
 </html>
-</xmp></code></pre>        
+</xmp></code></pre>
+	<a href="http://localhost/CAI/index.php" target="_blank">
+	<img src="../HTML/try-it-now.png" alt="TryItNow" width="120px" style="float:left"/></a>           
+	<br/>
         <li><code>bonjour.php</code></li>
 <pre><code><xmp><?php
    echo "Bonjour " . $_GET['prenom']  . " " . $_GET['nom'] . "!";
@@ -97,25 +100,28 @@
     </section>
 
     <section class="slide" id="slide5">
-      <h2>Exemple (avec l'URL)</h2> 
-      <p>Nous avons deux fichiers:</p>
+      <h2>Exemple avec l'URL</h2> 
+      <p>Il faut toujours vérifier les paramètres:</p>
       <ul>
-        <li><code>page.html</code></li>
+        <li><code>index.html</code></li>
 <pre><code><xmp><!DOCTYPE html>
 <html>
-  <head><title>Page</title></head>
+  <head><title>Index</title></head>
   <body>
     <a href="bonjour.php?nom=Dupont&prenom=Jean">Dis-moi Bonjour!</a>
   </body>
 </html>
-</xmp></code></pre>        
+</xmp></code></pre>   
+	<a href="http://localhost/CAI/index.php" target="_blank">
+	<img src="../HTML/try-it-now.png" alt="TryItNow" width="120px" style="float:left"/></a>           
+	<br/>     
         <li><code>bonjour.php</code></li>
 <pre><code><xmp><?php
    if (isset($_GET['prenom']) AND isset($_GET['nom'])) {
       echo 'Bonjour ' . $_GET['prenom'] . ' ' . $_GET['nom'] . ' !';
    }
-   else { // Il manque des paramètres, on avertit le visiteur 
-      echo 'Il faut renseigner un nom et un prénom !';
+   else { // Il manque des paramètres, on avertit le visiteur 
+      echo 'Il faut renseigner un nom et un pré́nom !';
    } 
 ?>
 </xmp></code></pre> 
@@ -125,16 +131,16 @@
     <section class="slide" id="slide6">
       <h2>Transmettre des données avec l'URL</h2>    
       <ul>
-        <li>Une URL représente l'adresse d'une page web (commençant généralement par <code>http://</code>)</li>
+        <li>Une URL représente l'adresse d'une page web (commençant gé́né́ralement par <code>http://</code>)</li>
         <li>Lorsqu'on fait un lien vers une page, il est possible d'ajouter des paramètres sous la forme
-        <code>nom_page.php?param1=val1&param2=val2</code>
+        <code>nom_page.php?param1=val1&amp;param2=val2</code>
         qui seront transmis à la page.</li>
         <li>La page <code>nom_page.php</code> dans l'exemple précédent recevra ces paramètres dans un tableau nommé <code>$_GET</code>:</li>
         <ul>
           <li><code>$_GET['param1']</code> aura pour valeur <code>val1</code>.</li>
           <li><code>$_GET['param2']</code> aura pour valeur <code>val2</code>.</li>
         </ul>
-        <li>Il faut pas faire confiance aux informations envoyé par l'URL, et il faut tester prudemment leur valeur avant de les utiliser.</li>
+        <li>Il faut pas faire confiance aux informations envoyé par l'URL, et il faut toujours tester prudemment leur valeur avant de les utiliser.</li>
       </ul>
     </section>
 
@@ -142,7 +148,7 @@
       <h2>Transmettre des données avec les formulaires</h2>    
       <p>Rappel sur les formulaires:</p>
       <ul>
-        <li>Les formulaires sont des éléments HTML permettant de récupérer des données auprès des visiteurs d'une page Web. Ils sont délimités par les balises <code>&lt;form&gt;</code> et <code>&lt;/form&gt;</code> (voir Chapitre3c).</li>
+        <li>Les formulaires sont des éléments HTML permettant de récupérer des données auprès des visiteurs d'une page Web. Ils sont délimités par les balises <code>&lt;form&gt;</code> et <code>&lt;/form&gt;</code> (voir Chap3c).</li>
         <li>L'attribut <code>action</code> permet de spécifier la page vers laquelle les données doivent être envoyées.</li>
         <li>L'attribut <code>method</code> permet de spécifier si les données doivent être encodées dans l'URL (<code>method="GET"</code>) ou dans le corps de la requête HTTP (<code>method="POST"</code>).</li>
         <li>On attribue un nom à chaque élément du formulaire à l'aide de leur attribut <code>name</code>.</li>
@@ -163,7 +169,7 @@
     </section>
     
     <section class="slide" id="slide9">
-      <h2>Exemple (avec Formulaire)</h2>    
+      <h2>Exemple avec Formulaire</h2>    
       <p>Code d'un formulaire HTML basique, <code>form.html</code>:</p>
 <pre><code><xmp><!DOCTYPE html>
 <html>
@@ -185,10 +191,15 @@
   </body>
 </html>
 </xmp></code></pre>
+	<a href="http://localhost/CAI/form.html" target="_blank">
+	<img src="../HTML/try-it-now.png" alt="TryItNow" width="120px" style="float:left"/></a>
+	<br/>
+	<p>Les données envoyé par la méthode <code>GET</code> dans l'URL:</p>	 
+	<code>http://localhost/CAI/myPage.php?name=Borran&surname=Fatemeh</code> 	
     </section>
     
     <section class="slide" id="slide10">
-      <h2>Exemple (page PHP)</h2>    
+      <h2>Exemple avec Formulaire (page PHP)</h2>    
       <p>Code de la page PHP chargée de récupérer les données du formulaire et de les afficher, <code>myPage.php</code>:</p>
 <pre><code><xmp><?php
    $nom    = $_GET['name'];
@@ -200,10 +211,12 @@
   </head>
   <body>
     <h1>Bonjour <?php echo $prenom; ?> !</h1>
-    <p>Ton nom de famille est <b><?php echo $nom; ?></b>
+    <p>Ton nom de famille est <strong><?php echo $nom; ?></strong></p>
   </body>
 </html>
-</xmp></code></pre>      
+</xmp></code></pre> 
+	<a href="http://localhost/CAI/myPage.php" target="_blank">
+	<img src="../HTML/try-it-now.png" alt="TryItNow" width="120px" style="float:left"/></a>   
     </section>
 
     <section class="slide" id="slide11">
@@ -218,7 +231,7 @@
       <h2>POST ou GET?</h2>    
       <ul>
         <li>La méthode <code>POST</code> est utilisée pour transmettre des données via un formulaire et passer en <strong>"caché"</strong> (via une deuxième requête HTTP, après la première qui demande la page html/php), on ne voit pas les données des variables explicitement.</li>
-        <li>Contrairement à <code>POST</code>, la méthode <code>GET</code> passe les variables via l'url (en une seule requête HTTP), les données sont donc "visible" dans l'adresse de la page.</li>
+        <li>Contrairement à <code>POST</code>, la méthode <code>GET</code> passe les variables via l'URL (en une seule requête HTTP), les données sont donc "visible" dans l'adresse de la page.</li>
         <li><em>Attention:</em> un URL est limitée à 255 caractères!</li>
       </ul>
     </section>
@@ -226,7 +239,7 @@
     <section class="slide" id="slide13">
       <h2>Variables superglobales</h2>  
       <ul>
-        <li>Elles sont écrites en majuscules et commencent toutes, à une exception près, par un underscore <code>_</code>.</li>
+        <li>Elles sont écrites en majuscules et commencent toutes par un underscore <code>_</code>.</li>
         <li>Elles sont des tableaux car elles contiennent généralement de nombreuses informations.</li>
         <li>Elles sont automatiquement créées par PHP à chaque fois qu'une page est chargée. Elles existent donc sur toutes les pages et sont accessibles partout : au milieu de votre code, au début, dans les fonctions, etc.</li>
         <li>Exemple: Le code <code>$_SERVER['REMOTE_ADDR']</code> nous donne l'adresse IP du client qui a demandé à voir la page, ce qui peut être utile pour l'identifier.</li>
@@ -240,6 +253,7 @@
         <li>Ceci ne serait pas facile avec <code>GET</code> et <code>POST</code> car ils sont plutôt faits pour transmettre les informations une seule fois, d'une page à une autre.</li>
         <li>Mais alors comment se fait-il que, lorsque je me connecte à ma boîte aux lettres Hotmail, le site ne me demande pas un mot de passe à chaque clic?</li>
         <li>Comment Hotmail sait-il qu'il s'agit de requêtes HTTP envoyées par moi-même?</li>
+        <li>Ecriture et lecture d'une variable session:</li>
 <pre><code><xmp>$_SESSION['prenom'] = "Fatemeh";
 $prenom = $_SESSION['prenom'];
 </xmp></code></pre>                
@@ -266,15 +280,17 @@ $prenom = $_SESSION['prenom'];
 <!DOCTYPE html>
 <html>
   <head>
-	<meta charset="utf-8">
+    <meta charset="utf-8">
     <title>Créer une session</title>
   </head>
   <body>
-    <b> Session créée ! </b>
+    <strong> Session créée ! </strong>
     <a href="restoreSession.php"> Autre page </a>
   </body>
 </html>
-</xmp></code></pre>      
+</xmp></code></pre>  
+	<a href="http://localhost/CAI/saveSession.php" target="_blank">
+	<img src="../HTML/try-it-now.png" alt="TryItNow" width="120px" style="float:left"/></a>     
     </section>
 
     <section class="slide" id="slide17">
@@ -288,16 +304,18 @@ $prenom = $_SESSION['prenom'];
 <!DOCTYPE html>
 <html>
   <head>
-	<meta charset="utf-8">
-	<title>Restaurer une session</title>
+    <meta charset="utf-8">
+    <title>Restaurer une session</title>
   </head>
   <body>
-    <b> Contenu de la session : </b><br/><br/>
-    Nom : <b><?php echo($nom); ?></b><br/>
-    Prenom : <b><?php echo($prenom); ?></b>
+    <strong> Contenu de la session : </strong><br/><br/>
+    Nom : <strong><?php echo($nom); ?></strong><br/>
+    Prenom : <strong><?php echo($prenom); ?></strong>
   </body>
 </html>
-</xmp></code></pre>       
+</xmp></code></pre> 
+	<a href="http://localhost/CAI/restoreSession.php" target="_blank">
+	<img src="../HTML/try-it-now.png" alt="TryItNow" width="120px" style="float:left"/></a>       
     </section>
                                     
     <section class="slide" id="slide18">
@@ -369,7 +387,9 @@ $prenom = $_SESSION['prenom'];
     </form>						
   </body>
 </html>
-</xmp></code></pre>        
+</xmp></code></pre> 
+	<a href="http://localhost/CAI/exemple.php" target="_blank">
+	<img src="../HTML/try-it-now.png" alt="TryItNow" width="120px" style="float:left"/></a>        
     </section>    
                                                 
     <section class="slide" id="slide22">
