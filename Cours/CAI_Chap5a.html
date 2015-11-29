@@ -775,7 +775,7 @@
           <li>comme d'habitude, les instructions sont d'abord exécutées dans l'ordre, de haut en bas (flèche rouge);</li>
           <li>à la fin des instructions, on retourne à la première (flèche verte);</li>
           <li>on recommence à lire les instructions dans l'ordre (flèche rouge);</li>
-          <li>et on retourne à la première (flè̀che verte);</li>
+          <li>et on retourne à la première (flèche verte);</li>
           <li>etc.,etc.</li>
           <img src="../Figures/boucle.png" style="float:right"/>          
         </ol>        
@@ -785,9 +785,9 @@
     <section class="slide" id="slide39">
       <h2>Boucles (2/2)</h2>
       <ul>
-        <li>Le seul problème dans ce sché́ma est que ça ne s'arrête jamais!</li>
-        <li>Les instructions seraient réexé́cuté́es à̀ l'infini! C'est pour cela que, quel que soit le type de boucle (<code>while</code> ou <code>for</code>), il faut indiquer une <strong>condition</strong>.</li>
-        <li>Tant que la condition est remplie, les instructions sont ré́exé́cuté́es.</li>
+        <li>Le seul problème dans ce schéma est que ça ne s'arrête jamais!</li>
+        <li>Les instructions seraient réexécutées à l'infini! C'est pour cela que, quel que soit le type de boucle (<code>while</code> ou <code>for</code>), il faut indiquer une <strong>condition</strong>.</li>
+        <li>Tant que la condition est remplie, les instructions sont réexécutées.</li>
         <li>Dès que la condition n'est plus remplie, on sort enfin de la boucle.</li>        
       </ul>
     </section>              
@@ -797,7 +797,7 @@
       <ul>
         <li><code>while</code> peut se traduire par "tant que".</li>
         <li>Ici, on demande à PHP: <em>tant que <code>$continuer_boucle</code> est vrai, exécuter ces instructions</em>.</li>
-        <li>Les instructions qui sont répé́té́es en boucle se trouvent entre les accolades <code>{</code> et <code>}</code>.</li>
+        <li>Les instructions qui sont répétées en boucle se trouvent entre les accolades <code>{</code> et <code>}</code>.</li>
 <pre><code><xmp><?php 
    while ($continuer_boucle == true) {
       // instruction à exécuter dans la boucle 
@@ -824,9 +824,9 @@
     <section class="slide" id="slide42">
       <h2>Boucle <code>for</code></h2>
       <ul>
-        <li><code>for</code> est un autre type de boucle, dans une forme un peu plus condensé́e et plus commode à̀ é́crire.</li>
-        <li>Cependant, sachez que <code>for</code> et <code>while</code> donnent le même résultat et servent à la mê̂me chose: ré́pé́ter des instructions en boucle.</li>
-        <li>L'une peut paraître plus adapté́e que l'autre dans certains cas, cela dé́pend aussi des goûts.</li>
+        <li><code>for</code> est un autre type de boucle, dans une forme un peu plus condensée et plus commode à écrire.</li>
+        <li>Cependant, sachez que <code>for</code> et <code>while</code> donnent le même résultat et servent à la même chose: répéter des instructions en boucle.</li>
+        <li>L'une peut paraître plus adaptée que l'autre dans certains cas, cela dépend aussi des goûts.</li>
 <pre><code><xmp><?php
    for (initialisation; condition; mise-à-jour) {
       // instruction à exécuter dans la boucle 
@@ -852,8 +852,8 @@
       <h2>Boucle <code>while</code> ou <code>for</code>?</h2>
       <ul>
         <li>La boucle <code>while</code> est plus simple et plus flexible: on peut faire tous les types de boucles avec mais on peut oublier de faire certaines étapes comme l'incrémentation de la variable!</li>
-        <li>En revanche, <code>for</code> est bien adapté́ quand on doit compter le nombre de fois que l'on répè̀te les instructions et il permet de ne pas oublier de faire l'incrémentation pour augmenter la valeur de la variable!</li>
-        <li>Si vous hésitez entre les deux, il suffit simplement de vous poser la question suivante: <strong>"Est-ce que je sais d'avance combien de fois je veux que mes instructions soient répé́té́es?"</strong>. Si la réponse est oui, alors la boucle <code>for</code> est tout indiquée. Sinon, alors il vaut mieux utiliser la boucle <code>while</code>.</li>
+        <li>En revanche, <code>for</code> est bien adapté quand on doit compter le nombre de fois que l'on répète les instructions et il permet de ne pas oublier de faire l'incrémentation pour augmenter la valeur de la variable!</li>
+        <li>Si vous hésitez entre les deux, il suffit simplement de vous poser la question suivante: <strong>"Est-ce que je sais d'avance combien de fois je veux que mes instructions soient répétées?"</strong>. Si la réponse est oui, alors la boucle <code>for</code> est tout indiquée. Sinon, alors il vaut mieux utiliser la boucle <code>while</code>.</li>
       </ul>
     </section> 
 
