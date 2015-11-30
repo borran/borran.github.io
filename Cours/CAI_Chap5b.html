@@ -87,7 +87,7 @@
   </body>
 </html>
 </xmp></code></pre>
-	<a href="http://localhost/CAI/index.php" target="_blank">
+	<a href="http://localhost/CAI/index.html" target="_blank">
 	<img src="../HTML/try-it-now.png" alt="TryItNow" width="120px" style="float:left"/></a>           
 	<br/>
         <li><code>bonjour.php</code></li>
@@ -112,7 +112,7 @@
   </body>
 </html>
 </xmp></code></pre>   
-	<a href="http://localhost/CAI/index.php" target="_blank">
+	<a href="http://localhost/CAI/index.html" target="_blank">
 	<img src="../HTML/try-it-now.png" alt="TryItNow" width="120px" style="float:left"/></a>           
 	<br/>     
         <li><code>bonjour.php</code></li>
@@ -131,11 +131,11 @@
     <section class="slide" id="slide6">
       <h2>Transmettre des données avec l'URL</h2>    
       <ul>
-        <li>Une URL représente l'adresse d'une page web (commençant gé́né́ralement par <code>http://</code>)</li>
-        <li>Lorsqu'on fait un lien vers une page, il est possible d'ajouter des paramètres sous la forme
+        <li>Une URL représente l'adresse d'une page web (commençant généralement par <code>http://</code>)</li>
+        <li>Lorsqu'on fait un lien vers une page, il est possible d'ajouter des paramètres sous la forme
         <code>nom_page.php?param1=val1&amp;param2=val2</code>
-        qui seront transmis à la page.</li>
-        <li>La page <code>nom_page.php</code> dans l'exemple précédent recevra ces paramètres dans un tableau nommé <code>$_GET</code>:</li>
+        qui seront transmis à la page.</li>
+        <li>La page <code>nom_page.php</code> dans l'exemple précédent recevra ces paramètres dans un tableau nommé <code>$_GET</code>:</li>
         <ul>
           <li><code>$_GET['param1']</code> aura pour valeur <code>val1</code>.</li>
           <li><code>$_GET['param2']</code> aura pour valeur <code>val2</code>.</li>
@@ -145,7 +145,7 @@
     </section>
 
     <section class="slide" id="slide7">
-      <h2>Transmettre des données avec les formulaires</h2>    
+      <h2>Transmettre des données avec les formulaires</h2>    
       <p>Rappel sur les formulaires:</p>
       <ul>
         <li>Les formulaires sont des éléments HTML permettant de récupérer des données auprès des visiteurs d'une page Web. Ils sont délimités par les balises <code>&lt;form&gt;</code> et <code>&lt;/form&gt;</code> (voir Chap3c).</li>
@@ -154,7 +154,7 @@
         <li>On attribue un nom à chaque élément du formulaire à l'aide de leur attribut <code>name</code>.</li>
       </ul>
     </section>    
-
+ 
     <section class="slide" id="slide8">
       <h2>Récupérer des données</h2>  
       <ul>
@@ -235,22 +235,24 @@
         <li><em>Attention:</em> un URL est limitée à 255 caractères!</li>
       </ul>
     </section>
-
+    
     <section class="slide" id="slide13">
       <h2>Variables superglobales</h2>  
       <ul>
-        <li>Elles sont écrites en majuscules et commencent toutes par un underscore <code>_</code>.</li>
-        <li>Elles sont des tableaux car elles contiennent généralement de nombreuses informations.</li>
-        <li>Elles sont automatiquement créées par PHP à chaque fois qu'une page est chargée. Elles existent donc sur toutes les pages et sont accessibles partout : au milieu de votre code, au début, dans les fonctions, etc.</li>
-        <li>Exemple: Le code <code>$_SERVER['REMOTE_ADDR']</code> nous donne l'adresse IP du client qui a demandé à voir la page, ce qui peut être utile pour l'identifier.</li>
+        <li>Elles sont écrites en majuscules et commencent toutes par un underscore <code>_</code>.</li>
+        <li>Elles sont des tableaux car elles contiennent généralement de nombreuses informations.</li>
+        <li>Elles sont automatiquement créées par PHP à chaque fois qu'une page est chargée. 
+        Elles existent donc sur toutes les pages et sont accessibles partout : 
+        au milieu de votre code, au début, dans les fonctions, etc.</li>
+        <li>Exemple: Le code <code>$_SERVER['REMOTE_ADDR']</code> nous donne l'adresse IP du client qui a demandé à voir la page, ce qui peut être utile pour l'identifier.</li>
       </ul>  
-    </section>
-                        
+    </section>            
+        
     <section class="slide" id="slide14">
       <h2>Sessions</h2> 
       <ul>
         <li>Les sessions constituent un moyen de conserver/stocker des variables sur le serveur le temps de la présence d'un visiteur sur toutes les pages de votre site.</li>
-        <li>Ceci ne serait pas facile avec <code>GET</code> et <code>POST</code> car ils sont plutôt faits pour transmettre les informations une seule fois, d'une page à une autre.</li>
+        <li>Ceci ne serait pas facile avec <code>GET</code> et <code>POST</code> car ils sont plutôt faits pour transmettre les informations une seule fois, d'une page à une autre.</li>
         <li>Mais alors comment se fait-il que, lorsque je me connecte à ma boîte aux lettres Hotmail, le site ne me demande pas un mot de passe à chaque clic?</li>
         <li>Comment Hotmail sait-il qu'il s'agit de requêtes HTTP envoyées par moi-même?</li>
         <li>Ecriture et lecture d'une variable session:</li>
@@ -259,16 +261,18 @@ $prenom = $_SESSION['prenom'];
 </xmp></code></pre>                
       </ul>   
     </section>
-    
+          
     <section class="slide" id="slide15">
       <h2>Fonctions à connaître</h2>  
       <ul>
         <li>Dans une page PHP, pour pouvoir utiliser les variables de session, il faut <strong>toujours</strong> commencer par invoquer la méthode <code>session_start()</code>.</li>
-        <li><code>session_start()</code>: démarre le système de sessions. Si le visiteur vient d'arriver sur le site, alors un numéro de session est généré pour lui. Vous devez appeler cette fonction au tout début de chacune des pages où vous avez besoin des variables de session.</li>
-        <li><code>session_destroy()</code>: ferme la session du visiteur. Cette fonction est automatiquement appelée lorsque le visiteur ne charge plus de page de votre site pendant plusieurs minutes (c'est le <strong>timeout</strong>), mais vous pouvez aussi créer une page <strong>Déconnexion</strong> si le visiteur souhaite se déconnecter manuellement.</li>
+        <li><code>session_start()</code>: démarre le système de sessions. 
+        Si le visiteur vient d'arriver sur le site, alors un numéro de session est généré pour lui. 
+        Vous devez appeler cette fonction au tout début de chacune des pages où vous avez besoin des variables de session.</li>
+        <li><code>session_destroy()</code>: ferme la session du visiteur. Cette fonction est automatiquement appelée lorsque le visiteur ne charge plus de page de votre site pendant plusieurs minutes (c'est le <strong>timeout</strong>), mais vous pouvez aussi créer une page <strong>Dé́connexion</strong> si le visiteur souhaite se déconnecter manuellement.</li>
       </ul>  
-    </section>    
-
+    </section>   
+            
     <section class="slide" id="slide16">
       <h2>Exemple (création de session)</h2>    
       <p>Code d'une page PHP chargée de créer deux variables de session, <code>saveSession.php</code>:</p>
@@ -292,7 +296,7 @@ $prenom = $_SESSION['prenom'];
 	<a href="http://localhost/CAI/saveSession.php" target="_blank">
 	<img src="../HTML/try-it-now.png" alt="TryItNow" width="120px" style="float:left"/></a>     
     </section>
-
+        
     <section class="slide" id="slide17">
       <h2>Exemple (récupération des valeurs)</h2>    
       <p>Code de la page PHP chargée de récupérer les valeurs des deux variables de session, <code>restoreSession.php</code>:</p>      
@@ -317,7 +321,7 @@ $prenom = $_SESSION['prenom'];
 	<a href="http://localhost/CAI/restoreSession.php" target="_blank">
 	<img src="../HTML/try-it-now.png" alt="TryItNow" width="120px" style="float:left"/></a>       
     </section>
-                                    
+    
     <section class="slide" id="slide18">
       <h2>Exemple (utilisation)</h2>    
       <p><code>saveSession.php</code></p>
@@ -326,15 +330,16 @@ $prenom = $_SESSION['prenom'];
       <img src="../PHP/restoreSession.png" alt="restoreSession"/>
     </section>
     
+    
     <section class="slide" id="slide19">
       <h2>L'utilité des sessions</h2> 
       <ul>
         <li>Imaginez un script qui demande un login et un mot de passe pour qu'un visiteur puisse se "connecter" (s'authentifier). On peut enregistrer ces informations dans des variables de session et se souvenir de l'identifiant du visiteur sur toutes les pages du site!</li>
-        <li>Puisqu'on retient son login et que la variable de session n'est créée que s'il  réussi à s'authentifier, on peut l'utiliser pour restreindre certaines pages de notre site à certains visiteurs uniquement. Cela permet de créer toute une zone d'administration sécurisée : si la variable de session login existe, on affiche le contenu, sinon on affiche une erreur.</li>
-        <li>On se sert activement des sessions sur les sites de vente en ligne. Cela permet de gérer un "panier": on retient les produits que commande le client quelle que soit la page où il est. Lorsqu'il valide sa commande, on récupère ces informations et... on le fait payer.</li>
+        <li>Puisqu'on retient son login et que la variable de session n'est créée que s'il  réussi à s'authentifier, on peut l'utiliser pour restreindre certaines pages de notre site à certains visiteurs uniquement. Cela permet de créer toute une zone d'administration sécurisée : si la variable de session login existe, on affiche le contenu, sinon on affiche une erreur.</li>
+        <li>On se sert activement des sessions sur les sites de vente en ligne. Cela permet de gérer un "panier": on retient les produits que commande le client quelle que soit la page où̀ il est. Lorsqu'il valide sa commande, on récupère ces informations et... on le fait payer.</li>
       </ul>   
     </section>    
-                                      
+          
     <section class="slide" id="slide20">
       <h2>exemple.php (1/2)</h2>
 <pre><code><xmp><?php
@@ -390,8 +395,8 @@ $prenom = $_SESSION['prenom'];
 </xmp></code></pre> 
 	<a href="http://localhost/CAI/exemple.php" target="_blank">
 	<img src="../HTML/try-it-now.png" alt="TryItNow" width="120px" style="float:left"/></a>        
-    </section>    
-                                                
+    </section>   
+                                                                                
     <section class="slide" id="slide22">
       <h2>Questions?!</h2>    
       <img src="../Figures/questions.png" alt="Questions?!"/>
